@@ -4,11 +4,13 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <meta name="author" content="John Doe" />
-  <meta name="author" content="Jane Roe" />
+  <meta name="author" content="Xinchang ‘Cathy’ Li" />
+  <meta name="author" content="Benjamin Smakic" />
+  <meta name="author" content="Zhiyi Yang" />
+  <meta name="author" content="Mingyu Sun" />
   <meta name="dcterms.date" content="2020-11-17" />
-  <meta name="keywords" content="markdown, publishing, manubot" />
-  <title>Manuscript Title</title>
+  <meta name="keywords" content="(TBD, keeping the originals for now) markdown, publishing, manubot" />
+  <title>CEE 498DS Project 11: Building Energy Predictions - Project Report</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -25,10 +27,10 @@
   Suggest improvements at https://github.com/manubot/manubot/blob/master/manubot/process/header-includes-template.html
   -->
   <meta name="dc.format" content="text/html" />
-  <meta name="dc.title" content="Manuscript Title" />
-  <meta name="citation_title" content="Manuscript Title" />
-  <meta property="og:title" content="Manuscript Title" />
-  <meta property="twitter:title" content="Manuscript Title" />
+  <meta name="dc.title" content="CEE 498DS Project 11: Building Energy Predictions - Project Report" />
+  <meta name="citation_title" content="CEE 498DS Project 11: Building Energy Predictions - Project Report" />
+  <meta property="og:title" content="CEE 498DS Project 11: Building Energy Predictions - Project Report" />
+  <meta property="twitter:title" content="CEE 498DS Project 11: Building Energy Predictions - Project Report" />
   <meta name="dc.date" content="2020-11-17" />
   <meta name="citation_publication_date" content="2020-11-17" />
   <meta name="dc.language" content="en-US" />
@@ -37,13 +39,18 @@
   <meta name="dc.publisher" content="Manubot" />
   <meta name="citation_journal_title" content="Manubot" />
   <meta name="citation_technical_report_institution" content="Manubot" />
-  <meta name="citation_author" content="John Doe" />
-  <meta name="citation_author_institution" content="Department of Something, University of Whatever" />
+  <meta name="citation_author" content="Xinchang &#39;Cathy&#39; Li" />
+  <meta name="citation_author_institution" content="Department of Civil and Environmental Engineering, University of Illinois at Urbana-Champaign" />
   <meta name="citation_author_orcid" content="XXXX-XXXX-XXXX-XXXX" />
-  <meta name="twitter:creator" content="@johndoe" />
-  <meta name="citation_author" content="Jane Roe" />
-  <meta name="citation_author_institution" content="Department of Something, University of Whatever" />
-  <meta name="citation_author_institution" content="Department of Whatever, University of Something" />
+  <meta name="citation_author" content="Benjamin Smakic" />
+  <meta name="citation_author_institution" content="Department of ..., University of ..." />
+  <meta name="citation_author_institution" content="Department of Civil and Environmental Engineering, University of Illinois at Urbana-Champaign" />
+  <meta name="citation_author_orcid" content="XXXX-XXXX-XXXX-XXXX" />
+  <meta name="citation_author" content="Zhiyi Yang" />
+  <meta name="citation_author_institution" content="Department of Civil and Environmental Engineering, University of Illinois at Urbana-Champaign" />
+  <meta name="citation_author_orcid" content="XXXX-XXXX-XXXX-XXXX" />
+  <meta name="citation_author" content="Mingyu Sun" />
+  <meta name="citation_author_institution" content="Department of Civil and Environmental Engineering, University of Illinois at Urbana-Champaign" />
   <meta name="citation_author_orcid" content="XXXX-XXXX-XXXX-XXXX" />
   <link rel="canonical" href="https://cathyxinchangli.github.io/cee498ds-project11/" />
   <meta property="og:url" content="https://cathyxinchangli.github.io/cee498ds-project11/" />
@@ -51,9 +58,9 @@
   <meta name="citation_fulltext_html_url" content="https://cathyxinchangli.github.io/cee498ds-project11/" />
   <meta name="citation_pdf_url" content="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/48902971b7e5ff444144aa7ebd0194804485aec8/" />
-  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/48902971b7e5ff444144aa7ebd0194804485aec8/" />
-  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/48902971b7e5ff444144aa7ebd0194804485aec8/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/fb2fdb1952e93939552aa71d1c31255964f7cb7b/" />
+  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/fb2fdb1952e93939552aa71d1c31255964f7cb7b/" />
+  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/fb2fdb1952e93939552aa71d1c31255964f7cb7b/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -63,35 +70,48 @@
 </head>
 <body>
 <header id="title-block-header">
-<h1 class="title">Manuscript Title</h1>
+<h1 class="title">CEE 498DS Project 11: Building Energy Predictions - Project Report</h1>
 </header>
 <p><small><em>
 This manuscript
-(<a href="https://cathyxinchangli.github.io/cee498ds-project11/v/48902971b7e5ff444144aa7ebd0194804485aec8/">permalink</a>)
+(<a href="https://cathyxinchangli.github.io/cee498ds-project11/v/fb2fdb1952e93939552aa71d1c31255964f7cb7b/">permalink</a>)
 was automatically generated
-from <a href="https://github.com/cathyxinchangli/cee498ds-project11/tree/48902971b7e5ff444144aa7ebd0194804485aec8">cathyxinchangli/cee498ds-project11@4890297</a>
+from <a href="https://github.com/cathyxinchangli/cee498ds-project11/tree/fb2fdb1952e93939552aa71d1c31255964f7cb7b">cathyxinchangli/cee498ds-project11@fb2fdb1</a>
 on November 17, 2020.
 </em></small></p>
 <h2 id="authors">Authors</h2>
 <ul>
-<li><p><strong>John Doe</strong><br>
+<li><p><strong>Xinchang ‘Cathy’ Li</strong><br>
 <img src="images/orcid.svg" class="inline_icon" alt="ORCID icon" />
 <a href="https://orcid.org/XXXX-XXXX-XXXX-XXXX">XXXX-XXXX-XXXX-XXXX</a>
 · <img src="images/github.svg" class="inline_icon" alt="GitHub icon" />
-<a href="https://github.com/johndoe">johndoe</a>
-· <img src="images/twitter.svg" class="inline_icon" alt="Twitter icon" />
-<a href="https://twitter.com/johndoe">johndoe</a><br>
+<a href="https://github.com/cathyxinchangli">cathyxinchangli</a><br>
 <small>
-Department of Something, University of Whatever
-· Funded by Grant XXXXXXXX
+Department of Civil and Environmental Engineering, University of Illinois at Urbana-Champaign
 </small></p></li>
-<li><p><strong>Jane Roe</strong><br>
+<li><p><strong>Benjamin Smakic</strong><br>
 <img src="images/orcid.svg" class="inline_icon" alt="ORCID icon" />
 <a href="https://orcid.org/XXXX-XXXX-XXXX-XXXX">XXXX-XXXX-XXXX-XXXX</a>
 · <img src="images/github.svg" class="inline_icon" alt="GitHub icon" />
-<a href="https://github.com/janeroe">janeroe</a><br>
+<a href="https://github.com/mkbenja">mkbenja</a><br>
 <small>
-Department of Something, University of Whatever; Department of Whatever, University of Something
+Department of …, University of …; Department of Civil and Environmental Engineering, University of Illinois at Urbana-Champaign
+</small></p></li>
+<li><p><strong>Zhiyi Yang</strong><br>
+<img src="images/orcid.svg" class="inline_icon" alt="ORCID icon" />
+<a href="https://orcid.org/XXXX-XXXX-XXXX-XXXX">XXXX-XXXX-XXXX-XXXX</a>
+· <img src="images/github.svg" class="inline_icon" alt="GitHub icon" />
+<a href="https://github.com/zhiyiy2">zhiyiy2</a><br>
+<small>
+Department of Civil and Environmental Engineering, University of Illinois at Urbana-Champaign
+</small></p></li>
+<li><p><strong>Mingyu Sun</strong><br>
+<img src="images/orcid.svg" class="inline_icon" alt="ORCID icon" />
+<a href="https://orcid.org/XXXX-XXXX-XXXX-XXXX">XXXX-XXXX-XXXX-XXXX</a>
+· <img src="images/github.svg" class="inline_icon" alt="GitHub icon" />
+<a href="https://github.com/TBD">TBD</a><br>
+<small>
+Department of Civil and Environmental Engineering, University of Illinois at Urbana-Champaign
 </small></p></li>
 </ul>
 <h2 class="page_break_before" id="abstract">Abstract</h2>
