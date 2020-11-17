@@ -79,11 +79,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/fb2fdb1952e93939552aa71d1c31255964f7cb7b/" />
+  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/1b19c4437ae23ec6d30ca8f6ed4aa38fa02def52/" />
 
-  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/fb2fdb1952e93939552aa71d1c31255964f7cb7b/" />
+  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/1b19c4437ae23ec6d30ca8f6ed4aa38fa02def52/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/fb2fdb1952e93939552aa71d1c31255964f7cb7b/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/1b19c4437ae23ec6d30ca8f6ed4aa38fa02def52/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -115,9 +115,9 @@ title: 'CEE 498DS Project 11: Building Energy Predictions - Project Report'
 
 <small><em>
 This manuscript
-([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/fb2fdb1952e93939552aa71d1c31255964f7cb7b/))
+([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/1b19c4437ae23ec6d30ca8f6ed4aa38fa02def52/))
 was automatically generated
-from [cathyxinchangli/cee498ds-project11@fb2fdb1](https://github.com/cathyxinchangli/cee498ds-project11/tree/fb2fdb1952e93939552aa71d1c31255964f7cb7b)
+from [cathyxinchangli/cee498ds-project11@1b19c44](https://github.com/cathyxinchangli/cee498ds-project11/tree/1b19c4437ae23ec6d30ca8f6ed4aa38fa02def52)
 on November 17, 2020.
 </em></small>
 
@@ -165,7 +165,7 @@ on November 17, 2020.
 
 ## Abstract {.page_break_before}
 
-
+This is the abstract. Testing to see if it will show up.
 
 
 ## References {.page_break_before}
