@@ -1,26 +1,38 @@
 ---
-title: "Manuscript Title"
+title: "CEE 498DS Project 11: Building Energy Predictions - Project Report"
 keywords:
-  - markdown
+  - (TBD, keeping the originals for now) markdown
   - publishing
   - manubot
 lang: en-US
 authors:
-  - github: johndoe
-    name: John Doe
-    initials: JD
+  - github: cathyxinchangli
+    name: Xinchang 'Cathy' Li
+    initials: XL
     orcid: XXXX-XXXX-XXXX-XXXX
-    twitter: johndoe
-    email: john.doe@something.com
+    email: xli172@illinois.edu
     affiliations:
-      - Department of Something, University of Whatever
-    funders:
-      - Grant XXXXXXXX
-  - github: janeroe
-    name: Jane Roe
-    initials: JR
+      - Department of Civil and Environmental Engineering, University of Illinois at Urbana-Champaign
+  - github: mkbenja
+    name: Benjamin Smakic
+    initials: BS
     orcid: XXXX-XXXX-XXXX-XXXX
-    email: jane.roe@whatever.edu
+    email: ...@illinois.edu
     affiliations:
-      - Department of Something, University of Whatever
-      - Department of Whatever, University of Something
+      - Department of ..., University of ...
+      - Department of Civil and Environmental Engineering, University of Illinois at Urbana-Champaign
+  - github: zhiyiy2
+    name: Zhiyi Yang
+    initials: ZY
+    orcid: XXXX-XXXX-XXXX-XXXX
+    email: ...@illinois.edu
+    affiliations:
+      - Department of Civil and Environmental Engineering, University of Illinois at Urbana-Champaign
+  - github: TBD
+    name: Mingyu Sun
+    initials: MS
+    orcid: XXXX-XXXX-XXXX-XXXX
+    email: ...@illinois.edu
+    affiliations:
+      - Department of Civil and Environmental Engineering, University of Illinois at Urbana-Champaign
+
