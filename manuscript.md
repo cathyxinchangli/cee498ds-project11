@@ -79,11 +79,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/128085ae13e428eb6e1bd521377b93d483fd29bb/" />
+  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/e850b873533dd5d8c7b04bda18bd69be3ba21d76/" />
 
-  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/128085ae13e428eb6e1bd521377b93d483fd29bb/" />
+  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/e850b873533dd5d8c7b04bda18bd69be3ba21d76/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/128085ae13e428eb6e1bd521377b93d483fd29bb/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/e850b873533dd5d8c7b04bda18bd69be3ba21d76/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -115,9 +115,9 @@ title: 'CEE 498DS Project 11: Building Energy Predictions - Project Report'
 
 <small><em>
 This manuscript
-([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/128085ae13e428eb6e1bd521377b93d483fd29bb/))
+([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/e850b873533dd5d8c7b04bda18bd69be3ba21d76/))
 was automatically generated
-from [cathyxinchangli/cee498ds-project11@128085a](https://github.com/cathyxinchangli/cee498ds-project11/tree/128085ae13e428eb6e1bd521377b93d483fd29bb)
+from [cathyxinchangli/cee498ds-project11@e850b87](https://github.com/cathyxinchangli/cee498ds-project11/tree/e850b873533dd5d8c7b04bda18bd69be3ba21d76)
 on December 4, 2020.
 </em></small>
 
@@ -191,9 +191,9 @@ The authors used Support Vector Regression (SVR) to predict the energy consumpti
 Zhang, Grolinger & Capretz present the results for home #1 in figure 1. They managed to predict electricity consumption well. The most inaccurate parts are peaks that arise due to random variations. Furthermore, the authors present a table with results for all 15 homes. According to them, time-based splitting is used to check parameter stability over time, which makes the algorithm more accurate. In this case however random sampling performs better in cases where some residential customers have irregular and uncertain patterns. These uncertain patterns make time-based splitting more inaccurate over time. Therefore, both methods are employed. Lastly, mean absolute percentage of error (MAPE) was utilized to measure the performance of the algorithm, which is a widely used performance metric.
  
 Figure 1: Observed electricity consumption compared to predicted electricity consumption for house #1 (of 15) (Zhang et al.). 
- 
+Insert figure
 Figure 2: Performance results of the predication model for all homes.
-
+Insert figure
 ### Conclusion
 The biggest strength of the paper is the execution of the chosen methods to achieve desired results. It is a relatively successful attempt at predicting single households, which tend to be more unpredictable compared to multi-family or corporate residential buildings. The biggest weakness is the justification for the chosen methods. The authors do an excellent job of utilizing the chosen methods, but there is little thought put in to why these methods where chosen or why they did certain things. By including a more extensive evaluation and justification for method choices, the target audience and other researchers in the same field can understand better and continue the research. However, it makes the paper longer and more complex, which can be negative for the readers and the target audience. 
 
