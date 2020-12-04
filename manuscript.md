@@ -79,11 +79,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/e39d677e57b535063786168f4e30790e67452e02/" />
+  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/61bde3299765d7019c7df4ea66aaa59158646de5/" />
 
-  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/e39d677e57b535063786168f4e30790e67452e02/" />
+  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/61bde3299765d7019c7df4ea66aaa59158646de5/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/e39d677e57b535063786168f4e30790e67452e02/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/61bde3299765d7019c7df4ea66aaa59158646de5/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -115,9 +115,9 @@ title: 'CEE 498DS Project 11: Building Energy Predictions - Project Report'
 
 <small><em>
 This manuscript
-([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/e39d677e57b535063786168f4e30790e67452e02/))
+([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/61bde3299765d7019c7df4ea66aaa59158646de5/))
 was automatically generated
-from [cathyxinchangli/cee498ds-project11@e39d677](https://github.com/cathyxinchangli/cee498ds-project11/tree/e39d677e57b535063786168f4e30790e67452e02)
+from [cathyxinchangli/cee498ds-project11@61bde32](https://github.com/cathyxinchangli/cee498ds-project11/tree/61bde3299765d7019c7df4ea66aaa59158646de5)
 on December 4, 2020.
 </em></small>
 
@@ -168,6 +168,9 @@ on December 4, 2020.
 This is the abstract. Testing to see if it will show up.
 
 By utilizing modern electric meters, it possible to collect and store enormous amount of data about household energy consumption. This data can be used to predict energy consumption and help energy providers manage energy (electricity) output and plan for energy peaks/lows.  
+
+
+## Literature review
 
 
 ## References {.page_break_before}
