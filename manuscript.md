@@ -6,7 +6,7 @@ author-meta:
 - Mingyu Sun
 bibliography:
 - content/manual-references.json
-date-meta: '2020-11-17'
+date-meta: '2020-12-04'
 header-includes: '<!--
 
   Manubot generated metadata rendered from header-includes-template.html.
@@ -25,9 +25,9 @@ header-includes: '<!--
 
   <meta property="twitter:title" content="CEE 498DS Project 11: Building Energy Predictions - Project Report" />
 
-  <meta name="dc.date" content="2020-11-17" />
+  <meta name="dc.date" content="2020-12-04" />
 
-  <meta name="citation_publication_date" content="2020-11-17" />
+  <meta name="citation_publication_date" content="2020-12-04" />
 
   <meta name="dc.language" content="en-US" />
 
@@ -49,7 +49,7 @@ header-includes: '<!--
 
   <meta name="citation_author" content="Benjamin Smakic" />
 
-  <meta name="citation_author_institution" content="Department of ..., University of ..." />
+  <meta name="citation_author_institution" content="Department of Aeronautical &amp; Vehicle Engineering, Royal Institute of Technology KTH" />
 
   <meta name="citation_author_institution" content="Department of Civil and Environmental Engineering, University of Illinois at Urbana-Champaign" />
 
@@ -79,11 +79,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/1b19c4437ae23ec6d30ca8f6ed4aa38fa02def52/" />
+  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/2e650241a9f7c5effa50d5ec6ec64cd22da93ffa/" />
 
-  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/1b19c4437ae23ec6d30ca8f6ed4aa38fa02def52/" />
+  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/2e650241a9f7c5effa50d5ec6ec64cd22da93ffa/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/1b19c4437ae23ec6d30ca8f6ed4aa38fa02def52/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/2e650241a9f7c5effa50d5ec6ec64cd22da93ffa/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -115,10 +115,10 @@ title: 'CEE 498DS Project 11: Building Energy Predictions - Project Report'
 
 <small><em>
 This manuscript
-([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/1b19c4437ae23ec6d30ca8f6ed4aa38fa02def52/))
+([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/2e650241a9f7c5effa50d5ec6ec64cd22da93ffa/))
 was automatically generated
-from [cathyxinchangli/cee498ds-project11@1b19c44](https://github.com/cathyxinchangli/cee498ds-project11/tree/1b19c4437ae23ec6d30ca8f6ed4aa38fa02def52)
-on November 17, 2020.
+from [cathyxinchangli/cee498ds-project11@2e65024](https://github.com/cathyxinchangli/cee498ds-project11/tree/2e650241a9f7c5effa50d5ec6ec64cd22da93ffa)
+on December 4, 2020.
 </em></small>
 
 ## Authors
@@ -140,7 +140,7 @@ on November 17, 2020.
     · ![GitHub icon](images/github.svg){.inline_icon}
     [mkbenja](https://github.com/mkbenja)<br>
   <small>
-     Department of ..., University of ...; Department of Civil and Environmental Engineering, University of Illinois at Urbana-Champaign
+     Department of Aeronautical & Vehicle Engineering, Royal Institute of Technology KTH; Department of Civil and Environmental Engineering, University of Illinois at Urbana-Champaign
   </small>
 
 + **Zhiyi Yang**<br>
