@@ -79,11 +79,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/61bde3299765d7019c7df4ea66aaa59158646de5/" />
+  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/f9ee654aadc45dce9efefa7c9d77d5e9e28207fa/" />
 
-  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/61bde3299765d7019c7df4ea66aaa59158646de5/" />
+  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/f9ee654aadc45dce9efefa7c9d77d5e9e28207fa/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/61bde3299765d7019c7df4ea66aaa59158646de5/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/f9ee654aadc45dce9efefa7c9d77d5e9e28207fa/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -115,9 +115,9 @@ title: 'CEE 498DS Project 11: Building Energy Predictions - Project Report'
 
 <small><em>
 This manuscript
-([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/61bde3299765d7019c7df4ea66aaa59158646de5/))
+([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/f9ee654aadc45dce9efefa7c9d77d5e9e28207fa/))
 was automatically generated
-from [cathyxinchangli/cee498ds-project11@61bde32](https://github.com/cathyxinchangli/cee498ds-project11/tree/61bde3299765d7019c7df4ea66aaa59158646de5)
+from [cathyxinchangli/cee498ds-project11@f9ee654](https://github.com/cathyxinchangli/cee498ds-project11/tree/f9ee654aadc45dce9efefa7c9d77d5e9e28207fa)
 on December 4, 2020.
 </em></small>
 
@@ -171,6 +171,18 @@ By utilizing modern electric meters, it possible to collect and store enormous a
 
 
 ## Literature review
+
+In the paper “Forecasting Residential Energy Consumption: Single Household Perspective”  (Zhang, Grolinger & Capretz 2019), the authors attempt to predict energy consumption in residential households, with focus on single households. 
+
+According to the authors it is more difficult to predict single household energy (electricity) consumption, compared with e.g. workplace energy consumption. The reason is that single households often differ in energy consumption patterns while workplace patters tend to be more similar. Also, if big workplace buildings or multi-family residential buildings are analysed, any anomalies tend to cancel each other out (with a big enough dataset).
+
+### Data set
+The data set used originates from an electricity provider in London, Ontario, Canada. It consists of hourly smart-meter readings of electricity usage (kWh) of 15 households between 2014 and 2016. 
+
+Firstly, the data set used might not be sufficiently broad. Tracking only 15 households will most likely not capture a variety of electricity consumption patterns. However, it was deemed enough in this case. Furthermore, the data set comes from one city with a certain climate, which means that different environmental prerequisites are not considered. Perhaps using other cities from a different part of the world would lay a foundation for a more advanced ML-algorithm (Machine Learning algorithm). As it is now, the ML-algorithm might be inaccurate for other parts of the world.   In addition to this, Zhang, Grolinger & Capretz  state that residents of London, Ontario, Canada tend to heat their homes gas heating systems, which affects the electricity consumption drastically. 
+
+Secondly, the data set used is pre-processed in different ways. Any missing readings of electricity consumption is replaced with the average value of the previous reading and the next reading, missing weather condition is replaced with the weather condition of the previous hour etc. This is perfectly good way of replacing missing data. However, the authors do not give an explanation as to why this method was chosen, if there are any consequences and if there are other methods of making the data set complete. 
+### TBC
 
 
 ## References {.page_break_before}
