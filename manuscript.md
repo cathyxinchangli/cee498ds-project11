@@ -49,7 +49,7 @@ header-includes: '<!--
 
   <meta name="citation_author" content="Benjamin Smakic" />
 
-  <meta name="citation_author_institution" content="Department of Aeronautical &amp; Vehicle Engineering, Royal Institute of Technology KTH" />
+  <meta name="citation_author_institution" content="Department of Aeronautical &amp; Vehicle Engineering, Royal Institute of Technology, KTH" />
 
   <meta name="citation_author_institution" content="Department of Civil and Environmental Engineering, University of Illinois at Urbana-Champaign" />
 
@@ -79,11 +79,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/2e650241a9f7c5effa50d5ec6ec64cd22da93ffa/" />
+  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/6e6a97486f60f59452b7f230c04a6da0cf24ef36/" />
 
-  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/2e650241a9f7c5effa50d5ec6ec64cd22da93ffa/" />
+  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/6e6a97486f60f59452b7f230c04a6da0cf24ef36/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/2e650241a9f7c5effa50d5ec6ec64cd22da93ffa/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/6e6a97486f60f59452b7f230c04a6da0cf24ef36/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -115,9 +115,9 @@ title: 'CEE 498DS Project 11: Building Energy Predictions - Project Report'
 
 <small><em>
 This manuscript
-([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/2e650241a9f7c5effa50d5ec6ec64cd22da93ffa/))
+([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/6e6a97486f60f59452b7f230c04a6da0cf24ef36/))
 was automatically generated
-from [cathyxinchangli/cee498ds-project11@2e65024](https://github.com/cathyxinchangli/cee498ds-project11/tree/2e650241a9f7c5effa50d5ec6ec64cd22da93ffa)
+from [cathyxinchangli/cee498ds-project11@6e6a974](https://github.com/cathyxinchangli/cee498ds-project11/tree/6e6a97486f60f59452b7f230c04a6da0cf24ef36)
 on December 4, 2020.
 </em></small>
 
@@ -140,7 +140,7 @@ on December 4, 2020.
     · ![GitHub icon](images/github.svg){.inline_icon}
     [mkbenja](https://github.com/mkbenja)<br>
   <small>
-     Department of Aeronautical & Vehicle Engineering, Royal Institute of Technology KTH; Department of Civil and Environmental Engineering, University of Illinois at Urbana-Champaign
+     Department of Aeronautical & Vehicle Engineering, Royal Institute of Technology, KTH; Department of Civil and Environmental Engineering, University of Illinois at Urbana-Champaign
   </small>
 
 + **Zhiyi Yang**<br>
