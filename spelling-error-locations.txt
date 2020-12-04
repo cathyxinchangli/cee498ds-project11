@@ -7,4 +7,15 @@ content/02.literature-review.md:10:Capretz
 content/02.literature-review.md:10:Grolinger
 content/02.literature-review.md:10:Zhang
 content/02.literature-review.md:12:pre
-content/02.literature-review.md:13:TBC
+content/02.literature-review.md:15:Capretz
+content/02.literature-review.md:15:EDA
+content/02.literature-review.md:15:Grolinger
+content/02.literature-review.md:15:Zhang
+content/02.literature-review.md:18:SVM
+content/02.literature-review.md:18:SVR
+content/02.literature-review.md:18:SVR
+content/02.literature-review.md:19:Capretz
+content/02.literature-review.md:19:Grolinger
+content/02.literature-review.md:19:MAPE
+content/02.literature-review.md:19:Zhang
+content/02.literature-review.md:21:Zhang

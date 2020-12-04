@@ -3,13 +3,16 @@ Capretz
 cathyxinchangli
 Champaign
 dataset
+EDA
 Grolinger
 KTH
+MAPE
 Mingyu
 mkbenja
 pre
 Smakic
-TBC
+SVM
+SVR
 TBD
 Urbana
 Xinchang
