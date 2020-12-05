@@ -45,27 +45,19 @@ header-includes: '<!--
 
   <meta name="citation_author_institution" content="Department of Civil and Environmental Engineering, University of Illinois at Urbana-Champaign" />
 
-  <meta name="citation_author_orcid" content="XXXX-XXXX-XXXX-XXXX" />
-
   <meta name="citation_author" content="Benjamin Smakic" />
 
   <meta name="citation_author_institution" content="Department of Aeronautical &amp; Vehicle Engineering, Royal Institute of Technology, KTH" />
 
   <meta name="citation_author_institution" content="Department of Civil and Environmental Engineering, University of Illinois at Urbana-Champaign" />
 
-  <meta name="citation_author_orcid" content="XXXX-XXXX-XXXX-XXXX" />
-
   <meta name="citation_author" content="Zhiyi Yang" />
 
   <meta name="citation_author_institution" content="Department of Civil and Environmental Engineering, University of Illinois at Urbana-Champaign" />
 
-  <meta name="citation_author_orcid" content="XXXX-XXXX-XXXX-XXXX" />
-
   <meta name="citation_author" content="Mingyu Sun" />
 
   <meta name="citation_author_institution" content="Department of Civil and Environmental Engineering, University of Illinois at Urbana-Champaign" />
-
-  <meta name="citation_author_orcid" content="XXXX-XXXX-XXXX-XXXX" />
 
   <link rel="canonical" href="https://cathyxinchangli.github.io/cee498ds-project11/" />
 
@@ -79,11 +71,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/380ea9101702f004514b72bcd112f55ab13acb9b/" />
+  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/6718727c564428f599b39a43f10fe1d2bfa6ad47/" />
 
-  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/380ea9101702f004514b72bcd112f55ab13acb9b/" />
+  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/6718727c564428f599b39a43f10fe1d2bfa6ad47/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/380ea9101702f004514b72bcd112f55ab13acb9b/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/6718727c564428f599b39a43f10fe1d2bfa6ad47/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -115,9 +107,9 @@ title: 'CEE 498DS Project 11: Building Energy Predictions - Project Report'
 
 <small><em>
 This manuscript
-([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/380ea9101702f004514b72bcd112f55ab13acb9b/))
+([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/6718727c564428f599b39a43f10fe1d2bfa6ad47/))
 was automatically generated
-from [cathyxinchangli/cee498ds-project11@380ea91](https://github.com/cathyxinchangli/cee498ds-project11/tree/380ea9101702f004514b72bcd112f55ab13acb9b)
+from [cathyxinchangli/cee498ds-project11@6718727](https://github.com/cathyxinchangli/cee498ds-project11/tree/6718727c564428f599b39a43f10fe1d2bfa6ad47)
 on December 5, 2020.
 </em></small>
 
@@ -126,8 +118,6 @@ on December 5, 2020.
 
 
 + **Xinchang 'Cathy' Li**<br>
-    ![ORCID icon](images/orcid.svg){.inline_icon}
-    [XXXX-XXXX-XXXX-XXXX](https://orcid.org/XXXX-XXXX-XXXX-XXXX)
     · ![GitHub icon](images/github.svg){.inline_icon}
     [cathyxinchangli](https://github.com/cathyxinchangli)<br>
   <small>
@@ -135,8 +125,6 @@ on December 5, 2020.
   </small>
 
 + **Benjamin Smakic**<br>
-    ![ORCID icon](images/orcid.svg){.inline_icon}
-    [XXXX-XXXX-XXXX-XXXX](https://orcid.org/XXXX-XXXX-XXXX-XXXX)
     · ![GitHub icon](images/github.svg){.inline_icon}
     [mkbenja](https://github.com/mkbenja)<br>
   <small>
@@ -144,8 +132,6 @@ on December 5, 2020.
   </small>
 
 + **Zhiyi Yang**<br>
-    ![ORCID icon](images/orcid.svg){.inline_icon}
-    [XXXX-XXXX-XXXX-XXXX](https://orcid.org/XXXX-XXXX-XXXX-XXXX)
     · ![GitHub icon](images/github.svg){.inline_icon}
     [zhiyiy2](https://github.com/zhiyiy2)<br>
   <small>
@@ -153,8 +139,6 @@ on December 5, 2020.
   </small>
 
 + **Mingyu Sun**<br>
-    ![ORCID icon](images/orcid.svg){.inline_icon}
-    [XXXX-XXXX-XXXX-XXXX](https://orcid.org/XXXX-XXXX-XXXX-XXXX)
     · ![GitHub icon](images/github.svg){.inline_icon}
     [TBD](https://github.com/TBD)<br>
   <small>
@@ -226,12 +210,21 @@ ADD GENERAL DESCRIPTION OF THE DATASET AND FILES HERE.
 #### Missing values
 
 #### Building Metadata
+There are in total 16 sites, labeled 0~15 (`site_id`), containing 1449 buildings. Each building is identified with a unique `building_id` independent from the `site_id`, from 0 to 1448. The number of buildings in each site differ greatly, as shown in INSERT FIG2 REF HERE.
+
+INSERT FIG2 HERE
+
+There are 16 primary use types, with a mix of residential and commercial buildings, mostly built after the 1950s. Both the building square footage and floor counts are approximately logarithmically distributed, meaning most buildings are relatively small, single- to multi-story buildings (INSERT FIG3 REF HERE). There's a fairly strong correlation (correlation coefficient = 0.53) between building square footage and floor counts, as we could expect, and a small but positive correlation between the constructed year and the building size (0.11). 
+
+INSERT FIG3 HERE
 
 #### Target Variable: Meter Readings
 ASSIGNED TO: Mingyu
 
 #### Weather Data
-ASSIGNED TO: Cathy
+`weather_train` has 2016 hourly weather data, and `weather_test` has 2017~18 hourly weather data. The time series plots for all variables of both the training and test periods are shown below (INSERT FIG4 REF HERE)
+
+INSERT FIG4 HERE
 
 #### Correlations
 

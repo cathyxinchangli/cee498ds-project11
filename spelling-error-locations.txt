@@ -58,10 +58,11 @@ content/03.literature-review.md:33:FFNN
 content/03.literature-review.md:33:HME
 content/03.literature-review.md:33:SVM
 content/04.method.md:3:DATASET
-content/04.method.md:9:Mingyu
-content/04.method.md:21:LSTM
-content/04.method.md:21:RNN
-content/04.method.md:24:LightGBM
+content/04.method.md:11:logarithmically
+content/04.method.md:16:Mingyu
+content/04.method.md:30:LSTM
+content/04.method.md:30:RNN
+content/04.method.md:33:LightGBM
 content/linear-regression.md:5:Kaggle
 content/linear-regression.md:6:dataset
 content/linear-regression.md:9:Kaggle
