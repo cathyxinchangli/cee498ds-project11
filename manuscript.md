@@ -71,11 +71,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/6718727c564428f599b39a43f10fe1d2bfa6ad47/" />
+  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/cd88b4bb6a76217968bbf2d86ae30fe1fae2f129/" />
 
-  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/6718727c564428f599b39a43f10fe1d2bfa6ad47/" />
+  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/cd88b4bb6a76217968bbf2d86ae30fe1fae2f129/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/6718727c564428f599b39a43f10fe1d2bfa6ad47/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/cd88b4bb6a76217968bbf2d86ae30fe1fae2f129/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -107,9 +107,9 @@ title: 'CEE 498DS Project 11: Building Energy Predictions - Project Report'
 
 <small><em>
 This manuscript
-([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/6718727c564428f599b39a43f10fe1d2bfa6ad47/))
+([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/cd88b4bb6a76217968bbf2d86ae30fe1fae2f129/))
 was automatically generated
-from [cathyxinchangli/cee498ds-project11@6718727](https://github.com/cathyxinchangli/cee498ds-project11/tree/6718727c564428f599b39a43f10fe1d2bfa6ad47)
+from [cathyxinchangli/cee498ds-project11@cd88b4b](https://github.com/cathyxinchangli/cee498ds-project11/tree/cd88b4bb6a76217968bbf2d86ae30fe1fae2f129)
 on December 5, 2020.
 </em></small>
 
@@ -210,21 +210,21 @@ ADD GENERAL DESCRIPTION OF THE DATASET AND FILES HERE.
 #### Missing values
 
 #### Building Metadata
-There are in total 16 sites, labeled 0~15 (`site_id`), containing 1449 buildings. Each building is identified with a unique `building_id` independent from the `site_id`, from 0 to 1448. The number of buildings in each site differ greatly, as shown in INSERT FIG2 REF HERE.
+There are in total 16 sites, labeled 0~15 (`site_id`), containing 1449 buildings. Each building is identified with a unique `building_id` independent from the `site_id`, from 0 to 1448. The number of buildings in each site differ greatly, as shown in {@fig:image2}.
 
-INSERT FIG2 HERE
+![Number of buildings in each site.](images/num-buildings-in-sites.png){#fig:image2}
 
-There are 16 primary use types, with a mix of residential and commercial buildings, mostly built after the 1950s. Both the building square footage and floor counts are approximately logarithmically distributed, meaning most buildings are relatively small, single- to multi-story buildings (INSERT FIG3 REF HERE). There's a fairly strong correlation (correlation coefficient = 0.53) between building square footage and floor counts, as we could expect, and a small but positive correlation between the constructed year and the building size (0.11). 
+There are 16 primary use types, with a mix of residential and commercial buildings, mostly built after the 1950s. Both the building square footage and floor counts are approximately logarithmically distributed, meaning most buildings are relatively small, single- to multi-story buildings ({@fig:image3}). There's a fairly strong correlation (correlation coefficient = 0.53) between building square footage and floor counts, as we could expect, and a small but positive correlation between the constructed year and the building size (0.11). 
 
-INSERT FIG3 HERE
+![Distribution of features in building_metadata.](images/bldg-meta-features-dist.png){#fig:image3}
 
 #### Target Variable: Meter Readings
 ASSIGNED TO: Mingyu
 
 #### Weather Data
-`weather_train` has 2016 hourly weather data, and `weather_test` has 2017~18 hourly weather data. The time series plots for all variables of both the training and test periods are shown below (INSERT FIG4 REF HERE)
+`weather_train` has 2016 hourly weather data, and `weather_test` has 2017~18 hourly weather data. The time series plots for all variables of both the training and test periods are shown below ({@fig:image4})
 
-INSERT FIG4 HERE
+![Time series plots of weather variables.](images/weather-data-time-series.png){#fig:image4}
 
 #### Correlations
 
