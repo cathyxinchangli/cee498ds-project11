@@ -1,4 +1,4 @@
-# Linear regression model
+## Linear regression model
 This section will cover how a linear regression model was constructed in order to predict household energy consumption, as well as discuss the limitations of a linear model. 
 
 ### Data preparation
