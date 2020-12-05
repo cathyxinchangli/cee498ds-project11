@@ -79,11 +79,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/1c8e5e4b8ff818d5c140e8d21a9f17410d1b6616/" />
+  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/2c77f94c219ac041c50e2bd345ee7488f92bce01/" />
 
-  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/1c8e5e4b8ff818d5c140e8d21a9f17410d1b6616/" />
+  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/2c77f94c219ac041c50e2bd345ee7488f92bce01/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/1c8e5e4b8ff818d5c140e8d21a9f17410d1b6616/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/2c77f94c219ac041c50e2bd345ee7488f92bce01/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -115,9 +115,9 @@ title: 'CEE 498DS Project 11: Building Energy Predictions - Project Report'
 
 <small><em>
 This manuscript
-([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/1c8e5e4b8ff818d5c140e8d21a9f17410d1b6616/))
+([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/2c77f94c219ac041c50e2bd345ee7488f92bce01/))
 was automatically generated
-from [cathyxinchangli/cee498ds-project11@1c8e5e4](https://github.com/cathyxinchangli/cee498ds-project11/tree/1c8e5e4b8ff818d5c140e8d21a9f17410d1b6616)
+from [cathyxinchangli/cee498ds-project11@2c77f94](https://github.com/cathyxinchangli/cee498ds-project11/tree/2c77f94c219ac041c50e2bd345ee7488f92bce01)
 on December 5, 2020.
 </em></small>
 
@@ -180,6 +180,8 @@ As the human population increases, it is vital to lower the energy footprint of 
 Household energy consumption is a big part of our total energy consumption, and new technology offers new ways of decreasing it.
 
 This project focuses on predicting building energy consumption based on the Kaggle competition "ASHRAE - Great Energy Predictor III". The main goal of the project is first and foremost to create an AI-model that can predict the energy usage of a building as accurately as possible, based on different input data such as air temperature, building size etc. In addition to that, different AI-models are explored to investigate which one works the best for this particular competition.
+
+![Building retrofit flowchart.](images/intro-flowchart.png){#fig:image1}
 
 
 # Literature review
