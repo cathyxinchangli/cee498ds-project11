@@ -79,11 +79,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/c5d7433dd810119df7df4589b2cda5ac0bff097f/" />
+  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/380ea9101702f004514b72bcd112f55ab13acb9b/" />
 
-  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/c5d7433dd810119df7df4589b2cda5ac0bff097f/" />
+  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/380ea9101702f004514b72bcd112f55ab13acb9b/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/c5d7433dd810119df7df4589b2cda5ac0bff097f/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/380ea9101702f004514b72bcd112f55ab13acb9b/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -115,9 +115,9 @@ title: 'CEE 498DS Project 11: Building Energy Predictions - Project Report'
 
 <small><em>
 This manuscript
-([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/c5d7433dd810119df7df4589b2cda5ac0bff097f/))
+([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/380ea9101702f004514b72bcd112f55ab13acb9b/))
 was automatically generated
-from [cathyxinchangli/cee498ds-project11@c5d7433](https://github.com/cathyxinchangli/cee498ds-project11/tree/c5d7433dd810119df7df4589b2cda5ac0bff097f)
+from [cathyxinchangli/cee498ds-project11@380ea91](https://github.com/cathyxinchangli/cee498ds-project11/tree/380ea9101702f004514b72bcd112f55ab13acb9b)
 on December 5, 2020.
 </em></small>
 
@@ -218,9 +218,6 @@ The authors first validate the ML techniques on the ASHRAE Great Energy Predicto
 
 This paper provides a comprehensive analysis on the application of multiple ML techniques to building energy data, which could serve as a guide to our project. The discussions on the differences between commercial and residential buildings are particularly helpful for our feature engineering and model selection, as we are expected to model 16 building types, commercial and residential included. The authors are also able to identify and prove the cause of failure for LS-SVM on the ASHRAE dataset, which may help us in model tuning and selection. Despite these merits, the paper does not address the differences in performance for FFNN, HME-FFNN and FCM-FFNN, the three closely related methods, shedding doubts on whether it is necessary to include them all. In addition, it would be very informative if the paper included the computational expenses required for training each model, which could be an important metric in model selection especially for real-life applications.
 
-
-
-## Exploratory Data Analysis
 
 
 ## Methods
