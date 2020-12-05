@@ -54,9 +54,9 @@
   <meta name="citation_fulltext_html_url" content="https://cathyxinchangli.github.io/cee498ds-project11/" />
   <meta name="citation_pdf_url" content="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/6718727c564428f599b39a43f10fe1d2bfa6ad47/" />
-  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/6718727c564428f599b39a43f10fe1d2bfa6ad47/" />
-  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/6718727c564428f599b39a43f10fe1d2bfa6ad47/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/cd88b4bb6a76217968bbf2d86ae30fe1fae2f129/" />
+  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/cd88b4bb6a76217968bbf2d86ae30fe1fae2f129/" />
+  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/cd88b4bb6a76217968bbf2d86ae30fe1fae2f129/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -70,9 +70,9 @@
 </header>
 <p><small><em>
 This manuscript
-(<a href="https://cathyxinchangli.github.io/cee498ds-project11/v/6718727c564428f599b39a43f10fe1d2bfa6ad47/">permalink</a>)
+(<a href="https://cathyxinchangli.github.io/cee498ds-project11/v/cd88b4bb6a76217968bbf2d86ae30fe1fae2f129/">permalink</a>)
 was automatically generated
-from <a href="https://github.com/cathyxinchangli/cee498ds-project11/tree/6718727c564428f599b39a43f10fe1d2bfa6ad47">cathyxinchangli/cee498ds-project11@6718727</a>
+from <a href="https://github.com/cathyxinchangli/cee498ds-project11/tree/cd88b4bb6a76217968bbf2d86ae30fe1fae2f129">cathyxinchangli/cee498ds-project11@cd88b4b</a>
 on December 5, 2020.
 </em></small></p>
 <h2 id="authors">Authors</h2>
@@ -145,15 +145,27 @@ The biggest strength of the paper is the execution of the chosen methods to achi
 <p>ADD GENERAL DESCRIPTION OF THE DATASET AND FILES HERE.
 #### Missing values</p>
 <h4 id="building-metadata">Building Metadata</h4>
-<p>There are in total 16 sites, labeled 0~15 (<code>site_id</code>), containing 1449 buildings. Each building is identified with a unique <code>building_id</code> independent from the <code>site_id</code>, from 0 to 1448. The number of buildings in each site differ greatly, as shown in INSERT FIG2 REF HERE.</p>
-<p>INSERT FIG2 HERE</p>
-<p>There are 16 primary use types, with a mix of residential and commercial buildings, mostly built after the 1950s. Both the building square footage and floor counts are approximately logarithmically distributed, meaning most buildings are relatively small, single- to multi-story buildings (INSERT FIG3 REF HERE). There’s a fairly strong correlation (correlation coefficient = 0.53) between building square footage and floor counts, as we could expect, and a small but positive correlation between the constructed year and the building size (0.11).</p>
-<p>INSERT FIG3 HERE</p>
+<p>There are in total 16 sites, labeled 0~15 (<code>site_id</code>), containing 1449 buildings. Each building is identified with a unique <code>building_id</code> independent from the <code>site_id</code>, from 0 to 1448. The number of buildings in each site differ greatly, as shown in <a href="#fig:image2">2</a>.</p>
+<div id="fig:image2" class="fignos">
+<figure>
+<img src="images/num-buildings-in-sites.png" alt="" /><figcaption><span>Figure 2:</span> Number of buildings in each site.</figcaption>
+</figure>
+</div>
+<p>There are 16 primary use types, with a mix of residential and commercial buildings, mostly built after the 1950s. Both the building square footage and floor counts are approximately logarithmically distributed, meaning most buildings are relatively small, single- to multi-story buildings (<a href="#fig:image3">3</a>). There’s a fairly strong correlation (correlation coefficient = 0.53) between building square footage and floor counts, as we could expect, and a small but positive correlation between the constructed year and the building size (0.11).</p>
+<div id="fig:image3" class="fignos">
+<figure>
+<img src="images/bldg-meta-features-dist.png" alt="" /><figcaption><span>Figure 3:</span> Distribution of features in building_metadata.</figcaption>
+</figure>
+</div>
 <h4 id="target-variable-meter-readings">Target Variable: Meter Readings</h4>
 <p>ASSIGNED TO: Mingyu</p>
 <h4 id="weather-data">Weather Data</h4>
-<p><code>weather_train</code> has 2016 hourly weather data, and <code>weather_test</code> has 2017~18 hourly weather data. The time series plots for all variables of both the training and test periods are shown below (INSERT FIG4 REF HERE)</p>
-<p>INSERT FIG4 HERE</p>
+<p><code>weather_train</code> has 2016 hourly weather data, and <code>weather_test</code> has 2017~18 hourly weather data. The time series plots for all variables of both the training and test periods are shown below (<a href="#fig:image4">4</a>)</p>
+<div id="fig:image4" class="fignos">
+<figure>
+<img src="images/weather-data-time-series.png" alt="" /><figcaption><span>Figure 4:</span> Time series plots of weather variables.</figcaption>
+</figure>
+</div>
 <h4 id="correlations">Correlations</h4>
 <h3 id="machine-learning-models">Machine Learning Models</h3>
 <h4 id="baseline-linear-regression">Baseline: Linear Regression</h4>
