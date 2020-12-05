@@ -1,7 +1,7 @@
 # Output directory containing the formatted manuscript
 
 The [`gh-pages`](https://github.com/cathyxinchangli/cee498ds-project11/tree/gh-pages) branch hosts the contents of this directory at <https://cathyxinchangli.github.io/cee498ds-project11/>.
-The permalink for this webpage version is <https://cathyxinchangli.github.io/cee498ds-project11/v/1836e101f190d0a5d89b45759555c956b0481e5c/>.
+The permalink for this webpage version is <https://cathyxinchangli.github.io/cee498ds-project11/v/870d6e54d1838550c6c09508c29fcb33a0be43a8/>.
 To redirect to the permalink for the latest manuscript version at anytime, use the link <https://cathyxinchangli.github.io/cee498ds-project11/v/freeze/>.
 
 ## Files
@@ -35,4 +35,4 @@ Verifying timestamps with the `ots verify` command requires running a local bitc
 ## Source
 
 The manuscripts in this directory were built from
-[`1836e101f190d0a5d89b45759555c956b0481e5c`](https://github.com/cathyxinchangli/cee498ds-project11/commit/1836e101f190d0a5d89b45759555c956b0481e5c).
+[`870d6e54d1838550c6c09508c29fcb33a0be43a8`](https://github.com/cathyxinchangli/cee498ds-project11/commit/870d6e54d1838550c6c09508c29fcb33a0be43a8).
