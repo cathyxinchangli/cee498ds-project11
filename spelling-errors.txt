@@ -4,7 +4,7 @@ Capretz
 cathyxinchangli
 Champaign
 consumptions
-dataset
+DATASET
 EDA
 FCM
 FFNN
@@ -27,6 +27,7 @@ SVR
 TBD
 Urbana
 Xinchang
+XXXX
 Zhang
 Zhiyi
 zhiyiy

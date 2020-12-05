@@ -45,19 +45,27 @@ header-includes: '<!--
 
   <meta name="citation_author_institution" content="Department of Civil and Environmental Engineering, University of Illinois at Urbana-Champaign" />
 
+  <meta name="citation_author_orcid" content="XXXX-XXXX-XXXX-XXXX" />
+
   <meta name="citation_author" content="Benjamin Smakic" />
 
   <meta name="citation_author_institution" content="Department of Aeronautical &amp; Vehicle Engineering, Royal Institute of Technology, KTH" />
 
   <meta name="citation_author_institution" content="Department of Civil and Environmental Engineering, University of Illinois at Urbana-Champaign" />
 
+  <meta name="citation_author_orcid" content="XXXX-XXXX-XXXX-XXXX" />
+
   <meta name="citation_author" content="Zhiyi Yang" />
 
   <meta name="citation_author_institution" content="Department of Civil and Environmental Engineering, University of Illinois at Urbana-Champaign" />
 
+  <meta name="citation_author_orcid" content="XXXX-XXXX-XXXX-XXXX" />
+
   <meta name="citation_author" content="Mingyu Sun" />
 
   <meta name="citation_author_institution" content="Department of Civil and Environmental Engineering, University of Illinois at Urbana-Champaign" />
+
+  <meta name="citation_author_orcid" content="XXXX-XXXX-XXXX-XXXX" />
 
   <link rel="canonical" href="https://cathyxinchangli.github.io/cee498ds-project11/" />
 
@@ -71,11 +79,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/a8458cf52b69de59e8e7468bee202fb99a382237/" />
+  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/c5d7433dd810119df7df4589b2cda5ac0bff097f/" />
 
-  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/a8458cf52b69de59e8e7468bee202fb99a382237/" />
+  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/c5d7433dd810119df7df4589b2cda5ac0bff097f/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/a8458cf52b69de59e8e7468bee202fb99a382237/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/c5d7433dd810119df7df4589b2cda5ac0bff097f/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -107,9 +115,9 @@ title: 'CEE 498DS Project 11: Building Energy Predictions - Project Report'
 
 <small><em>
 This manuscript
-([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/a8458cf52b69de59e8e7468bee202fb99a382237/))
+([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/c5d7433dd810119df7df4589b2cda5ac0bff097f/))
 was automatically generated
-from [cathyxinchangli/cee498ds-project11@a8458cf](https://github.com/cathyxinchangli/cee498ds-project11/tree/a8458cf52b69de59e8e7468bee202fb99a382237)
+from [cathyxinchangli/cee498ds-project11@c5d7433](https://github.com/cathyxinchangli/cee498ds-project11/tree/c5d7433dd810119df7df4589b2cda5ac0bff097f)
 on December 5, 2020.
 </em></small>
 
@@ -118,6 +126,8 @@ on December 5, 2020.
 
 
 + **Xinchang 'Cathy' Li**<br>
+    ![ORCID icon](images/orcid.svg){.inline_icon}
+    [XXXX-XXXX-XXXX-XXXX](https://orcid.org/XXXX-XXXX-XXXX-XXXX)
     · ![GitHub icon](images/github.svg){.inline_icon}
     [cathyxinchangli](https://github.com/cathyxinchangli)<br>
   <small>
@@ -125,6 +135,8 @@ on December 5, 2020.
   </small>
 
 + **Benjamin Smakic**<br>
+    ![ORCID icon](images/orcid.svg){.inline_icon}
+    [XXXX-XXXX-XXXX-XXXX](https://orcid.org/XXXX-XXXX-XXXX-XXXX)
     · ![GitHub icon](images/github.svg){.inline_icon}
     [mkbenja](https://github.com/mkbenja)<br>
   <small>
@@ -132,6 +144,8 @@ on December 5, 2020.
   </small>
 
 + **Zhiyi Yang**<br>
+    ![ORCID icon](images/orcid.svg){.inline_icon}
+    [XXXX-XXXX-XXXX-XXXX](https://orcid.org/XXXX-XXXX-XXXX-XXXX)
     · ![GitHub icon](images/github.svg){.inline_icon}
     [zhiyiy2](https://github.com/zhiyiy2)<br>
   <small>
@@ -139,6 +153,8 @@ on December 5, 2020.
   </small>
 
 + **Mingyu Sun**<br>
+    ![ORCID icon](images/orcid.svg){.inline_icon}
+    [XXXX-XXXX-XXXX-XXXX](https://orcid.org/XXXX-XXXX-XXXX-XXXX)
     · ![GitHub icon](images/github.svg){.inline_icon}
     [TBD](https://github.com/TBD)<br>
   <small>
@@ -202,6 +218,9 @@ The authors first validate the ML techniques on the ASHRAE Great Energy Predicto
 
 This paper provides a comprehensive analysis on the application of multiple ML techniques to building energy data, which could serve as a guide to our project. The discussions on the differences between commercial and residential buildings are particularly helpful for our feature engineering and model selection, as we are expected to model 16 building types, commercial and residential included. The authors are also able to identify and prove the cause of failure for LS-SVM on the ASHRAE dataset, which may help us in model tuning and selection. Despite these merits, the paper does not address the differences in performance for FFNN, HME-FFNN and FCM-FFNN, the three closely related methods, shedding doubts on whether it is necessary to include them all. In addition, it would be very informative if the paper included the computational expenses required for training each model, which could be an important metric in model selection especially for real-life applications.
 
+
+
+## Exploratory Data Analysis
 
 
 ## Methods
