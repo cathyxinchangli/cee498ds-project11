@@ -58,9 +58,9 @@
   <meta name="citation_fulltext_html_url" content="https://cathyxinchangli.github.io/cee498ds-project11/" />
   <meta name="citation_pdf_url" content="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/0c0955896323678f76dbc3c78545232c31d96413/" />
-  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/0c0955896323678f76dbc3c78545232c31d96413/" />
-  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/0c0955896323678f76dbc3c78545232c31d96413/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/adaacf73fce52321b6465c53453fec85c01f619c/" />
+  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/adaacf73fce52321b6465c53453fec85c01f619c/" />
+  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/adaacf73fce52321b6465c53453fec85c01f619c/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -74,9 +74,9 @@
 </header>
 <p><small><em>
 This manuscript
-(<a href="https://cathyxinchangli.github.io/cee498ds-project11/v/0c0955896323678f76dbc3c78545232c31d96413/">permalink</a>)
+(<a href="https://cathyxinchangli.github.io/cee498ds-project11/v/adaacf73fce52321b6465c53453fec85c01f619c/">permalink</a>)
 was automatically generated
-from <a href="https://github.com/cathyxinchangli/cee498ds-project11/tree/0c0955896323678f76dbc3c78545232c31d96413">cathyxinchangli/cee498ds-project11@0c09558</a>
+from <a href="https://github.com/cathyxinchangli/cee498ds-project11/tree/adaacf73fce52321b6465c53453fec85c01f619c">cathyxinchangli/cee498ds-project11@adaacf7</a>
 on December 5, 2020.
 </em></small></p>
 <h2 id="authors">Authors</h2>
@@ -117,7 +117,7 @@ Department of Civil and Environmental Engineering, University of Illinois at Urb
 <h2 class="page_break_before" id="abstract">Abstract</h2>
 <p>This is the abstract. Testing to see if it will show up.</p>
 <p>By utilizing modern electric meters, it possible to collect and store enormous amount of data about household energy consumption. This data can be used to predict energy consumption and help energy providers manage energy (electricity) output and plan for energy peaks/lows.</p>
-<h1 id="introduction">Introduction</h1>
+<h2 id="introduction">Introduction</h2>
 <p>By utilizing modern electric meters, it possible to collect and store enormous amount of data about building energy consumption. This data can be used to predict
 energy consumption and help energy providers manage energy (electricity) output and plan for energy peaks/lows. It can also help the indiviudal resident keep track
 of their energy usage and perhaps even recommend energy saving actions.</p>
@@ -129,30 +129,30 @@ Household energy consumption is a big part of our total energy consumption, and 
 <img src="images/intro-flowchart.png" alt="" /><figcaption><span>Figure 1:</span> Building retrofit flowchart.</figcaption>
 </figure>
 </div>
-<h1 id="literature-review">Literature review</h1>
-<h2 id="zhang-grolinger-capretz-2109-forecasting-residential-energy-consumption-single-household-perspective">Zhang, Grolinger, &amp; Capretz (2109): Forecasting Residential Energy Consumption: Single Household Perspective</h2>
+<h2 id="literature-review">Literature review</h2>
+<h3 id="zhang-grolinger-capretz-2109-forecasting-residential-energy-consumption-single-household-perspective">Zhang, Grolinger, &amp; Capretz (2109): Forecasting Residential Energy Consumption: Single Household Perspective</h3>
 <p>In the paper “Forecasting Residential Energy Consumption: Single Household Perspective” (Zhang, Grolinger &amp; Capretz 2019), the authors attempt to predict energy consumption in residential households, with focus on single households.</p>
 <p>According to the authors it is more difficult to predict single household energy (electricity) consumption, compared with e.g. workplace energy consumption. The reason is that single households often differ in energy consumption patterns while workplace patters tend to be more similar. Also, if big workplace buildings or multi-family residential buildings are analysed, any anomalies tend to cancel each other out (with a big enough dataset).</p>
-<h3 id="data-set">Data set</h3>
+<h4 id="data-set">Data set</h4>
 <p>The data set used originates from an electricity provider in London, Ontario, Canada. It consists of hourly smart-meter readings of electricity usage (kWh) of 15 households between 2014 and 2016.</p>
 <p>Firstly, the data set used might not be sufficiently broad. Tracking only 15 households will most likely not capture a variety of electricity consumption patterns. However, it was deemed enough in this case. Furthermore, the data set comes from one city with a certain climate, which means that different environmental prerequisites are not considered. Perhaps using other cities from a different part of the world would lay a foundation for a more advanced ML-algorithm (Machine Learning algorithm). As it is now, the ML-algorithm might be inaccurate for other parts of the world. In addition to this, Zhang, Grolinger &amp; Capretz state that residents of London, Ontario, Canada tend to heat their homes gas heating systems, which affects the electricity consumption drastically.</p>
 <p>Secondly, the data set used is pre-processed in different ways. Any missing readings of electricity consumption is replaced with the average value of the previous reading and the next reading, missing weather condition is replaced with the weather condition of the previous hour etc. This is perfectly good way of replacing missing data. However, the authors do not give an explanation as to why this method was chosen, if there are any consequences and if there are other methods of making the data set complete.</p>
-<h3 id="exploratory-data-analysis">Exploratory Data Analysis</h3>
+<h4 id="exploratory-data-analysis">Exploratory Data Analysis</h4>
 <p>The EDA performed by the authors is illustrated in the form of electricity consumption graphs and heat-maps. The patterns show that most households live regular lives (the authors do not define what “regular lives” mean, though it can be understood by the context). However, there are some exceptions where irregularities occur (e.g. empty homes during the summer when consumption otherwise is the highest), which significantly reduce the precision. This could be improved by adding vacancy detection which could be implemented in the ML-algorithm (which raise privacy concerns). Zhang, Grolinger &amp; Capretz realize that the top three most important variables (i.e. the variables that correlate the most with the output energy consumption) are “temperature”, “hour of the day” and “peak index”. Peak index is a variable that captures important energy usage peaks, such as peak hours, days, seasons etc.</p>
-<h3 id="prediction-model-and-results">Prediction model and results</h3>
+<h4 id="prediction-model-and-results">Prediction model and results</h4>
 <p>The authors used Support Vector Regression (SVR) to predict the energy consumption. SVR is a supervised machine learning algorithm, which means that it is compares an input with an output and is trained by comparing predicted results with true results. It was chosen due to time and computational hardware constraints. No other evaluations or comparison of other machine learning algorithms were made by the authors, so it is difficult to understand why SVM is faster and require less processing power.
 Zhang, Grolinger &amp; Capretz present the results for home #1 in figure 1. They managed to predict electricity consumption well. The most inaccurate parts are peaks that arise due to random variations. Furthermore, the authors present a table with results for all 15 homes. According to them, time-based splitting is used to check parameter stability over time, which makes the algorithm more accurate. In this case however random sampling performs better in cases where some residential customers have irregular and uncertain patterns. These uncertain patterns make time-based splitting more inaccurate over time. Therefore, both methods are employed. Lastly, mean absolute percentage of error (MAPE) was utilized to measure the performance of the algorithm, which is a widely used performance metric.</p>
 <p>Figure 1: Observed electricity consumption compared to predicted electricity consumption for house #1 (of 15) (Zhang et al.).
 Insert figure
 Figure 2: Performance results of the predication model for all homes.
 Insert figure
-### Conclusion
+#### Conclusion
 The biggest strength of the paper is the execution of the chosen methods to achieve desired results. It is a relatively successful attempt at predicting single households, which tend to be more unpredictable compared to multi-family or corporate residential buildings. The biggest weakness is the justification for the chosen methods. The authors do an excellent job of utilizing the chosen methods, but there is little thought put in to why these methods where chosen or why they did certain things. By including a more extensive evaluation and justification for method choices, the target audience and other researchers in the same field can understand better and continue the research. However, it makes the paper longer and more complex, which can be negative for the readers and the target audience.</p>
-<h2 id="edwards-new-parker-2012-predicting-future-hourly-residential-electrical-consumption-a-machine-learning-case-study">Edwards, New, &amp; Parker (2012): Predicting future hourly residential electrical consumption: A machine learning case study</h2>
+<h3 id="edwards-new-parker-2012-predicting-future-hourly-residential-electrical-consumption-a-machine-learning-case-study">Edwards, New, &amp; Parker (2012): Predicting future hourly residential electrical consumption: A machine learning case study</h3>
 <p>The article explores seven machine learning (ML) techniques on their performances in predicting next hour electricity consumption of buildings, with a focus on residential buildings. Sensor-based energy modeling uses high-frequency sensor data and ML algorithms to statistically derive building energy forecasting models that can help improve building efficiency. Previous studies have applied such models to commercial buildings where high-frequency sensor data are available, but not to residential buildings due to a lack of sensors in homes and consequently a lack of frequent sensor data. The authors address this gap by employing a new high-frequency residential dataset to test proven and emerging ML techniques on predicting next hour residential energy consumptions. The ML techniques used include: Linear Regression, Feed Forward Neural Networks (FFNN), Support Vector Regression (SVR), Least Squares Support Vector Machines (LS-SVM), Hierarchical Mixture of Experts (HME) with Linear Regression Experts, HME with FFNN Experts, and Fuzzy C-Means with FFNN. They use cross validation for parameter tuning, and select the best model based on three performance metrics, namely Coefficient of Variance (CV), Mean Bias Error (MBE) and Mean Absolute Percentage of Error (MAPE).</p>
 <p>The authors first validate the ML techniques on the ASHRAE Great Energy Predictor Shootout dataset, which contains hourly sensor data for a commercial building of year 1989. They find that FFNN performs best on this dataset, with CV at ~11%, competitive with the top-3 competition winners. Then they apply these techniques to the new dataset, the Campbell Creek dataset, which contains full-year (2010) measurements at 15-minute interval from sensors installed on three Tennessee homes. The results show unsatisfactory results from FFNN (CV = ~32%), close to the baseline Linear Regression (CV = ~34%). LS-SVM is selected as the overall best technique for modeling the Campbell houses, with an average CV of ~26%. The overall larger model errors in the residential dataset are attributed to variant occupancy behaviors in homes that lead to more complex energy use patterns, as compared to those of commercial buildings, which tend to vary only between workdays and weekends/holidays. The also find that statistically different training and testing data may cause LS-SVM to fail when generalizing to the testing data, which is the case for the ASHRAE dataset. The performance of LS-SVM is improved after randomizing the training and testing data.</p>
 <p>This paper provides a comprehensive analysis on the application of multiple ML techniques to building energy data, which could serve as a guide to our project. The discussions on the differences between commercial and residential buildings are particularly helpful for our feature engineering and model selection, as we are expected to model 16 building types, commercial and residential included. The authors are also able to identify and prove the cause of failure for LS-SVM on the ASHRAE dataset, which may help us in model tuning and selection. Despite these merits, the paper does not address the differences in performance for FFNN, HME-FFNN and FCM-FFNN, the three closely related methods, shedding doubts on whether it is necessary to include them all. In addition, it would be very informative if the paper included the computational expenses required for training each model, which could be an important metric in model selection especially for real-life applications.</p>
-<h1 id="exploratory-data-analysis-1">Exploratory Data Analysis</h1>
+<h2 id="exploratory-data-analysis-1">Exploratory Data Analysis</h2>
 <h2 class="page_break_before" id="references">References</h2>
 <!-- Explicitly insert bibliography here -->
 <div id="refs" role="doc-bibliography">
