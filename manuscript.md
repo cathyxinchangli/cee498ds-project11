@@ -6,7 +6,7 @@ author-meta:
 - Mingyu Sun
 bibliography:
 - content/manual-references.json
-date-meta: '2020-12-04'
+date-meta: '2020-12-05'
 header-includes: '<!--
 
   Manubot generated metadata rendered from header-includes-template.html.
@@ -25,9 +25,9 @@ header-includes: '<!--
 
   <meta property="twitter:title" content="CEE 498DS Project 11: Building Energy Predictions - Project Report" />
 
-  <meta name="dc.date" content="2020-12-04" />
+  <meta name="dc.date" content="2020-12-05" />
 
-  <meta name="citation_publication_date" content="2020-12-04" />
+  <meta name="citation_publication_date" content="2020-12-05" />
 
   <meta name="dc.language" content="en-US" />
 
@@ -79,11 +79,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/e850b873533dd5d8c7b04bda18bd69be3ba21d76/" />
+  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/abd5bc28588aca3ec2e8763d8a7ba28098450742/" />
 
-  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/e850b873533dd5d8c7b04bda18bd69be3ba21d76/" />
+  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/abd5bc28588aca3ec2e8763d8a7ba28098450742/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/e850b873533dd5d8c7b04bda18bd69be3ba21d76/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/abd5bc28588aca3ec2e8763d8a7ba28098450742/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -115,10 +115,10 @@ title: 'CEE 498DS Project 11: Building Energy Predictions - Project Report'
 
 <small><em>
 This manuscript
-([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/e850b873533dd5d8c7b04bda18bd69be3ba21d76/))
+([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/abd5bc28588aca3ec2e8763d8a7ba28098450742/))
 was automatically generated
-from [cathyxinchangli/cee498ds-project11@e850b87](https://github.com/cathyxinchangli/cee498ds-project11/tree/e850b873533dd5d8c7b04bda18bd69be3ba21d76)
-on December 4, 2020.
+from [cathyxinchangli/cee498ds-project11@abd5bc2](https://github.com/cathyxinchangli/cee498ds-project11/tree/abd5bc28588aca3ec2e8763d8a7ba28098450742)
+on December 5, 2020.
 </em></small>
 
 ## Authors
