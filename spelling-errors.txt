@@ -1,10 +1,13 @@
 analysed
+ASHRAE
 Capretz
 cathyxinchangli
 Champaign
 dataset
 EDA
 Grolinger
+indiviudal
+Kaggle
 KTH
 MAPE
 Mingyu

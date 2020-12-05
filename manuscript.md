@@ -79,11 +79,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/090d78357a6721f01c5f2b4724e20f0bee992585/" />
+  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/104c9fe588e2b5d1be99273bb6d32bc1200802a9/" />
 
-  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/090d78357a6721f01c5f2b4724e20f0bee992585/" />
+  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/104c9fe588e2b5d1be99273bb6d32bc1200802a9/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/090d78357a6721f01c5f2b4724e20f0bee992585/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/104c9fe588e2b5d1be99273bb6d32bc1200802a9/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -115,9 +115,9 @@ title: 'CEE 498DS Project 11: Building Energy Predictions - Project Report'
 
 <small><em>
 This manuscript
-([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/090d78357a6721f01c5f2b4724e20f0bee992585/))
+([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/104c9fe588e2b5d1be99273bb6d32bc1200802a9/))
 was automatically generated
-from [cathyxinchangli/cee498ds-project11@090d783](https://github.com/cathyxinchangli/cee498ds-project11/tree/090d78357a6721f01c5f2b4724e20f0bee992585)
+from [cathyxinchangli/cee498ds-project11@104c9fe](https://github.com/cathyxinchangli/cee498ds-project11/tree/104c9fe588e2b5d1be99273bb6d32bc1200802a9)
 on December 5, 2020.
 </em></small>
 
@@ -168,6 +168,18 @@ on December 5, 2020.
 This is the abstract. Testing to see if it will show up.
 
 By utilizing modern electric meters, it possible to collect and store enormous amount of data about household energy consumption. This data can be used to predict energy consumption and help energy providers manage energy (electricity) output and plan for energy peaks/lows.  
+
+
+# Introduction
+
+By utilizing modern electric meters, it possible to collect and store enormous amount of data about building energy consumption. This data can be used to predict
+energy consumption and help energy providers manage energy (electricity) output and plan for energy peaks/lows. It can also help the indiviudal resident keep track
+of their energy usage and perhaps even recommend energy saving actions. 
+
+As the human population increases, it is vital to lower the energy footprint of each individual and save the limited resources earth has to offer to future generations.
+Household energy consumption is a big part of our total energy consumption, and new technology offers new ways of decreasing it.
+
+This project focuses on predicting building energy consumption based on the Kaggle competition "ASHRAE - Great Energy Predictor III". The main goal of the project is first and foremost to create an AI-model that can predict the energy usage of a building as accurately as possible, based on different input data such as air temperature, building size etc. In addition to that, different AI-models are explored to investigate which one works the best for this particular competition.
 
 
 # Literature review
