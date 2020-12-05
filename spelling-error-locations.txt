@@ -20,3 +20,4 @@ content/02.literature-review.md:19:MAPE
 content/02.literature-review.md:19:Zhang
 content/02.literature-review.md:21:Zhang
 content/linear-regression.md:6:dataset
+content/linear-regression.md:13:EDA
