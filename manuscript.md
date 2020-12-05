@@ -79,11 +79,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/2c77f94c219ac041c50e2bd345ee7488f92bce01/" />
+  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/93c49a6361ef8368f4dba4360d08ffd79382c724/" />
 
-  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/2c77f94c219ac041c50e2bd345ee7488f92bce01/" />
+  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/93c49a6361ef8368f4dba4360d08ffd79382c724/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/2c77f94c219ac041c50e2bd345ee7488f92bce01/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/93c49a6361ef8368f4dba4360d08ffd79382c724/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -115,9 +115,9 @@ title: 'CEE 498DS Project 11: Building Energy Predictions - Project Report'
 
 <small><em>
 This manuscript
-([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/2c77f94c219ac041c50e2bd345ee7488f92bce01/))
+([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/93c49a6361ef8368f4dba4360d08ffd79382c724/))
 was automatically generated
-from [cathyxinchangli/cee498ds-project11@2c77f94](https://github.com/cathyxinchangli/cee498ds-project11/tree/2c77f94c219ac041c50e2bd345ee7488f92bce01)
+from [cathyxinchangli/cee498ds-project11@93c49a6](https://github.com/cathyxinchangli/cee498ds-project11/tree/93c49a6361ef8368f4dba4360d08ffd79382c724)
 on December 5, 2020.
 </em></small>
 
@@ -221,6 +221,9 @@ This paper provides a comprehensive analysis on the application of multiple ML t
 
 
 # Exploratory Data Analysis
+
+
+
 
 
 ## References {.page_break_before}
