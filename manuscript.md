@@ -71,11 +71,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/07f03c39b20d23c9a435258fd40eba522d989281/" />
+  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/0c8ba5fd542c390e88d97da13d7d36a11aaea79b/" />
 
-  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/07f03c39b20d23c9a435258fd40eba522d989281/" />
+  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/0c8ba5fd542c390e88d97da13d7d36a11aaea79b/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/07f03c39b20d23c9a435258fd40eba522d989281/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/0c8ba5fd542c390e88d97da13d7d36a11aaea79b/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -107,9 +107,9 @@ title: 'CEE 498DS Project 11: Building Energy Predictions - Project Report'
 
 <small><em>
 This manuscript
-([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/07f03c39b20d23c9a435258fd40eba522d989281/))
+([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/0c8ba5fd542c390e88d97da13d7d36a11aaea79b/))
 was automatically generated
-from [cathyxinchangli/cee498ds-project11@07f03c3](https://github.com/cathyxinchangli/cee498ds-project11/tree/07f03c39b20d23c9a435258fd40eba522d989281)
+from [cathyxinchangli/cee498ds-project11@0c8ba5f](https://github.com/cathyxinchangli/cee498ds-project11/tree/0c8ba5fd542c390e88d97da13d7d36a11aaea79b)
 on December 6, 2020.
 </em></small>
 
@@ -499,6 +499,7 @@ Another challenge was data preprocessing.
 
 
 ## Reference list
+
 [@zhang2019]: doi:10.1109/ICMLA.2018.00024
 
 
@@ -506,3 +507,6 @@ Another challenge was data preprocessing.
 
 <!-- Explicitly insert bibliography here -->
 <div id="refs"></div>
+
+
+[@zhang2019]: doi:10.1109/ICMLA.2018.00024
