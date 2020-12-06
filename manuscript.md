@@ -71,11 +71,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/cb9d7071cd8ec2409afc333628fd9c3c392ed9a4/" />
+  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/8f2e4ee424bd273c0093688cc58d9dc04d3295d0/" />
 
-  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/cb9d7071cd8ec2409afc333628fd9c3c392ed9a4/" />
+  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/8f2e4ee424bd273c0093688cc58d9dc04d3295d0/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/cb9d7071cd8ec2409afc333628fd9c3c392ed9a4/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/8f2e4ee424bd273c0093688cc58d9dc04d3295d0/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -107,9 +107,9 @@ title: 'CEE 498DS Project 11: Building Energy Predictions - Project Report'
 
 <small><em>
 This manuscript
-([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/cb9d7071cd8ec2409afc333628fd9c3c392ed9a4/))
+([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/8f2e4ee424bd273c0093688cc58d9dc04d3295d0/))
 was automatically generated
-from [cathyxinchangli/cee498ds-project11@cb9d707](https://github.com/cathyxinchangli/cee498ds-project11/tree/cb9d7071cd8ec2409afc333628fd9c3c392ed9a4)
+from [cathyxinchangli/cee498ds-project11@8f2e4ee](https://github.com/cathyxinchangli/cee498ds-project11/tree/8f2e4ee424bd273c0093688cc58d9dc04d3295d0)
 on December 6, 2020.
 </em></small>
 
@@ -221,6 +221,15 @@ In addition, although compared to Black-box model, the tuned Energy Plus model d
 
 In conclusion, at the end of the article, the author summarized the four models and affirmed the practicality of black-box and tuned Energy Plus model once again. 
 
+### Amasyali, K., & El-Gohary, N. M. (2018). A review of data-driven building energy consumption prediction studies. 
+
+Buildings cause a large portion of energy consumption across the world. To reduce the energy consumption, plenty of research has been conducted on predicting the energy consumption for different types of buildings. Two major approaches for predicting building energy consumption are: physical modeling (forward-modeling/white-box modeling) and data-driven modeling (black-box modeling). Physical models are based on detailed energy analysis which requires input information such as building geometry and construction materials. Since physical models rely heavily on the accurate input but the detailed input is often not available to the public, data-driven models based on the available energy consumption data has come to attention. The four typical steps in developing a data-driven model are: data collection, data preprocessing, model training and model testing.
+
+This paper (Amasyali & EI-Gohary, 2017) provides a review of the existing data-driven building energy consumption models from a multivariate perspective. In this paper, the existing models are categorized based on the following criteria: 1. Scope of prediction. The scope of prediction is classified by types of building, temporal granularity, and type of energy consumption predicted. 2. Types of data. Data are classified into real data, simulated data and publicly available benchmark data such as ASHRAE’s Great Building Energy Predictor Shootout dataset. 3. Types of features used in the machine learning algorithms, such as building characteristics, occupant energy use behavior, and outdoor weather conditions. 4. Data sizes, which is related to the collection period of the energy consumption data. 5. Data preprocessing techniques such as data cleaning, data integration, data transformation and data reduction. 6. Machine learning algorithms. The widely used model training algorithms in this field includes: SVM, ANN, decision trees, and other statistical algorithms such as multiple linear regression, general linear regression, autoregressive integrated moving average, Bayesian regression, polynomial regression, etc. Each algorithm has its benefits and drawbacks and should be chosen based on the available data and the goal of the project. For example, statistical algorithms are usually easy to be understood and explained, while the model accuracy might be not as good as SVM and ANN models. 6.  Model performance evaluation. The widely used criteria for testing the model performance are the coefficient of variance, mean absolute percentage error, and root mean square error.
+
+The limitations of the existing models are also summarized in this paper. First, data-driven models may perform poorly with new datasets. Thus, the usage of a data-driven model might be limited to certain data ranges. Second, since the data-driven models are black-box models, it is hard to interpret the physical meanings of the models to gain better understanding of buildings’ energy consumption. Thus, hybrid models which combine physical modeling and data-driven modeling can balance the benefits and drawbacks of both modeling approaches. 
+
+After reading this paper, we can narrow down the possible models for the project based on the available data provided in Kaggle. Since the meter data is time series data, statistical models such as the autoregressive model or autoregressive integrated moving average might be preferred. 
 
 ## Methods
 ### Exploratory Data Analysis
@@ -302,17 +311,26 @@ There are 16 primary use types, with a mix of residential and commercial buildin
 #### Target Variable: Meter Readings
 ASSIGNED TO: Mingyu
 
-#### Weather Data
-`weather_train` has 2016 hourly weather data, and `weather_test` has 2017~18 hourly weather data. The time series plots for all variables of both the training and test periods are shown below ({@fig:image4}).
+**Please feel free to remove this or change, I just added it to make it easier to know what should be included here**
 
-![Time series plots of weather variables.](images/weather-data-time-series.png){#fig:image4}
+When analyzing the meter readings, it was discovered that some measurements were suspiciously high. After analyzing each meter type, It was found that meter 2 (steam) was responsible for the unusually high values. After this discovery, each site was analyzed, and the data anomaly was located to site 13. {#fig:image4} shows the mean hourly steam readings for site 13. {#fig:image5} shows all meter readings for all sites. Lastly {#fig:image6} illustrates all meter readings when site 13 was removed. It is clear that the readings are much larger in the first two graphs. Also, the shape of the graph is dictated by site 13.
+
+![](images/site13_steam.png){#fig:image4}
+![](images/all-sites.png){#fig:image5}
+![](images/site-13-removed.png){#fig:image6}
+
+
+#### Weather Data
+`weather_train` has 2016 hourly weather data, and `weather_test` has 2017~18 hourly weather data. The time series plots for all variables of both the training and test periods are shown below ({@fig:image7}).
+
+![Time series plots of weather variables.](images/weather-data-time-series.png){#fig:image7}
 
 #### Correlations
-Putting `building_metadata`, `train` and `weather_train` together, we can generate the correlation between each features and the target variable. The heat map below ({@fig:image5}) shows that the correlation between variables range from -0.32 to 0.98, but no individual features have significant correlation with the target variable `meter_reading`. The top 5 most features most correlated with `meter_reading` are building square footage (0.13), number of floors (0.13), year of construction (0.11), meter type (0.077), and sites (0.047). This suggests that building metadata are potentially important predictors for our machine learning models, and the missing values need to be treated with care.
+Putting `building_metadata`, `train` and `weather_train` together, we can generate the correlation between each features and the target variable. The heat map below ({@fig:image8}) shows that the correlation between variables range from -0.32 to 0.98, but no individual features have significant correlation with the target variable `meter_reading`. The top 5 most features most correlated with `meter_reading` are building square footage (0.13), number of floors (0.13), year of construction (0.11), meter type (0.077), and sites (0.047). This suggests that building metadata are potentially important predictors for our machine learning models, and the missing values need to be treated with care.
 
 In addition, some features show rather strong correlations with each other, such as: `square_feet` and `floor_count` (0.58); `air_temperature` and `dew_temperature` (0.75); `wind_direction` and `wind_speed` (0.43). This may provide insights to imputation of the missing values.
 
-![Correlations heatmap.](images/heatmap.png){#fig:image5}
+![Correlations heatmap.](images/heatmap.png){#fig:image8}
 
 ### Machine Learning Models
 #### Baseline: Linear Regression
@@ -445,10 +463,7 @@ for bldg_id in test_full.building_id.unique():
 
 #### Tree-based Model: LightGBM
 
-
-Here is some text.
-
-
+##  Introduction of Light Gradient Boosting Machine
 
 
 ## Discussion
