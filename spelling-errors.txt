@@ -37,7 +37,7 @@ intial
 Kaggle
 kBTU
 KTH
-LightGBM
+lightgbm
 locade
 logarithmically
 LSTM
@@ -51,7 +51,7 @@ oktas
 pre
 precip
 predition
-preprocessing
+Preprocessing
 Rastegarpour
 relashinships
 RMSLE
