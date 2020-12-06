@@ -71,11 +71,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/8f4743c2765a00b2aa523c6b572d3edb6cfe86d8/" />
+  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/d597cfeb09ee490e57bd25999fab8cbe68f89af3/" />
 
-  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/8f4743c2765a00b2aa523c6b572d3edb6cfe86d8/" />
+  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/d597cfeb09ee490e57bd25999fab8cbe68f89af3/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/8f4743c2765a00b2aa523c6b572d3edb6cfe86d8/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/d597cfeb09ee490e57bd25999fab8cbe68f89af3/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -107,9 +107,9 @@ title: 'CEE 498DS Project 11: Building Energy Predictions - Project Report'
 
 <small><em>
 This manuscript
-([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/8f4743c2765a00b2aa523c6b572d3edb6cfe86d8/))
+([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/d597cfeb09ee490e57bd25999fab8cbe68f89af3/))
 was automatically generated
-from [cathyxinchangli/cee498ds-project11@8f4743c](https://github.com/cathyxinchangli/cee498ds-project11/tree/8f4743c2765a00b2aa523c6b572d3edb6cfe86d8)
+from [cathyxinchangli/cee498ds-project11@d597cfe](https://github.com/cathyxinchangli/cee498ds-project11/tree/d597cfeb09ee490e57bd25999fab8cbe68f89af3)
 on December 6, 2020.
 </em></small>
 
@@ -156,6 +156,8 @@ Under pay-for-performance financing, the building owner makes payments based on 
 Therefore, we develop accurate models of metered building energy usage in the following areas: chilled water, electric, hot water, and steam meters. The data comes from over 1,000 buildings over a three-year timeframe. With better estimates of these energy-saving investments, large scale investors and financial institutions will be more inclined to invest in this area to enable progress in building efficiencies.
 
 By utilizing modern electric meters, it possible to collect and store enormous amount of data about household energy consumption. This data can be used to predict energy consumption and help energy providers manage energy (electricity) output and plan for energy peaks/lows.  
+
+Three different AI-models were used. First, a linear regression model was tested as a baseline. It was discovered that the model performed poorly, with a final RMSLE of 4,5. Merely linear prediction was not enough to obtain accurate predictions, which suggests that strong non-linear relashinships exist between the features and target variable (energy usage).   
 
 
 ## Introduction
