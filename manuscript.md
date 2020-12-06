@@ -71,11 +71,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/ed4ac57f15bb356453601ad5cdd994e0cebd380d/" />
+  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/d96a66b43299558566c293d51e935e9f194f04f1/" />
 
-  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/ed4ac57f15bb356453601ad5cdd994e0cebd380d/" />
+  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/d96a66b43299558566c293d51e935e9f194f04f1/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/ed4ac57f15bb356453601ad5cdd994e0cebd380d/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/d96a66b43299558566c293d51e935e9f194f04f1/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -107,9 +107,9 @@ title: 'CEE 498DS Project 11: Building Energy Predictions - Project Report'
 
 <small><em>
 This manuscript
-([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/ed4ac57f15bb356453601ad5cdd994e0cebd380d/))
+([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/d96a66b43299558566c293d51e935e9f194f04f1/))
 was automatically generated
-from [cathyxinchangli/cee498ds-project11@ed4ac57](https://github.com/cathyxinchangli/cee498ds-project11/tree/ed4ac57f15bb356453601ad5cdd994e0cebd380d)
+from [cathyxinchangli/cee498ds-project11@d96a66b](https://github.com/cathyxinchangli/cee498ds-project11/tree/d96a66b43299558566c293d51e935e9f194f04f1)
 on December 6, 2020.
 </em></small>
 
@@ -162,7 +162,7 @@ Three different AI-models were used. First, a linear regression model was tested
 ## Introduction
 
 By utilizing modern electric meters, it possible to collect and store enormous amount of data about building energy consumption. This data can be used to predict
-energy consumption and help energy providers manage energy (electricity) output and plan for energy peaks/lows. It can also help the indiviudal resident keep track
+energy consumption and help energy providers manage energy (electricity) output and plan for energy peaks/lows. It can also help the individual resident keep track
 of their energy usage and perhaps even recommend energy saving actions. 
 
 As the human population increases, it is vital to lower the current energy footprint of each individual and conserve the limited resources earth has to offer, to future generations. Each generation has a responsibility to manage resource consumption so that future generations' ability to use the very same resources is not jeopardized.

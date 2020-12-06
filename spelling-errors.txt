@@ -32,7 +32,6 @@ hotwater
 Hyperparameters
 Hyperparamter
 ICMLA
-indiviudal
 intial
 Kaggle
 Katarina
@@ -50,7 +49,7 @@ NRMSE
 oktas
 pre
 precip
-preprocessing
+Preprocessing
 Rastegarpour
 relashinships
 RMSLE
