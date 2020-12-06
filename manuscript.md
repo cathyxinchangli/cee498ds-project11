@@ -6,7 +6,7 @@ author-meta:
 - Mingyu Sun
 bibliography:
 - content/manual-references.json
-date-meta: '2020-12-05'
+date-meta: '2020-12-06'
 header-includes: '<!--
 
   Manubot generated metadata rendered from header-includes-template.html.
@@ -25,9 +25,9 @@ header-includes: '<!--
 
   <meta property="twitter:title" content="CEE 498DS Project 11: Building Energy Predictions - Project Report" />
 
-  <meta name="dc.date" content="2020-12-05" />
+  <meta name="dc.date" content="2020-12-06" />
 
-  <meta name="citation_publication_date" content="2020-12-05" />
+  <meta name="citation_publication_date" content="2020-12-06" />
 
   <meta name="dc.language" content="en-US" />
 
@@ -71,11 +71,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/870d6e54d1838550c6c09508c29fcb33a0be43a8/" />
+  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/bb759629041953ee369d78b8b6fa72598840ee83/" />
 
-  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/870d6e54d1838550c6c09508c29fcb33a0be43a8/" />
+  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/bb759629041953ee369d78b8b6fa72598840ee83/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/870d6e54d1838550c6c09508c29fcb33a0be43a8/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/bb759629041953ee369d78b8b6fa72598840ee83/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -107,10 +107,10 @@ title: 'CEE 498DS Project 11: Building Energy Predictions - Project Report'
 
 <small><em>
 This manuscript
-([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/870d6e54d1838550c6c09508c29fcb33a0be43a8/))
+([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/bb759629041953ee369d78b8b6fa72598840ee83/))
 was automatically generated
-from [cathyxinchangli/cee498ds-project11@870d6e5](https://github.com/cathyxinchangli/cee498ds-project11/tree/870d6e54d1838550c6c09508c29fcb33a0be43a8)
-on December 5, 2020.
+from [cathyxinchangli/cee498ds-project11@bb75962](https://github.com/cathyxinchangli/cee498ds-project11/tree/bb759629041953ee369d78b8b6fa72598840ee83)
+on December 6, 2020.
 </em></small>
 
 ## Authors
@@ -298,10 +298,123 @@ In addition, some features show rather strong correlations with each other, such
 
 ### Machine Learning Models
 #### Baseline: Linear Regression
+ASSIGNED TO: Benjamin
 
+#### Neural Network: Recurrent Neural Network with Long Short Term Memory (RNN-LSTM)
+**Choossing the Model**<br>
+This dataset is in its essense a time-series dataset, which is what RNN is designed at handling. LSTM is one of the most effective and commonly used RNN that improves on RNN's diminishing gradient problem. The advantage of using RNN-LSTM is that instead of using engineer features to account for the time information, the model architecture inherently carries this info and learns the relationship between each timestep, reducing the number of features needed. 
 
-#### Neural Network: RNN-LSTM
+**Training Data Preprocessing**<br>
+*Building Metadata*<br>
+We first treated the building meta data as it is used in both training and testing. `year_built` and `floor_count` were the two features containing missing data. Since one site likely has buildings built around the same time, we used the average `year_built` in one site to impute the missing values. Similarly, same `primary_use` may mean buildings have similar number of floors, so we used the average `floor_count` of one `primary_use` to impute the missing floor counts.
 
+*Weather Data*<br>
+For `weather_train`, we noticed that there were missing entries in the `weather_train` dataframe, i.e. for some hours in the training data there were not a single weather variable record. Since NaN values cannot be handled by RNN, we first found the missing hours and filled them in as rows in `weather_train`.
+
+We then imputed the missing data in `weather_train`. Since most of the weather variables have clear seasonalities/follows a annual cycle, for each weather variable, we imputed the missing data with the average of the rest of the data in the respective month. 
+
+*Categorical Column: `primary_use`*<br>
+One-hot encoding was first tried for the 16 primary use types, but it created very sparse data (i.e. every one-hot category column only has a small fraction of ones) and quickly consumed all memory. We then chose to use the label encoder from sklearn to convert the categories into integers.
+
+The three dataframes were then merged together to form the training dataframe, with data types modified to conserve RAM.
+
+**Creating Training Data Tensors**<br>
+For RNN, training tensors need to have the following shape:
+    `[number of samples, number of timesteps, number of features]`
+
+Each sample needs to have the same shape. However, not every building has record for the whole of 2016. To handle this, we used the same truncating technique as in Class 12, with three major modifications:
+1. **Each sample is a building-meter pair**: this is to solve the problem that not every building has all meter types, and to conform the number of timesteps;
+2. **Setting a cleaning threshold (`THRES`)**: buildings with number of meter_readings < `THRES` will be discarded;
+3. **The start of record time period is truncated**: instead of truncating the time steps exceeding THRES from the end, I decided to truncate the start, because as observed in EDA, many sites have near-zero meter readings at the start of the training period, which likely is not generalizable and hence should be discarded.
+
+**Transforming Target Variable Space**<br>
+Because we have many heteorogenous feature varaibles having values of different orders of magnitude, we would like to use a normalization layer in our model architecture to transform the data into having zero means and unit standard deviations. If we could also transform the target variable, projecting the values onto a closer space to the training data, that would help the model converge faster.
+
+We chose the `numpy.log1p()` transformation, which is taking natural log on the all target values plus one. This way, zero meter readings can also be handled without generating negative infinity, and the transformed data have the same order of magnitude as all feature variables. Moreover, unlike normalization/standardization, this transformation is self-contained, meaning we can transform the testing predictions back without relying on the information from the training data.
+
+**Model Architecture**<br>
+The RNN-LSTM is a simple model with one hidden layer.
+1. **Normalization layer**: to transform the feature variables;
+2. **LSTM layer with return_sequence = True**: This will allow LSTM to generate one output at each time step;
+3. **Dense output layer**.
+The code block for constructing the model is shown below.
+
+```python
+model = tf.keras.Sequential()
+
+norm = tf.keras.layers.experimental.preprocessing.Normalization()
+norm.adapt(train_x)
+
+# Add normalization layer
+model.add(norm)
+
+# Add RNN: LSTM layer
+model.add(
+    tf.keras.layers.LSTM(units=32, # units is the number of hidden states
+                         input_shape = (None, num_features), # None to allow for flexible prediction length
+                         dropout = 0.2, # for regularization
+                         return_sequences = True) # So we get a prediction for each time step
+         ) 
+
+# Add output layer
+model.add(tf.keras.layers.Dense(1)) # because we only want to predict one value at each time step
+```
+**Model Training**<br>
+Adam optimizer with a learning_rate of 5e-4 is used for an initial training of 30 epochs. Mean Squared Error losses are monitored with early stopping. It took about 30-45 minutes to finish training.
+
+```python
+model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=5e-4),
+              loss='mse',
+              metrics=[tf.keras.metrics.RootMeanSquaredError()])
+
+model.fit(train_ds.shuffle(50).batch(10), 
+          epochs=30, 
+          callbacks=tf.keras.callbacks.EarlyStopping(monitor='loss', patience=3))
+```
+
+**Model Tuning**<br>
+*Two-step learning rate schedule*<br>
+After 30 epochs, we lowered the learning rate to 1e-4 and continued training 30 more epochs. This two-step manual learning rate scheduling seemed to generate better performance than using a constant learning rate, as after the intial training the decreasing trend for losses slowed down and plateaued near the end of the initial training, which likely suggested that model learning was at capacity.
+
+*Hyperparamter Tuning and Other Adjustments*<br>
+We attempted to improve the model performance by adjusting the following elements of the model:
+* Model architecture: whether to have dropout or not at the LSTM layer;
+* `THRES` value: a higher threshold means less samples but more training time steps, and vice versa. 
+* Hyperparameters: such as learning rate, number of epochs and number of samples to shuffle.
+
+The following table summarizes the changes we made for three of the submissions, as well as the scores. Note the score for the competition is Root Mean Squared Logarithmic Error (RMSLE) as defined by the competition.
+
+| Submission | Model Architecture  | `THRES` | Learning Rate                                     | Shuffle, Batch | EarlyStopping | Scores (Training, Testing) |
+|------------|---------------------|-----------------------------------|---------------------------------------------------|----------------|---------------|----------------------------|
+| 1          | LSTM w/o dropout    | 7,000                             | 1e-3 for 14/15 epochs, then 1e-4 for 10/20 epochs | 20, 10         | patience=3    | 1.696. 1.708               |
+| 2          | LSTM w/o dropout    | 8,000                             | 5e-4 for 25/25 epochs, then 1e-4 for 25/25 epochs | 50, 10         | patience=3    | 1.696, 1.681               |
+| 3          | LSTM w. dropout=0.2 | 8,000                             | 5e-4 for 30/30 epochs, then 1e-4 for 30/30 epochs | 100, 10        | patience=3    | 1.651, 1.623               |
+<br>
+
+Changes from 1 to 2 were mainly to test the effect of THRES, and 2 to 3 to test the effect of dropout. Learning rate schedules etc. were also adjusted based on observations from other unsubmitted tries. 
+
+**Applying Model to Test Data**<br>
+Since we constructed traing dataset by seperating samples based on building_id and meter type, we also needed to do predictions accordingly, looping through each building and each of its meters (see code block below). We could not compile testing data into a single array because 1) it caused too much memory overhead; and 2) each building would have different length of time for predictions.
+
+The prediction results were first converted back into the original data space (by taking exponential and subtracting 1), then stored to the corresponding rows in the newly added `meter_reading` column in the original `test` dataframe. Using the original `test` dataframe is necessary to match predictions to the submission file with `row_id`, as required by the competition. It took ~35 minutes to finish the test.
+
+```python
+test['meter_reading'] = np.zeros(test.shape[0], dtype=np.float32)
+
+for bldg_id in test_full.building_id.unique():
+    bldg = test_full[test_full.building_id==bldg_id]
+    print(str(bldg_id)+', ', end='')
+    for m in bldg.meter.unique():
+        met = bldg[bldg.meter==m]
+        # adding a dim=1 at axis=0 to match the input layer shape
+        ts = np.expand_dims(met[feat_cols].values, axis=0) 
+        del met
+        v = np.float32(np.expm1(model.predict(ts).squeeze()))
+        del ts
+        test.loc[(test.building_id==bldg_id)&(test.meter==m), 'meter_reading'] = v
+        del v
+    del bldg
+```
 
 #### Tree-based Model: LightGBM
 
