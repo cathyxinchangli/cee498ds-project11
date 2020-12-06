@@ -37,13 +37,13 @@ intial
 Kaggle
 kBTU
 KTH
-lightgbm
+LightGBM
 locade
 logarithmically
 LSTM
 MAPE
 MBE
-mingyu
+Mingyu
 Minyu
 mkbenja
 NRMSE

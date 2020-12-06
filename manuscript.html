@@ -116,9 +116,9 @@
   <meta name="citation_fulltext_html_url" content="https://cathyxinchangli.github.io/cee498ds-project11/" />
   <meta name="citation_pdf_url" content="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/7f1d2752091316976f0a115fe638c34a67007c81/" />
-  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/7f1d2752091316976f0a115fe638c34a67007c81/" />
-  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/7f1d2752091316976f0a115fe638c34a67007c81/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/34343d2950341fe4bc7aed4199f2f60c3039a076/" />
+  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/34343d2950341fe4bc7aed4199f2f60c3039a076/" />
+  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/34343d2950341fe4bc7aed4199f2f60c3039a076/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -132,9 +132,9 @@
 </header>
 <p><small><em>
 This manuscript
-(<a href="https://cathyxinchangli.github.io/cee498ds-project11/v/7f1d2752091316976f0a115fe638c34a67007c81/">permalink</a>)
+(<a href="https://cathyxinchangli.github.io/cee498ds-project11/v/34343d2950341fe4bc7aed4199f2f60c3039a076/">permalink</a>)
 was automatically generated
-from <a href="https://github.com/cathyxinchangli/cee498ds-project11/tree/7f1d2752091316976f0a115fe638c34a67007c81">cathyxinchangli/cee498ds-project11@7f1d275</a>
+from <a href="https://github.com/cathyxinchangli/cee498ds-project11/tree/34343d2950341fe4bc7aed4199f2f60c3039a076">cathyxinchangli/cee498ds-project11@34343d2</a>
 on December 6, 2020.
 </em></small></p>
 <h2 id="authors">Authors</h2>
@@ -195,8 +195,12 @@ of their energy usage and perhaps even recommend energy saving actions.</p>
 <h4 id="prediction-model-and-results">Prediction model and results</h4>
 <p>The authors used Support Vector Regression (SVR) to predict the energy consumption. SVR is a supervised machine learning algorithm, which means that it is compares an input with an output and is trained by comparing predicted results with true results. It was chosen due to time and computational hardware constraints. No other evaluations or comparison of other machine learning algorithms were made by the authors, so it is difficult to understand why SVM is faster and require less processing power.
 Zhang, Grolinger &amp; Capretz present the results for home #1 in figure 1. They managed to predict electricity consumption well. The most inaccurate parts are peaks that arise due to random variations. Furthermore, the authors present a table with results for all 15 homes. According to them, time-based splitting is used to check parameter stability over time, which makes the algorithm more accurate. In this case however random sampling performs better in cases where some residential customers have irregular and uncertain patterns. These uncertain patterns make time-based splitting more inaccurate over time. Therefore, both methods are employed. Lastly, mean absolute percentage of error (MAPE) was utilized to measure the performance of the algorithm, which is a widely used performance metric.</p>
-<p>Figure 1: Observed electricity consumption compared to predicted electricity consumption for house #1 (of 15) (Zhang et al.).
-Insert figure
+<div id="fig:image1" class="fignos">
+<figure>
+<img src="images/Literature%20review%20image%201.png" alt="" /><figcaption><span>Figure 2:</span> Figure 1: Observed electricity consumption compared to predicted electricity consumption for house #1 (of 15) (Zhang et al.).</figcaption>
+</figure>
+</div>
+<p>Insert figure
 Figure 2: Performance results of the predication model for all homes.
 Insert figure
 #### Conclusion
@@ -273,33 +277,33 @@ A valid sample submission containing <code>row_id</code> to match your predictio
 * wind_speed: 460 (0.2%)<br></p>
 <p>As we can see, some features such as <code>year_built</code>, <code>floor_count</code> and <code>air_temperature</code>, are missing over half of all entries. Special attention should be given to these variables when filling in the missing values to avoid losing raw training data while minimizing artificial influence.</p>
 <h4 id="building-metadata">Building Metadata</h4>
-<p>There are in total 16 sites, labeled 0~15 (<code>site_id</code>), containing 1449 buildings. Each building is identified with a unique <code>building_id</code> independent from the <code>site_id</code>, from 0 to 1448. The number of buildings in each site differ greatly, as shown in <a href="#fig:image2">2</a>.</p>
+<p>There are in total 16 sites, labeled 0~15 (<code>site_id</code>), containing 1449 buildings. Each building is identified with a unique <code>building_id</code> independent from the <code>site_id</code>, from 0 to 1448. The number of buildings in each site differ greatly, as shown in <a href="#fig:image2">3</a>.</p>
 <div id="fig:image2" class="fignos">
 <figure>
-<img src="images/num-buildings-in-sites.png" alt="" /><figcaption><span>Figure 2:</span> Number of buildings in each site.</figcaption>
+<img src="images/num-buildings-in-sites.png" alt="" /><figcaption><span>Figure 3:</span> Number of buildings in each site.</figcaption>
 </figure>
 </div>
-<p>There are 16 primary use types, with a mix of residential and commercial buildings, mostly built after the 1950s. Both the building square footage and floor counts are approximately logarithmically distributed, meaning most buildings are relatively small, single- to multi-story buildings (<a href="#fig:image3">3</a>). There’s a fairly strong correlation (correlation coefficient = 0.53) between building square footage and floor counts, as we could expect, and a small but positive correlation between the constructed year and the building size (0.11).</p>
+<p>There are 16 primary use types, with a mix of residential and commercial buildings, mostly built after the 1950s. Both the building square footage and floor counts are approximately logarithmically distributed, meaning most buildings are relatively small, single- to multi-story buildings (<a href="#fig:image3">4</a>). There’s a fairly strong correlation (correlation coefficient = 0.53) between building square footage and floor counts, as we could expect, and a small but positive correlation between the constructed year and the building size (0.11).</p>
 <div id="fig:image3" class="fignos">
 <figure>
-<img src="images/bldg-meta-features-dist.png" alt="" /><figcaption><span>Figure 3:</span> Distribution of features in building_metadata.</figcaption>
+<img src="images/bldg-meta-features-dist.png" alt="" /><figcaption><span>Figure 4:</span> Distribution of features in building_metadata.</figcaption>
 </figure>
 </div>
 <h4 id="target-variable-meter-readings">Target Variable: Meter Readings</h4>
 <p>ASSIGNED TO: Mingyu</p>
 <h4 id="weather-data">Weather Data</h4>
-<p><code>weather_train</code> has 2016 hourly weather data, and <code>weather_test</code> has 2017~18 hourly weather data. The time series plots for all variables of both the training and test periods are shown below (<a href="#fig:image4">4</a>).</p>
+<p><code>weather_train</code> has 2016 hourly weather data, and <code>weather_test</code> has 2017~18 hourly weather data. The time series plots for all variables of both the training and test periods are shown below (<a href="#fig:image4">5</a>).</p>
 <div id="fig:image4" class="fignos">
 <figure>
-<img src="images/weather-data-time-series.png" alt="" /><figcaption><span>Figure 4:</span> Time series plots of weather variables.</figcaption>
+<img src="images/weather-data-time-series.png" alt="" /><figcaption><span>Figure 5:</span> Time series plots of weather variables.</figcaption>
 </figure>
 </div>
 <h4 id="correlations">Correlations</h4>
-<p>Putting <code>building_metadata</code>, <code>train</code> and <code>weather_train</code> together, we can generate the correlation between each features and the target variable. The heat map below (<a href="#fig:image5">5</a>) shows that the correlation between variables range from -0.32 to 0.98, but no individual features have significant correlation with the target variable <code>meter_reading</code>. The top 5 most features most correlated with <code>meter_reading</code> are building square footage (0.13), number of floors (0.13), year of construction (0.11), meter type (0.077), and sites (0.047). This suggests that building metadata are potentially important predictors for our machine learning models, and the missing values need to be treated with care.</p>
+<p>Putting <code>building_metadata</code>, <code>train</code> and <code>weather_train</code> together, we can generate the correlation between each features and the target variable. The heat map below (<a href="#fig:image5">6</a>) shows that the correlation between variables range from -0.32 to 0.98, but no individual features have significant correlation with the target variable <code>meter_reading</code>. The top 5 most features most correlated with <code>meter_reading</code> are building square footage (0.13), number of floors (0.13), year of construction (0.11), meter type (0.077), and sites (0.047). This suggests that building metadata are potentially important predictors for our machine learning models, and the missing values need to be treated with care.</p>
 <p>In addition, some features show rather strong correlations with each other, such as: <code>square_feet</code> and <code>floor_count</code> (0.58); <code>air_temperature</code> and <code>dew_temperature</code> (0.75); <code>wind_direction</code> and <code>wind_speed</code> (0.43). This may provide insights to imputation of the missing values.</p>
 <div id="fig:image5" class="fignos">
 <figure>
-<img src="images/heatmap.png" alt="" /><figcaption><span>Figure 5:</span> Correlations heatmap.</figcaption>
+<img src="images/heatmap.png" alt="" /><figcaption><span>Figure 6:</span> Correlations heatmap.</figcaption>
 </figure>
 </div>
 <h3 id="machine-learning-models">Machine Learning Models</h3>
