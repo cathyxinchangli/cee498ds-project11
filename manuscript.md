@@ -71,11 +71,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/7a40f5d1660e06ff5863ad108d9e9be00b99e9b4/" />
+  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/61966edf659e2e962ef1bb0fc18ef3065a4520f5/" />
 
-  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/7a40f5d1660e06ff5863ad108d9e9be00b99e9b4/" />
+  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/61966edf659e2e962ef1bb0fc18ef3065a4520f5/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/7a40f5d1660e06ff5863ad108d9e9be00b99e9b4/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/61966edf659e2e962ef1bb0fc18ef3065a4520f5/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -107,9 +107,9 @@ title: 'CEE 498DS Project 11: Building Energy Predictions - Project Report'
 
 <small><em>
 This manuscript
-([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/7a40f5d1660e06ff5863ad108d9e9be00b99e9b4/))
+([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/61966edf659e2e962ef1bb0fc18ef3065a4520f5/))
 was automatically generated
-from [cathyxinchangli/cee498ds-project11@7a40f5d](https://github.com/cathyxinchangli/cee498ds-project11/tree/7a40f5d1660e06ff5863ad108d9e9be00b99e9b4)
+from [cathyxinchangli/cee498ds-project11@61966ed](https://github.com/cathyxinchangli/cee498ds-project11/tree/61966edf659e2e962ef1bb0fc18ef3065a4520f5)
 on December 6, 2020.
 </em></small>
 
@@ -453,6 +453,9 @@ Here is some text.
 
 
 ## Discussion
+### Performance of linear regression model
+Is an obtained RMSLE of 4,5 the limit for linear regression? Most likely not. In the model and data preparation, several things can be made better. First, the datasets could be optimized even better. Site_id 13 was removed because the values were suspiciously high, as seen in the EDA. In this case, an even more in-depth "cleaning" could be made to locade the exact building_id (or several building_ids) that is responsible for the data anomaly. This deeper cleaning was made for the other models, but not for the linear regression model.Furthermore, if cateorical values could be implemented not only in the training, but also the prediction, perhaps a better score could be obtained. However, it must be realized that no matter how many parameters are added to a linear model, it will still only predict new values linearly. If many or strong non-linear relationships exist between the target variable and predition features, a linear model will never be able to perform nearly as good as e.g. neural networks. This suggests that other AI-models such as Neural Networks must be used.
+
 ### The performance of the RNN-LSTM model
 The simple LSTM model was fairly effective, largely outperforming the baseline linear regression model but slightly underperforming than the lightgbm models. 
 Tuning attempted improved the performance marginally but steadily. Other tuning opportunities we hope to explore if we had more time include: 
