@@ -191,3 +191,12 @@ content/05.discussion.md:14:RNN
 content/05.discussion.md:18:Minyu
 content/05.discussion.md:18:Zhiyi
 content/05.discussion.md:27:preprocessing
+content/06.references.md:3:ICMLA
+content/06.references.md:4:Capretz
+content/06.references.md:4:Grolinger
+content/06.references.md:4:ICMLA
+content/06.references.md:4:Katarina
+content/06.references.md:4:Xiaoou
+content/06.references.md:4:Zhang
+content/06.references.md:5:ICMLA
+content/90.back-matter.md:7:ICMLA

@@ -37,8 +37,10 @@ HME
 hotwater
 Hyperparameters
 Hyperparamter
+ICMLA
 intial
 Kaggle
+Katarina
 kBTU
 KTH
 lightgbm
@@ -46,7 +48,7 @@ logarithmically
 LSTM
 MAPE
 MBE
-mingyu
+Mingyu
 Minyu
 mkbenja
 NRMSE
@@ -75,6 +77,7 @@ unneccesary
 unsubmitted
 Urbana
 varaibles
+Xiaoou
 Xinchang
 Zhang
 Zhiyi
