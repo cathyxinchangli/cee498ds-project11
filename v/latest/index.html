@@ -116,9 +116,9 @@
   <meta name="citation_fulltext_html_url" content="https://cathyxinchangli.github.io/cee498ds-project11/" />
   <meta name="citation_pdf_url" content="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/915c6c88d9d1334adc219ff895f9c6cd7e8c5019/" />
-  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/915c6c88d9d1334adc219ff895f9c6cd7e8c5019/" />
-  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/915c6c88d9d1334adc219ff895f9c6cd7e8c5019/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/ed4ac57f15bb356453601ad5cdd994e0cebd380d/" />
+  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/ed4ac57f15bb356453601ad5cdd994e0cebd380d/" />
+  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/ed4ac57f15bb356453601ad5cdd994e0cebd380d/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -132,9 +132,9 @@
 </header>
 <p><small><em>
 This manuscript
-(<a href="https://cathyxinchangli.github.io/cee498ds-project11/v/915c6c88d9d1334adc219ff895f9c6cd7e8c5019/">permalink</a>)
+(<a href="https://cathyxinchangli.github.io/cee498ds-project11/v/ed4ac57f15bb356453601ad5cdd994e0cebd380d/">permalink</a>)
 was automatically generated
-from <a href="https://github.com/cathyxinchangli/cee498ds-project11/tree/915c6c88d9d1334adc219ff895f9c6cd7e8c5019">cathyxinchangli/cee498ds-project11@915c6c8</a>
+from <a href="https://github.com/cathyxinchangli/cee498ds-project11/tree/ed4ac57f15bb356453601ad5cdd994e0cebd380d">cathyxinchangli/cee498ds-project11@ed4ac57</a>
 on December 6, 2020.
 </em></small></p>
 <h2 id="authors">Authors</h2>
@@ -454,7 +454,7 @@ Since we constructed traing dataset by seperating samples based on building_id a
 <p>Here is some text.</p>
 <h2 id="discussion">Discussion</h2>
 <h3 id="performance-of-linear-regression-model">Performance of linear regression model</h3>
-<p>Is an obtained RMSLE of 4,5 the limit for linear regression? Most likely not. In the model and data preparation, several things can be made better. First, the datasets could be optimized even better. Site_id 13 was removed because the values were suspiciously high, as seen in the EDA. In this case, an even more in-depth “cleaning” could be made to locade the exact building_id (or several building_ids) that is responsible for the data anomaly. This deeper cleaning was made for the other models, but not for the linear regression model.Furthermore, if cateorical values could be implemented not only in the training, but also the prediction, perhaps a better score could be obtained. However, it must be realized that no matter how many parameters are added to a linear model, it will still only predict new values linearly. If many or strong non-linear relationships exist between the target variable and predition features, a linear model will never be able to perform nearly as good as e.g. neural networks. This suggests that other AI-models such as Neural Networks must be used.</p>
+<p>Is an obtained RMSLE of 4,5 the limit for linear regression? Most likely not. In the model and data preparation, several things can be made better. First, the datasets could be optimized even better. Site 13 was removed because the values were suspiciously high, as seen in the EDA. In this case, an even more in-depth “cleaning” could be made to locate the exact building (or several building) that is responsible for the data anomaly. This deeper cleaning was made for the other models, but not for the linear regression model. Furthermore, if categorical values could be implemented not only in the training, but also the prediction, perhaps a better score could be obtained. However, it must be realized that no matter how many parameters are added to a linear model, it will still only predict new values linearly. If many or strong non-linear relationships exist between the target variable and prediction features, a linear model will never be able to perform nearly as good as e.g. neural networks. This suggests that other AI-models such as Neural Networks must be used.</p>
 <h3 id="the-performance-of-the-rnn-lstm-model">The performance of the RNN-LSTM model</h3>
 <p>The simple LSTM model was fairly effective, largely outperforming the baseline linear regression model but slightly underperforming than the lightgbm models.
 Tuning attempted improved the performance marginally but steadily. Other tuning opportunities we hope to explore if we had more time include:
