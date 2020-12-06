@@ -71,11 +71,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/d82f9354d4da31ca24a1fa3e55246486c7a8597f/" />
+  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/65aa120c66c169d7dce161b41bc6a22eea3b04fb/" />
 
-  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/d82f9354d4da31ca24a1fa3e55246486c7a8597f/" />
+  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/65aa120c66c169d7dce161b41bc6a22eea3b04fb/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/d82f9354d4da31ca24a1fa3e55246486c7a8597f/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/65aa120c66c169d7dce161b41bc6a22eea3b04fb/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -107,9 +107,9 @@ title: 'CEE 498DS Project 11: Building Energy Predictions - Project Report'
 
 <small><em>
 This manuscript
-([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/d82f9354d4da31ca24a1fa3e55246486c7a8597f/))
+([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/65aa120c66c169d7dce161b41bc6a22eea3b04fb/))
 was automatically generated
-from [cathyxinchangli/cee498ds-project11@d82f935](https://github.com/cathyxinchangli/cee498ds-project11/tree/d82f9354d4da31ca24a1fa3e55246486c7a8597f)
+from [cathyxinchangli/cee498ds-project11@65aa120](https://github.com/cathyxinchangli/cee498ds-project11/tree/65aa120c66c169d7dce161b41bc6a22eea3b04fb)
 on December 6, 2020.
 </em></small>
 
@@ -166,7 +166,6 @@ energy consumption and help energy providers manage energy (electricity) output 
 of their energy usage and perhaps even recommend energy saving actions. 
 
 As the human population increases, it is vital to lower the energy footprint of each individual and save the limited resources earth has to offer to future generations.
-
 Household energy consumption is a big part of our total energy consumption, and new technology offers new ways of decreasing it.
 
 This project focuses on predicting building energy consumption based on the Kaggle competition "ASHRAE - Great Energy Predictor III". The main goal of the project is first and foremost to create an AI-model that can predict the energy usage of a building as accurately as possible, based on different input data such as air temperature, building size etc. In addition to that, different AI-models are explored to investigate which one works the best for this particular competition.
