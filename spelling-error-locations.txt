@@ -161,11 +161,8 @@ content/04.method.md:199:traing
 content/04.method.md:201:dataframe
 content/04.method.md:201:dataframe
 content/04.method.md:222:LightGBM
-content/05.discussion.md:3:cateorical
 content/05.discussion.md:3:datasets
 content/05.discussion.md:3:EDA
-content/05.discussion.md:3:locade
-content/05.discussion.md:3:predition
 content/05.discussion.md:3:RMSLE
 content/05.discussion.md:5:LSTM
 content/05.discussion.md:5:RNN
@@ -193,7 +190,4 @@ content/linear-regression.md:9:Kaggle
 content/linear-regression.md:10:RMSLE
 content/linear-regression.md:13:datasets
 content/linear-regression.md:13:EDA
-content/linear-regression.md:13:locade
 content/linear-regression.md:13:RMSLE
-content/linear-regression.md:14:cateorical
-content/linear-regression.md:14:predition

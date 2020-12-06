@@ -2,7 +2,6 @@ allocator
 analysed
 ASHRAE
 Capretz
-cateorical
 cathyxinchangli
 Champaign
 chilledwater
@@ -40,7 +39,6 @@ Katarina
 kBTU
 KTH
 LightGBM
-locade
 logarithmically
 LSTM
 MAPE
@@ -52,7 +50,6 @@ NRMSE
 oktas
 pre
 precip
-predition
 preprocessing
 Rastegarpour
 relashinships
