@@ -202,12 +202,3 @@ content/05.discussion.md:26:LightGBM
 content/05.discussion.md:26:LSTM
 content/05.discussion.md:26:preprocessing
 content/05.discussion.md:26:RNN
-content/06.references.md:3:ICMLA
-content/06.references.md:4:Capretz
-content/06.references.md:4:Grolinger
-content/06.references.md:4:ICMLA
-content/06.references.md:4:Katarina
-content/06.references.md:4:Xiaoou
-content/06.references.md:4:Zhang
-content/06.references.md:5:ICMLA
-content/90.back-matter.md:7:ICMLA
