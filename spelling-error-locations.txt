@@ -191,10 +191,3 @@ content/05.discussion.md:14:RNN
 content/05.discussion.md:18:Minyu
 content/05.discussion.md:18:Zhiyi
 content/05.discussion.md:27:preprocessing
-content/linear-regression.md:5:Kaggle
-content/linear-regression.md:6:dataset
-content/linear-regression.md:9:Kaggle
-content/linear-regression.md:10:RMSLE
-content/linear-regression.md:13:datasets
-content/linear-regression.md:13:EDA
-content/linear-regression.md:13:RMSLE
