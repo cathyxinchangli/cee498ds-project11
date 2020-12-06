@@ -71,11 +71,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/7153e42dab53cceb7943e962daec9869134376b8/" />
+  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/a0127c51eb364b20b66e257f80b6aebcc3be0294/" />
 
-  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/7153e42dab53cceb7943e962daec9869134376b8/" />
+  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/a0127c51eb364b20b66e257f80b6aebcc3be0294/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/7153e42dab53cceb7943e962daec9869134376b8/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/a0127c51eb364b20b66e257f80b6aebcc3be0294/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -107,9 +107,9 @@ title: 'CEE 498DS Project 11: Building Energy Predictions - Project Report'
 
 <small><em>
 This manuscript
-([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/7153e42dab53cceb7943e962daec9869134376b8/))
+([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/a0127c51eb364b20b66e257f80b6aebcc3be0294/))
 was automatically generated
-from [cathyxinchangli/cee498ds-project11@7153e42](https://github.com/cathyxinchangli/cee498ds-project11/tree/7153e42dab53cceb7943e962daec9869134376b8)
+from [cathyxinchangli/cee498ds-project11@a0127c5](https://github.com/cathyxinchangli/cee498ds-project11/tree/a0127c51eb364b20b66e257f80b6aebcc3be0294)
 on December 6, 2020.
 </em></small>
 
@@ -462,6 +462,54 @@ for bldg_id in test_full.building_id.unique():
 
 ##  Introduction of Light Gradient Boosting Machine
 I'm a person.
+
+## Model analysis of Mingyu
+
+## Another way of LightGBM
+
+
+```python
+data = ["building_id", "primary_use", "hour", "day", "weekend", "month", "meter","square_feet", "year_built", "air_temperature", "cloud_coverage","dew_temperature"]
+num_folds = 3
+kf = KFold(n_splits = num_folds, shuffle = False, random_state = 42)
+error = 0
+models = []
+evals_results = []
+for i, (train_index, test_index) in enumerate(kf.split(train)):
+    if i + 1 < num_folds:
+        continue
+    print(train_index.max(), test_index.min())
+    train_X = train[data].iloc[train_index]
+    test_X = train[data].iloc[test_index]
+    train_y = target.iloc[train_index]
+    test_y = target.iloc[test_index]
+    
+    lgb_train = lgb.Dataset(train_X[train_y > 0], train_y[train_y > 0])
+    lgb_test = lgb.Dataset(test_X[test_y > 0] , test_y[test_y > 0])
+    evals_result = {}
+    params = {
+            'boosting_type': 'gbdt',
+            'objective': 'regression',
+            'metric': {'rmse'},
+            'learning_rate': 0.6,
+            'feature_fraction': 0.7,
+            'bagging_fraction': 0.7,
+            'bagging_freq' : 4
+            }
+    model = lgb.train(params,
+                lgb_train,
+                num_boost_round=2000,
+                valid_sets=(lgb_train, lgb_test),
+               early_stopping_rounds=30,
+               verbose_eval = 25,
+               evals_result = evals_result
+                           )
+    models.append(model)
+    evals_results.append(evals_result)
+```
+
+## Feature Important
+
 
 
 ## Discussion

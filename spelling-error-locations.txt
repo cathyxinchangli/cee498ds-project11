@@ -178,6 +178,10 @@ content/04.method.md:208:traing
 content/04.method.md:210:dataframe
 content/04.method.md:210:dataframe
 content/04.method.md:231:LightGBM
+content/04.method.md:236:Mingyu
+content/04.method.md:238:LightGBM
+content/04.method.md:257:Dataset
+content/04.method.md:258:Dataset
 content/05.discussion.md:3:datasets
 content/05.discussion.md:3:EDA
 content/05.discussion.md:3:RMSLE
