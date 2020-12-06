@@ -71,11 +71,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/8aea72b6e609d8e2b0c71003fc8ab3cd82be5fc2/" />
+  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/7e2998a3a68033e71d0aee7565295077ff71045c/" />
 
-  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/8aea72b6e609d8e2b0c71003fc8ab3cd82be5fc2/" />
+  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/7e2998a3a68033e71d0aee7565295077ff71045c/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/8aea72b6e609d8e2b0c71003fc8ab3cd82be5fc2/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/7e2998a3a68033e71d0aee7565295077ff71045c/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -107,9 +107,9 @@ title: 'CEE 498DS Project 11: Building Energy Predictions - Project Report'
 
 <small><em>
 This manuscript
-([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/8aea72b6e609d8e2b0c71003fc8ab3cd82be5fc2/))
+([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/7e2998a3a68033e71d0aee7565295077ff71045c/))
 was automatically generated
-from [cathyxinchangli/cee498ds-project11@8aea72b](https://github.com/cathyxinchangli/cee498ds-project11/tree/8aea72b6e609d8e2b0c71003fc8ab3cd82be5fc2)
+from [cathyxinchangli/cee498ds-project11@7e2998a](https://github.com/cathyxinchangli/cee498ds-project11/tree/7e2998a3a68033e71d0aee7565295077ff71045c)
 on December 6, 2020.
 </em></small>
 
@@ -150,6 +150,10 @@ on December 6, 2020.
 ## Abstract {.page_break_before}
 
 This is the abstract. Testing to see if it will show up.
+
+Under pay-for-performance financing, the building owner makes payments based on the difference between their real energy consumption and what they would have used without any retrofits. The latter values have to come from a model. Current methods of estimation are fragmented and do not scale well. Some assume a specific meter type or don’t work with different building types.
+
+Therefore, we develop accurate models of metered building energy usage in the following areas: chilled water, electric, hot water, and steam meters. The data comes from over 1,000 buildings over a three-year timeframe. With better estimates of these energy-saving investments, large scale investors and financial institutions will be more inclined to invest in this area to enable progress in building efficiencies.
 
 By utilizing modern electric meters, it possible to collect and store enormous amount of data about household energy consumption. This data can be used to predict energy consumption and help energy providers manage energy (electricity) output and plan for energy peaks/lows.  
 

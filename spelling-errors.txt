@@ -30,7 +30,7 @@ intial
 Kaggle
 kBTU
 KTH
-lightgbm
+LightGBM
 logarithmically
 LSTM
 MAPE
@@ -52,6 +52,7 @@ Smakic
 SVM
 SVR
 THRES
+timeframe
 timestep
 timesteps
 traing
