@@ -37,7 +37,7 @@ intial
 Kaggle
 kBTU
 KTH
-lightgbm
+LightGBM
 locade
 logarithmically
 LSTM

@@ -71,11 +71,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/f208d6f6213adaf0cd7da0843135ec6ec065868f/" />
+  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/0fc9ee9fa86dcafdf75f784be4351019a4a3c0bf/" />
 
-  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/f208d6f6213adaf0cd7da0843135ec6ec065868f/" />
+  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/0fc9ee9fa86dcafdf75f784be4351019a4a3c0bf/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/f208d6f6213adaf0cd7da0843135ec6ec065868f/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/0fc9ee9fa86dcafdf75f784be4351019a4a3c0bf/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -107,9 +107,9 @@ title: 'CEE 498DS Project 11: Building Energy Predictions - Project Report'
 
 <small><em>
 This manuscript
-([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/f208d6f6213adaf0cd7da0843135ec6ec065868f/))
+([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/0fc9ee9fa86dcafdf75f784be4351019a4a3c0bf/))
 was automatically generated
-from [cathyxinchangli/cee498ds-project11@f208d6f](https://github.com/cathyxinchangli/cee498ds-project11/tree/f208d6f6213adaf0cd7da0843135ec6ec065868f)
+from [cathyxinchangli/cee498ds-project11@0fc9ee9](https://github.com/cathyxinchangli/cee498ds-project11/tree/0fc9ee9fa86dcafdf75f784be4351019a4a3c0bf)
 on December 6, 2020.
 </em></small>
 
@@ -195,7 +195,7 @@ The EDA performed by the authors is illustrated in the form of electricity consu
 The authors used Support Vector Regression (SVR) to predict the energy consumption. SVR is a supervised machine learning algorithm, which means that it is compares an input with an output and is trained by comparing predicted results with true results.  It was chosen due to time and computational hardware constraints. No other evaluations or comparison of other machine learning algorithms were made by the authors, so it is difficult to understand why SVM is faster and require less processing power. 
 Zhang, Grolinger & Capretz present the results for home #1 in figure 1. They managed to predict electricity consumption well. The most inaccurate parts are peaks that arise due to random variations. Furthermore, the authors present a table with results for all 15 homes. According to them, time-based splitting is used to check parameter stability over time, which makes the algorithm more accurate. In this case however random sampling performs better in cases where some residential customers have irregular and uncertain patterns. These uncertain patterns make time-based splitting more inaccurate over time. Therefore, both methods are employed. Lastly, mean absolute percentage of error (MAPE) was utilized to measure the performance of the algorithm, which is a widely used performance metric. {#fig:image1}
 
-![Figure 1: Observed electricity consumption compared to predicted electricity consumption for house #1 (of 15) (Zhang et al.). ](images/Literature review image 1.png){#fig:image1}
+![Figure 1: Observed electricity consumption compared to predicted electricity consumption for house #1 (of 15) (Zhang et al.). ](images/lit-rev-img-1.png){#fig:image1}
 
 Insert figure
 Figure 2: Performance results of the predication model for all homes.
