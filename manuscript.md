@@ -71,11 +71,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/49a0998c9c9f13bada3def1d14c6a837fbb8c1e6/" />
+  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/8f4743c2765a00b2aa523c6b572d3edb6cfe86d8/" />
 
-  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/49a0998c9c9f13bada3def1d14c6a837fbb8c1e6/" />
+  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/8f4743c2765a00b2aa523c6b572d3edb6cfe86d8/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/49a0998c9c9f13bada3def1d14c6a837fbb8c1e6/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/8f4743c2765a00b2aa523c6b572d3edb6cfe86d8/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -107,9 +107,9 @@ title: 'CEE 498DS Project 11: Building Energy Predictions - Project Report'
 
 <small><em>
 This manuscript
-([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/49a0998c9c9f13bada3def1d14c6a837fbb8c1e6/))
+([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/8f4743c2765a00b2aa523c6b572d3edb6cfe86d8/))
 was automatically generated
-from [cathyxinchangli/cee498ds-project11@49a0998](https://github.com/cathyxinchangli/cee498ds-project11/tree/49a0998c9c9f13bada3def1d14c6a837fbb8c1e6)
+from [cathyxinchangli/cee498ds-project11@8f4743c](https://github.com/cathyxinchangli/cee498ds-project11/tree/8f4743c2765a00b2aa523c6b572d3edb6cfe86d8)
 on December 6, 2020.
 </em></small>
 
@@ -315,7 +315,19 @@ In addition, some features show rather strong correlations with each other, such
 
 ### Machine Learning Models
 #### Baseline: Linear Regression
-ASSIGNED TO: Benjamin
+This section will cover how a linear regression model was constructed in order to predict household energy consumption, as well as discuss the limitations of a linear model. 
+
+**Training data preprocessing**
+As it has been described earlier in this section sections, the data used for this Kaggle competition came in three different files: train data, building metadata and weather train data. Since the dataset contains over 20 million readings and numerous features, issues with RAM usage had to be dealt with. The main problem was that not all desirable features could be included in the before RAM usage hit the limit. It was crucial to identify the most predictive features and not include meaningless features which would increase unneccesary RAM usage. In addition to that, a memory saving function was utilized, which changed the data types to be less memory demanding. Lastly, the three datasets were loaded with only the desired columns, to further reduce unneccesary RAM usage.
+
+**Linear regression model**
+The linear regression model was created by adding a feature layer with all the desired numerical and categorical features and then adding a dense layer for linear regression. First, missing values in a column were replaced with the mean of that column. In order to create a feature layer, the features used for the prediction had to be converted to tensors. Lastly, categorical features had to be one-hot encoded before being added to the feature layer.
+
+The best public score (RMSLE) that could be obtained with this linear model was 4,5 (4,24 private score).
+
+**Imporvements**
+Is RMSLE of 4,5 the limit for linear regression? Most likely not. In the model and data preparation, several things can be made better. First, the datasets could be optimized even better. Site_id 13 was removed because the values were suspiciously high, as seen in the EDA. In this case, an even more in-depth "cleaning" could be made to locade the exact building_id (or several building_ids) that is responsible for the data anomaly. This deeper cleaning was made for the other models, but not for the linear regression model.Furthermore, if cateorical values could be implemented not only in the training, but also the prediction, perhaps a better score could be obtained. However, it must be realized that no matter how many parameters are added to a linear model, it will still only predict new values linearly. If many or strong non-linear relationships exist between the target variable and predition features, a linear model will never be able to perform nearly as good as e.g. neural networks.
+
 
 #### Neural Network: Recurrent Neural Network with Long Short Term Memory (RNN-LSTM)
 **Choossing the Model**<br>

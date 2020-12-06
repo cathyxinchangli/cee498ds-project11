@@ -2,6 +2,7 @@ allocator
 analysed
 ASHRAE
 Capretz
+cateorical
 cathyxinchangli
 Champaign
 chilledwater
@@ -11,6 +12,7 @@ csv
 dataframe
 dataframes
 dataset
+datasets
 Disegna
 EarlyStopping
 EDA
@@ -30,12 +32,14 @@ HME
 hotwater
 Hyperparameters
 Hyperparamter
+Imporvements
 indiviudal
 intial
 Kaggle
 kBTU
 KTH
 LightGBM
+locade
 logarithmically
 LSTM
 MAPE
@@ -47,6 +51,7 @@ NRMSE
 oktas
 pre
 precip
+predition
 preprocessing
 Rastegarpour
 RMSLE
@@ -64,6 +69,7 @@ timestep
 timesteps
 traing
 underperforming
+unneccesary
 unsubmitted
 Urbana
 varaibles
