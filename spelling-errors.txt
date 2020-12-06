@@ -48,14 +48,14 @@ logarithmically
 LSTM
 MAPE
 MBE
-Mingyu
+mingyu
 Minyu
 mkbenja
 NRMSE
 oktas
 pre
 precip
-preprocessing
+Preprocessing
 Rastegarpour
 relashinships
 RMSLE

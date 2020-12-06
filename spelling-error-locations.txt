@@ -6,9 +6,6 @@ content/02.introduction.md:10:Kaggle
 content/03.literature-review.md:2:Capretz
 content/03.literature-review.md:2:Grolinger
 content/03.literature-review.md:2:Zhang
-content/03.literature-review.md:3:Capretz
-content/03.literature-review.md:3:Grolinger
-content/03.literature-review.md:3:Zhang
 content/03.literature-review.md:5:analysed
 content/03.literature-review.md:5:dataset
 content/03.literature-review.md:10:Capretz

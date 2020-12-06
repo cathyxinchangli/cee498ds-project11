@@ -71,11 +71,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/8f2e4ee424bd273c0093688cc58d9dc04d3295d0/" />
+  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/3cc328abd006a7782c85e0a7ae34772722ea4bbb/" />
 
-  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/8f2e4ee424bd273c0093688cc58d9dc04d3295d0/" />
+  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/3cc328abd006a7782c85e0a7ae34772722ea4bbb/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/8f2e4ee424bd273c0093688cc58d9dc04d3295d0/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/3cc328abd006a7782c85e0a7ae34772722ea4bbb/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -107,9 +107,9 @@ title: 'CEE 498DS Project 11: Building Energy Predictions - Project Report'
 
 <small><em>
 This manuscript
-([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/8f2e4ee424bd273c0093688cc58d9dc04d3295d0/))
+([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/3cc328abd006a7782c85e0a7ae34772722ea4bbb/))
 was automatically generated
-from [cathyxinchangli/cee498ds-project11@8f2e4ee](https://github.com/cathyxinchangli/cee498ds-project11/tree/8f2e4ee424bd273c0093688cc58d9dc04d3295d0)
+from [cathyxinchangli/cee498ds-project11@3cc328a](https://github.com/cathyxinchangli/cee498ds-project11/tree/3cc328abd006a7782c85e0a7ae34772722ea4bbb)
 on December 6, 2020.
 </em></small>
 
@@ -174,8 +174,8 @@ This project focuses on predicting building energy consumption based on the Kagg
 
 
 ## Literature review
-### Zhang, Grolinger, & Capretz (2109): Forecasting Residential Energy Consumption: Single Household Perspective
-In the paper “Forecasting Residential Energy Consumption: Single Household Perspective”  (Zhang, Grolinger & Capretz 2019), the authors attempt to predict energy consumption in residential households, with focus on single households. 
+### Zhang, Grolinger, & Capretz (2019): Forecasting Residential Energy Consumption: Single Household Perspective
+In the paper “Forecasting Residential Energy Consumption: Single Household Perspective” [@zhang2019], the authors attempt to predict energy consumption in residential households, with focus on single households. 
 
 According to the authors it is more difficult to predict single household energy (electricity) consumption, compared with e.g. workplace energy consumption. The reason is that single households often differ in energy consumption patterns while workplace patters tend to be more similar. Also, if big workplace buildings or multi-family residential buildings are analysed, any anomalies tend to cancel each other out (with a big enough dataset).
 
@@ -230,6 +230,7 @@ This paper (Amasyali & EI-Gohary, 2017) provides a review of the existing data-d
 The limitations of the existing models are also summarized in this paper. First, data-driven models may perform poorly with new datasets. Thus, the usage of a data-driven model might be limited to certain data ranges. Second, since the data-driven models are black-box models, it is hard to interpret the physical meanings of the models to gain better understanding of buildings’ energy consumption. Thus, hybrid models which combine physical modeling and data-driven modeling can balance the benefits and drawbacks of both modeling approaches. 
 
 After reading this paper, we can narrow down the possible models for the project based on the available data provided in Kaggle. Since the meter data is time series data, statistical models such as the autoregressive model or autoregressive integrated moving average might be preferred. 
+
 
 ## Methods
 ### Exploratory Data Analysis
