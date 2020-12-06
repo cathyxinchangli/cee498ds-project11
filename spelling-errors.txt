@@ -37,10 +37,8 @@ HME
 hotwater
 Hyperparameters
 Hyperparamter
-ICMLA
 intial
 Kaggle
-Katarina
 kBTU
 KTH
 lightgbm
@@ -55,7 +53,7 @@ NRMSE
 oktas
 pre
 precip
-Preprocessing
+preprocessing
 Rastegarpour
 relashinships
 RMSLE
@@ -77,7 +75,6 @@ unneccesary
 unsubmitted
 Urbana
 varaibles
-Xiaoou
 Xinchang
 Zhang
 Zhiyi
