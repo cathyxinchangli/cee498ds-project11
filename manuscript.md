@@ -71,11 +71,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/c8cdb4fac817df9fbb1ddad8e4f004f9de0f2a7d/" />
+  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/c5f757a8d0a36beb4571a1083eff629c84aa2287/" />
 
-  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/c8cdb4fac817df9fbb1ddad8e4f004f9de0f2a7d/" />
+  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/c5f757a8d0a36beb4571a1083eff629c84aa2287/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/c8cdb4fac817df9fbb1ddad8e4f004f9de0f2a7d/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/c5f757a8d0a36beb4571a1083eff629c84aa2287/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -107,9 +107,9 @@ title: 'CEE 498DS Project 11: Building Energy Predictions - Project Report'
 
 <small><em>
 This manuscript
-([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/c8cdb4fac817df9fbb1ddad8e4f004f9de0f2a7d/))
+([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/c5f757a8d0a36beb4571a1083eff629c84aa2287/))
 was automatically generated
-from [cathyxinchangli/cee498ds-project11@c8cdb4f](https://github.com/cathyxinchangli/cee498ds-project11/tree/c8cdb4fac817df9fbb1ddad8e4f004f9de0f2a7d)
+from [cathyxinchangli/cee498ds-project11@c5f757a](https://github.com/cathyxinchangli/cee498ds-project11/tree/c5f757a8d0a36beb4571a1083eff629c84aa2287)
 on December 6, 2020.
 </em></small>
 
@@ -149,14 +149,11 @@ on December 6, 2020.
 
 ## Abstract {.page_break_before}
 
-This is the abstract. Testing to see if it will show up.
-
-Under pay-for-performance financing, the building owner makes payments based on the difference between their real energy consumption and what they would have used without any retrofits. The latter values have to come from a model. Current methods of estimation are fragmented and do not scale well. Some assume a specific meter type or don’t work with different building types.
+Under pay-for-performance financing, the building owner makes payments based on the difference between their real energy consumption and what they would have used without any retrofits. The latter values have to come from a model. Current methods of estimation are fragmented and do not scale well. Some assume a specific meter type or do not work with different building types.
 
 Therefore, we develop accurate models of metered building energy usage in the following areas: chilled water, electric, hot water, and steam meters. The data comes from over 1,000 buildings over a three-year timeframe. With better estimates of these energy-saving investments, large scale investors and financial institutions will be more inclined to invest in this area to enable progress in building efficiencies.
 
-
-Three different AI-models were used. First, a linear regression model was tested as a baseline. It was discovered that the model performed poorly, with a final RMSLE of 4,5. Merely linear prediction was not enough to obtain accurate predictions, which suggests that strong non-linear relashinships exist between the features and target variable (energy usage).   
+Three different AI-models were used. First, a linear regression model was tested as a baseline. It was discovered that the model performed poorly, with a final root mean squared logarithmic error (RMSLE) of 4.5. Merely linear prediction was not enough to obtain accurate predictions, which suggests that strong non-linear relashinships exist between the features and target variable (energy usage). Then, a three-layer Recurrent Neural Network with Long Short Term Memory was trained and tuned, with a test RMSLE of 1.6. The performance was better than linear regression but not impressive becuase of the simplicity of the model architecture and the trade-off between the number of data samples and the length of training period. Finally, the Light Gradient Boosting Machine was chosen because of its ability to deal with categorical variables and large structured dataset. Building one model for each meter type resulted in the best performance (test RMSLE = 1.2).
 
 
 ## Introduction

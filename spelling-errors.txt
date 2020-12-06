@@ -4,6 +4,7 @@ analysed
 ASHRAE
 ASHRAE’s
 autoregressive
+becuase
 Capretz
 cathyxinchangli
 Champaign
@@ -48,14 +49,14 @@ logarithmically
 LSTM
 MAPE
 MBE
-Mingyu
+mingyu
 Minyu
 mkbenja
 NRMSE
 oktas
 pre
 precip
-Preprocessing
+preprocessing
 Rastegarpour
 relashinships
 RMSLE
