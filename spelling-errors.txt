@@ -51,7 +51,7 @@ oktas
 pre
 precip
 predition
-Preprocessing
+preprocessing
 Rastegarpour
 relashinships
 RMSLE
