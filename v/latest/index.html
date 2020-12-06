@@ -116,9 +116,9 @@
   <meta name="citation_fulltext_html_url" content="https://cathyxinchangli.github.io/cee498ds-project11/" />
   <meta name="citation_pdf_url" content="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/b4dc5608a61d9dbabc1045a21ddc916178449397/" />
-  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/b4dc5608a61d9dbabc1045a21ddc916178449397/" />
-  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/b4dc5608a61d9dbabc1045a21ddc916178449397/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/47f08f2028d21db703d03e3a2f42d65a87399bd5/" />
+  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/47f08f2028d21db703d03e3a2f42d65a87399bd5/" />
+  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/47f08f2028d21db703d03e3a2f42d65a87399bd5/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -132,9 +132,9 @@
 </header>
 <p><small><em>
 This manuscript
-(<a href="https://cathyxinchangli.github.io/cee498ds-project11/v/b4dc5608a61d9dbabc1045a21ddc916178449397/">permalink</a>)
+(<a href="https://cathyxinchangli.github.io/cee498ds-project11/v/47f08f2028d21db703d03e3a2f42d65a87399bd5/">permalink</a>)
 was automatically generated
-from <a href="https://github.com/cathyxinchangli/cee498ds-project11/tree/b4dc5608a61d9dbabc1045a21ddc916178449397">cathyxinchangli/cee498ds-project11@b4dc560</a>
+from <a href="https://github.com/cathyxinchangli/cee498ds-project11/tree/47f08f2028d21db703d03e3a2f42d65a87399bd5">cathyxinchangli/cee498ds-project11@47f08f2</a>
 on December 6, 2020.
 </em></small></p>
 <h2 id="authors">Authors</h2>
@@ -516,9 +516,9 @@ Since we constructed traing dataset by seperating samples based on building_id a
 <span id="cb6-10"><a href="#cb6-10"></a>    res <span class="op">=</span> np.append(res,r)</span>
 <span id="cb6-11"><a href="#cb6-11"></a>    i <span class="op">+=</span> step_size</span></code></pre></div>
 <h2 id="discussion">Discussion</h2>
-<h3 id="performance-of-linear-regression-model">Performance of linear regression model</h3>
+<h3 id="performance-of-the-linear-regression-model">Performance of the linear regression model</h3>
 <p>Is an obtained RMSLE of 4,5 the limit for linear regression? Most likely not. In the model and data preparation, several things can be made better. First, the datasets could be optimized even better. Site 13 was removed because the values were suspiciously high, as seen in the EDA. In this case, an even more in-depth “cleaning” could be made to locate the exact building (or several building) that is responsible for the data anomaly. This deeper cleaning was made for the other models, but not for the linear regression model. Furthermore, if categorical values could be implemented not only in the training, but also the prediction, perhaps a better score could be obtained. However, it must be realized that no matter how many parameters are added to a linear model, it will still only predict new values linearly. If many or strong non-linear relationships exist between the target variable and prediction features, a linear model will never be able to perform nearly as good as e.g. neural networks. This suggests that other AI-models such as Neural Networks must be used.</p>
-<h3 id="the-performance-of-the-rnn-lstm-model">The performance of the RNN-LSTM model</h3>
+<h3 id="performance-of-the-rnn-lstm-model">Performance of the RNN-LSTM model</h3>
 <p>The simple LSTM model was fairly effective, largely outperforming the baseline linear regression model but slightly underperforming than the lightgbm models.
 Tuning attempted improved the performance marginally but steadily. Other tuning opportunities we hope to explore if we had more time include:
 excluding some correlated features;
@@ -526,7 +526,7 @@ increasing model complexity by adding one or more layers;
 other ways of handling missing data.</p>
 <p>It is hard to say for certain whether with more tuning, this three-layer RNN-LSTM would outperform our LightGBM models, but our best guess is no.
 The trade-off between number of samples and number of timestamps means we are forced to leave behind part of the information from the raw data
-in training. This can potentially be viewed as a shortcoming for RNN-LSTM (or rather our way of handling it).</p>
+in training. This can potentially be viewed as a shortcoming for RNN-LSTM (or rather our way of handling it). In hindsight, <code>building_id</code> proved to be an important predictor, but treating each building-meter pair as a sample forbade us to use <code>building_id</code> as a feature. This also potentially limited the performance of our RNN-LSTM model.</p>
 <h3 id="tree-based-model-and-neural-networks">Tree-based Model and Neural Networks</h3>
 <p>ASSIGNED TO: Minyu &amp; Zhiyi</p>
 <h3 id="challenges">Challenges</h3>
@@ -534,7 +534,7 @@ in training. This can potentially be viewed as a shortcoming for RNN-LSTM (or ra
 A significant amount of time was spent on optimizing the memory usage;
 which is also helpful as that potentially has also improved the speed of training/predicting,
 and in the long run building foundations for dealing with larger data and more complex problems and models in the future.</p>
-<p>Another challenge was data preprocessing.</p>
+<p>Another challenge was data preprocessing. For the LightGBM model, simple time features such as month of year, hour of day can be obtained pretty easily, but to further improve the model performance, lag features are recommended. However, we were not able to implement it in our model. As for RNN-LSTM, massaging the training data into a the same shape was challenging, and our decisions of truncating the data and treating each building-meter pair as a sample have probably limited its predicting power.</p>
 <h2 id="reference-list">Reference list</h2>
 <p>Zhang, Xiaoou Monica; Grolinger, Katarina and Capretz, Miriam E. M. 2019. Forecasting Residential Energy Consumption: Single Household Perspective. Published In: 2018 17th IEEE International Conference on Machine Learning and Applications (ICMLA). Orlando, FL, USA 17-20 December 2018.
 https://doi.org/10.1109/ICMLA.2018.00024</p>
