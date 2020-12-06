@@ -43,7 +43,7 @@ logarithmically
 LSTM
 MAPE
 MBE
-Mingyu
+mingyu
 Minyu
 mkbenja
 NRMSE
@@ -51,7 +51,7 @@ oktas
 pre
 precip
 predition
-Preprocessing
+preprocessing
 Rastegarpour
 relashinships
 RMSLE
