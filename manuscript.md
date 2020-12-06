@@ -71,11 +71,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/7d9aa7914ff27a32aa3df916c1f6383f8be54cbd/" />
+  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/915c6c88d9d1334adc219ff895f9c6cd7e8c5019/" />
 
-  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/7d9aa7914ff27a32aa3df916c1f6383f8be54cbd/" />
+  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/915c6c88d9d1334adc219ff895f9c6cd7e8c5019/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/7d9aa7914ff27a32aa3df916c1f6383f8be54cbd/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/915c6c88d9d1334adc219ff895f9c6cd7e8c5019/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -107,9 +107,9 @@ title: 'CEE 498DS Project 11: Building Energy Predictions - Project Report'
 
 <small><em>
 This manuscript
-([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/7d9aa7914ff27a32aa3df916c1f6383f8be54cbd/))
+([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/915c6c88d9d1334adc219ff895f9c6cd7e8c5019/))
 was automatically generated
-from [cathyxinchangli/cee498ds-project11@7d9aa79](https://github.com/cathyxinchangli/cee498ds-project11/tree/7d9aa7914ff27a32aa3df916c1f6383f8be54cbd)
+from [cathyxinchangli/cee498ds-project11@915c6c8](https://github.com/cathyxinchangli/cee498ds-project11/tree/915c6c88d9d1334adc219ff895f9c6cd7e8c5019)
 on December 6, 2020.
 </em></small>
 
@@ -165,7 +165,7 @@ By utilizing modern electric meters, it possible to collect and store enormous a
 energy consumption and help energy providers manage energy (electricity) output and plan for energy peaks/lows. It can also help the indiviudal resident keep track
 of their energy usage and perhaps even recommend energy saving actions. 
 
-As the human population increases, it is vital to lower the energy footprint of each individual and save the limited resources earth has to offer to future generations.
+As the human population increases, it is vital to lower the current energy footprint of each individual and conserve the limited resources earth has to offer, to future generations. Each generation has a responsibility to manage resource consumption so that future generations' ability to use the very same resources is not jeopardized.
 Household energy consumption is a big part of our total energy consumption, and new technology offers new ways of decreasing it.
 
 This project focuses on predicting building energy consumption based on the Kaggle competition "ASHRAE - Great Energy Predictor III". The main goal of the project is first and foremost to create an AI-model that can predict the energy usage of a building as accurately as possible, based on different input data such as air temperature, building size etc. In addition to that, different AI-models are explored to investigate which one works the best for this particular competition.
