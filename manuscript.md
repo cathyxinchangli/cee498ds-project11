@@ -71,11 +71,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/a0127c51eb364b20b66e257f80b6aebcc3be0294/" />
+  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/9ae18f1b0d9d8b5dd41c878ab5c70cc89b26f013/" />
 
-  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/a0127c51eb364b20b66e257f80b6aebcc3be0294/" />
+  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/9ae18f1b0d9d8b5dd41c878ab5c70cc89b26f013/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/a0127c51eb364b20b66e257f80b6aebcc3be0294/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/9ae18f1b0d9d8b5dd41c878ab5c70cc89b26f013/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -107,9 +107,9 @@ title: 'CEE 498DS Project 11: Building Energy Predictions - Project Report'
 
 <small><em>
 This manuscript
-([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/a0127c51eb364b20b66e257f80b6aebcc3be0294/))
+([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/9ae18f1b0d9d8b5dd41c878ab5c70cc89b26f013/))
 was automatically generated
-from [cathyxinchangli/cee498ds-project11@a0127c5](https://github.com/cathyxinchangli/cee498ds-project11/tree/a0127c51eb364b20b66e257f80b6aebcc3be0294)
+from [cathyxinchangli/cee498ds-project11@9ae18f1](https://github.com/cathyxinchangli/cee498ds-project11/tree/9ae18f1b0d9d8b5dd41c878ab5c70cc89b26f013)
 on December 6, 2020.
 </em></small>
 
@@ -509,7 +509,28 @@ for i, (train_index, test_index) in enumerate(kf.split(train)):
 ```
 
 ## Feature Important
+``` python
+for model, evals_result in zip(models, evals_results):
+    f, (ax1, ax2) = plt.subplots(nrows = 1, ncols = 2, figsize=(15, 6))
+    lgb.plot_importance(model, ax=ax1)
+    lgb.plot_metric(evals_result, metric='rmse', ax=ax2)
 
+plt.show()
+```
+
+```python
+from tqdm import tqdm
+
+step_size = 100000
+res = []
+i = 0
+for j in tqdm(range(int(np.ceil(test.shape[0]/step_size)))):
+    r = np.zeros(test.iloc[i:i+step_size].shape[0])
+    for model in models:
+        r += np.expm1(model.predict(test.iloc[i:i+step_size], num_iteration=model.best_iteration)) / len(models)
+    res = np.append(res,r)
+    i += step_size
+```
 
 
 ## Discussion
@@ -548,6 +569,12 @@ Another challenge was data preprocessing.
 [@zhang2019]: doi:10.1109/ICMLA.2018.00024
 Zhang, Xiaoou Monica; Grolinger, Katarina and Capretz, Miriam E. M. 2019. Forecasting Residential Energy Consumption: Single Household Perspective. Published In:  2018 17th IEEE International Conference on Machine Learning and Applications (ICMLA). Orlando, FL, USA 17-20 December 2018.
 https://doi.org/10.1109/ICMLA.2018.00024
+
+[@edwards2012]: doi:10.1016/j.enbuild.2012.03.010
+
+[@ferrarini2019]: doi:10.1109/ETFA.2019.8869151
+
+[@amasyali2018]: doi:10.1016/j.rser.2017.04.095
 
 
 ## References {.page_break_before}

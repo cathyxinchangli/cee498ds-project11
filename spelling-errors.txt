@@ -44,12 +44,12 @@ Kaggle
 Katarina
 kBTU
 KTH
-lightgbm
+LightGBM
 logarithmically
 LSTM
 MAPE
 MBE
-Mingyu
+mingyu
 Minyu
 mkbenja
 NRMSE
