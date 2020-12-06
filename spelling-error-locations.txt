@@ -1,6 +1,6 @@
 content/01.abstract.md:7:timeframe
-content/01.abstract.md:11:relashinships
-content/01.abstract.md:11:RMSLE
+content/01.abstract.md:10:relashinships
+content/01.abstract.md:10:RMSLE
 content/02.introduction.md:4:indiviudal
 content/02.introduction.md:11:ASHRAE
 content/02.introduction.md:11:Kaggle

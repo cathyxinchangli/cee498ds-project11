@@ -71,11 +71,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/0fc9ee9fa86dcafdf75f784be4351019a4a3c0bf/" />
+  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/d82f9354d4da31ca24a1fa3e55246486c7a8597f/" />
 
-  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/0fc9ee9fa86dcafdf75f784be4351019a4a3c0bf/" />
+  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/d82f9354d4da31ca24a1fa3e55246486c7a8597f/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/0fc9ee9fa86dcafdf75f784be4351019a4a3c0bf/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/d82f9354d4da31ca24a1fa3e55246486c7a8597f/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -107,9 +107,9 @@ title: 'CEE 498DS Project 11: Building Energy Predictions - Project Report'
 
 <small><em>
 This manuscript
-([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/0fc9ee9fa86dcafdf75f784be4351019a4a3c0bf/))
+([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/d82f9354d4da31ca24a1fa3e55246486c7a8597f/))
 was automatically generated
-from [cathyxinchangli/cee498ds-project11@0fc9ee9](https://github.com/cathyxinchangli/cee498ds-project11/tree/0fc9ee9fa86dcafdf75f784be4351019a4a3c0bf)
+from [cathyxinchangli/cee498ds-project11@d82f935](https://github.com/cathyxinchangli/cee498ds-project11/tree/d82f9354d4da31ca24a1fa3e55246486c7a8597f)
 on December 6, 2020.
 </em></small>
 
@@ -155,7 +155,6 @@ Under pay-for-performance financing, the building owner makes payments based on 
 
 Therefore, we develop accurate models of metered building energy usage in the following areas: chilled water, electric, hot water, and steam meters. The data comes from over 1,000 buildings over a three-year timeframe. With better estimates of these energy-saving investments, large scale investors and financial institutions will be more inclined to invest in this area to enable progress in building efficiencies.
 
-By utilizing modern electric meters, it possible to collect and store enormous amount of data about household energy consumption. This data can be used to predict energy consumption and help energy providers manage energy (electricity) output and plan for energy peaks/lows.  
 
 Three different AI-models were used. First, a linear regression model was tested as a baseline. It was discovered that the model performed poorly, with a final RMSLE of 4,5. Merely linear prediction was not enough to obtain accurate predictions, which suggests that strong non-linear relashinships exist between the features and target variable (energy usage).   
 
@@ -193,13 +192,13 @@ The EDA performed by the authors is illustrated in the form of electricity consu
 
 #### Prediction model and results
 The authors used Support Vector Regression (SVR) to predict the energy consumption. SVR is a supervised machine learning algorithm, which means that it is compares an input with an output and is trained by comparing predicted results with true results.  It was chosen due to time and computational hardware constraints. No other evaluations or comparison of other machine learning algorithms were made by the authors, so it is difficult to understand why SVM is faster and require less processing power. 
-Zhang, Grolinger & Capretz present the results for home #1 in figure 1. They managed to predict electricity consumption well. The most inaccurate parts are peaks that arise due to random variations. Furthermore, the authors present a table with results for all 15 homes. According to them, time-based splitting is used to check parameter stability over time, which makes the algorithm more accurate. In this case however random sampling performs better in cases where some residential customers have irregular and uncertain patterns. These uncertain patterns make time-based splitting more inaccurate over time. Therefore, both methods are employed. Lastly, mean absolute percentage of error (MAPE) was utilized to measure the performance of the algorithm, which is a widely used performance metric. {#fig:image1}
+Zhang, Grolinger & Capretz present the results for home #1 in {#fig:image1}. They managed to predict electricity consumption well. The most inaccurate parts are peaks that arise due to random variations. Furthermore, the authors present a table with results for all 15 homes, {#fig:image2} . According to them, time-based splitting is used to check parameter stability over time, which makes the algorithm more accurate. In this case however random sampling performs better in cases where some residential customers have irregular and uncertain patterns. These uncertain patterns make time-based splitting more inaccurate over time. Therefore, both methods are employed. Lastly, mean absolute percentage of error (MAPE) was utilized to measure the performance of the algorithm, which is a widely used performance metric. 
 
-![Figure 1: Observed electricity consumption compared to predicted electricity consumption for house #1 (of 15) (Zhang et al.). ](images/lit-rev-img-1.png){#fig:image1}
+![Figure 1: Observed electricity consumption compared to predicted electricity consumption for house #1 (of 15) (Zhang et al.). ](images/lit-rev-img-2.png){#fig:image1}
 
-Insert figure
-Figure 2: Performance results of the predication model for all homes.
-Insert figure
+![Figure 2: Performance results of the predication model for all homes.](images/lit-rev-img-1.png){#fig:image2}
+
+
 #### Conclusion
 The biggest strength of the paper is the execution of the chosen methods to achieve desired results. It is a relatively successful attempt at predicting single households, which tend to be more unpredictable compared to multi-family or corporate residential buildings. The biggest weakness is the justification for the chosen methods. The authors do an excellent job of utilizing the chosen methods, but there is little thought put in to why these methods where chosen or why they did certain things. By including a more extensive evaluation and justification for method choices, the target audience and other researchers in the same field can understand better and continue the research. However, it makes the paper longer and more complex, which can be negative for the readers and the target audience. 
 

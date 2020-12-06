@@ -37,13 +37,13 @@ intial
 Kaggle
 kBTU
 KTH
-LightGBM
+lightgbm
 locade
 logarithmically
 LSTM
 MAPE
 MBE
-Mingyu
+mingyu
 Minyu
 mkbenja
 NRMSE
@@ -51,7 +51,7 @@ oktas
 pre
 precip
 predition
-preprocessing
+Preprocessing
 Rastegarpour
 relashinships
 RMSLE
