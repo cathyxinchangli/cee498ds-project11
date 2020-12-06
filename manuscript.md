@@ -71,11 +71,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/ca4d3ce859bce2d96a5e7c2d28ecae67318af19f/" />
+  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/b4dc5608a61d9dbabc1045a21ddc916178449397/" />
 
-  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/ca4d3ce859bce2d96a5e7c2d28ecae67318af19f/" />
+  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/b4dc5608a61d9dbabc1045a21ddc916178449397/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/ca4d3ce859bce2d96a5e7c2d28ecae67318af19f/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/b4dc5608a61d9dbabc1045a21ddc916178449397/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -107,9 +107,9 @@ title: 'CEE 498DS Project 11: Building Energy Predictions - Project Report'
 
 <small><em>
 This manuscript
-([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/ca4d3ce859bce2d96a5e7c2d28ecae67318af19f/))
+([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/b4dc5608a61d9dbabc1045a21ddc916178449397/))
 was automatically generated
-from [cathyxinchangli/cee498ds-project11@ca4d3ce](https://github.com/cathyxinchangli/cee498ds-project11/tree/ca4d3ce859bce2d96a5e7c2d28ecae67318af19f)
+from [cathyxinchangli/cee498ds-project11@b4dc560](https://github.com/cathyxinchangli/cee498ds-project11/tree/b4dc5608a61d9dbabc1045a21ddc916178449397)
 on December 6, 2020.
 </em></small>
 
@@ -296,37 +296,36 @@ Here are the number (percentage) of missing values in each dataframes:
 As we can see, some features such as `year_built`, `floor_count` and `air_temperature`, are missing over half of all entries. Special attention should be given to these variables when filling in the missing values to avoid losing raw training data while minimizing artificial influence.
 
 #### Building Metadata
-There are in total 16 sites, labeled 0~15 (`site_id`), containing 1449 buildings. Each building is identified with a unique `building_id` independent from the `site_id`, from 0 to 1448. The number of buildings in each site differ greatly, as shown in {@fig:image2}.
+There are in total 16 sites, labeled 0~15 (`site_id`), containing 1449 buildings. Each building is identified with a unique `building_id` independent from the `site_id`, from 0 to 1448. The number of buildings in each site differ greatly, as shown in {@fig:image4}.
 
-![Number of buildings in each site.](images/num-buildings-in-sites.png){#fig:image2}
+![Number of buildings in each site.](images/num-buildings-in-sites.png){#fig:image4}
 
-There are 16 primary use types, with a mix of residential and commercial buildings, mostly built after the 1950s. Both the building square footage and floor counts are approximately logarithmically distributed, meaning most buildings are relatively small, single- to multi-story buildings ({@fig:image3}). There's a fairly strong correlation (correlation coefficient = 0.53) between building square footage and floor counts, as we could expect, and a small but positive correlation between the constructed year and the building size (0.11). 
+There are 16 primary use types, with a mix of residential and commercial buildings, mostly built after the 1950s. Both the building square footage and floor counts are approximately logarithmically distributed, meaning most buildings are relatively small, single- to multi-story buildings ({@fig:image5}). There's a fairly strong correlation (correlation coefficient = 0.53) between building square footage and floor counts, as we could expect, and a small but positive correlation between the constructed year and the building size (0.11). 
 
-![Distribution of features in building_metadata.](images/bldg-meta-features-dist.png){#fig:image3}
+![Distribution of features in building_metadata.](images/bldg-meta-features-dist.png){#fig:image5}
 
 #### Target Variable: Meter Readings
-ASSIGNED TO: Mingyu
 
 **Please feel free to remove this or change, I just added it to make it easier to know what should be included here**
 
-When analyzing the meter readings, it was discovered that some measurements were suspiciously high. After analyzing each meter type, It was found that meter 2 (steam) was responsible for the unusually high values. After this discovery, each site was analyzed, and the data anomaly was located to site 13. {#fig:image4} shows the mean hourly steam readings for site 13. {#fig:image5} shows all meter readings for all sites. Lastly {#fig:image6} illustrates all meter readings when site 13 was removed. It is clear that the readings are much larger in the first two graphs. Also, the shape of the graph is dictated by site 13.
+When analyzing the meter readings, it was discovered that some measurements were suspiciously high. After analyzing each meter type, It was found that meter 2 (steam) was responsible for the unusually high values. After this discovery, each site was analyzed, and the data anomaly was located to site 13. Figure {@fig:image6} shows the mean hourly steam readings for site 13. Figure {@fig:image7} shows all meter readings for all sites. Lastly Figure {@fig:image8} illustrates all meter readings when site 13 was removed. It is clear that the readings are much larger in the first two graphs. Also, the shape of the graph is dictated by site 13.
 
-![](images/site13_steam.png){#fig:image4}
-![](images/all-sites.png){#fig:image5}
-![](images/site-13-removed.png){#fig:image6}
+![Steam profile at site 13.](images/site13_steam.png){#fig:image6}
+![Combined meters profile of all sites.](images/all-sites.png){#fig:image7}
+![Combined meters profile of all sites excluding site 13.](images/site-13-removed.png){#fig:image8}
 
 
 #### Weather Data
-`weather_train` has 2016 hourly weather data, and `weather_test` has 2017~18 hourly weather data. The time series plots for all variables of both the training and test periods are shown below ({@fig:image7}).
+`weather_train` has 2016 hourly weather data, and `weather_test` has 2017~18 hourly weather data. The time series plots for all variables of both the training and test periods are shown below ({@fig:image9}).
 
-![Time series plots of weather variables.](images/weather-data-time-series.png){#fig:image7}
+![Time series plots of weather variables.](images/weather-data-time-series.png){#fig:image9}
 
 #### Correlations
-Putting `building_metadata`, `train` and `weather_train` together, we can generate the correlation between each features and the target variable. The heat map below ({@fig:image8}) shows that the correlation between variables range from -0.32 to 0.98, but no individual features have significant correlation with the target variable `meter_reading`. The top 5 most features most correlated with `meter_reading` are building square footage (0.13), number of floors (0.13), year of construction (0.11), meter type (0.077), and sites (0.047). This suggests that building metadata are potentially important predictors for our machine learning models, and the missing values need to be treated with care.
+Putting `building_metadata`, `train` and `weather_train` together, we can generate the correlation between each features and the target variable. The heat map below ({@fig:image10}) shows that the correlation between variables range from -0.32 to 0.98, but no individual features have significant correlation with the target variable `meter_reading`. The top 5 most features most correlated with `meter_reading` are building square footage (0.13), number of floors (0.13), year of construction (0.11), meter type (0.077), and sites (0.047). This suggests that building metadata are potentially important predictors for our machine learning models, and the missing values need to be treated with care.
 
 In addition, some features show rather strong correlations with each other, such as: `square_feet` and `floor_count` (0.58); `air_temperature` and `dew_temperature` (0.75); `wind_direction` and `wind_speed` (0.43). This may provide insights to imputation of the missing values.
 
-![Correlations heatmap.](images/heatmap.png){#fig:image8}
+![Correlations heatmap.](images/heatmap.png){#fig:image10}
 
 ### Machine Learning Models
 #### Baseline: Linear Regression
@@ -338,7 +337,7 @@ As it has been described earlier in this section sections, the data used for thi
 **Linear regression model**
 The linear regression model was created by adding a feature layer with all the desired numerical and categorical features and then adding a dense layer for linear regression. First, missing values in a column were replaced with the mean of that column. In order to create a feature layer, the features used for the prediction had to be converted to tensors. Lastly, categorical features had to be one-hot encoded before being added to the feature layer.
 
-The best public score (RMSLE) that could be obtained with this linear model was 4,5 (4,24 private score).
+The best public score (RMSLE) that could be obtained with this linear model was 4.5 (4.24 private score).
 
 #### Neural Network: Recurrent Neural Network with Long Short Term Memory (RNN-LSTM)
 **Choossing the Model**<br>
