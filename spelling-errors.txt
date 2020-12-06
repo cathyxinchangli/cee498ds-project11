@@ -42,7 +42,7 @@ intial
 Kaggle
 kBTU
 KTH
-lightgbm
+LightGBM
 logarithmically
 LSTM
 MAPE
