@@ -71,11 +71,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/d597cfeb09ee490e57bd25999fab8cbe68f89af3/" />
+  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/7a40f5d1660e06ff5863ad108d9e9be00b99e9b4/" />
 
-  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/d597cfeb09ee490e57bd25999fab8cbe68f89af3/" />
+  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/7a40f5d1660e06ff5863ad108d9e9be00b99e9b4/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/d597cfeb09ee490e57bd25999fab8cbe68f89af3/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/7a40f5d1660e06ff5863ad108d9e9be00b99e9b4/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -107,9 +107,9 @@ title: 'CEE 498DS Project 11: Building Energy Predictions - Project Report'
 
 <small><em>
 This manuscript
-([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/d597cfeb09ee490e57bd25999fab8cbe68f89af3/))
+([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/7a40f5d1660e06ff5863ad108d9e9be00b99e9b4/))
 was automatically generated
-from [cathyxinchangli/cee498ds-project11@d597cfe](https://github.com/cathyxinchangli/cee498ds-project11/tree/d597cfeb09ee490e57bd25999fab8cbe68f89af3)
+from [cathyxinchangli/cee498ds-project11@7a40f5d](https://github.com/cathyxinchangli/cee498ds-project11/tree/7a40f5d1660e06ff5863ad108d9e9be00b99e9b4)
 on December 6, 2020.
 </em></small>
 
@@ -326,10 +326,6 @@ As it has been described earlier in this section sections, the data used for thi
 The linear regression model was created by adding a feature layer with all the desired numerical and categorical features and then adding a dense layer for linear regression. First, missing values in a column were replaced with the mean of that column. In order to create a feature layer, the features used for the prediction had to be converted to tensors. Lastly, categorical features had to be one-hot encoded before being added to the feature layer.
 
 The best public score (RMSLE) that could be obtained with this linear model was 4,5 (4,24 private score).
-
-**Imporvements**
-Is RMSLE of 4,5 the limit for linear regression? Most likely not. In the model and data preparation, several things can be made better. First, the datasets could be optimized even better. Site_id 13 was removed because the values were suspiciously high, as seen in the EDA. In this case, an even more in-depth "cleaning" could be made to locade the exact building_id (or several building_ids) that is responsible for the data anomaly. This deeper cleaning was made for the other models, but not for the linear regression model.Furthermore, if cateorical values could be implemented not only in the training, but also the prediction, perhaps a better score could be obtained. However, it must be realized that no matter how many parameters are added to a linear model, it will still only predict new values linearly. If many or strong non-linear relationships exist between the target variable and predition features, a linear model will never be able to perform nearly as good as e.g. neural networks.
-
 
 #### Neural Network: Recurrent Neural Network with Long Short Term Memory (RNN-LSTM)
 **Choossing the Model**<br>

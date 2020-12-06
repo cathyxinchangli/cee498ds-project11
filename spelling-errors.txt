@@ -2,7 +2,6 @@ allocator
 analysed
 ASHRAE
 Capretz
-cateorical
 cathyxinchangli
 Champaign
 chilledwater
@@ -32,14 +31,12 @@ HME
 hotwater
 Hyperparameters
 Hyperparamter
-Imporvements
 indiviudal
 intial
 Kaggle
 kBTU
 KTH
-lightgbm
-locade
+LightGBM
 logarithmically
 LSTM
 MAPE
@@ -51,7 +48,6 @@ NRMSE
 oktas
 pre
 precip
-predition
 preprocessing
 Rastegarpour
 relashinships
