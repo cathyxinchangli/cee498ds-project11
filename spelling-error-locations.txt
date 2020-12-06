@@ -180,6 +180,13 @@ content/05.discussion.md:14:RNN
 content/05.discussion.md:18:Minyu
 content/05.discussion.md:18:Zhiyi
 content/05.discussion.md:27:preprocessing
+content/06.references.md:3:Capretz
+content/06.references.md:3:Grolinger
+content/06.references.md:3:ICMLA
+content/06.references.md:3:Katarina
+content/06.references.md:3:Xiaoou
+content/06.references.md:3:Zhang
+content/06.references.md:4:ICMLA
 content/linear-regression.md:5:Kaggle
 content/linear-regression.md:6:dataset
 content/linear-regression.md:9:Kaggle

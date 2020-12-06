@@ -71,11 +71,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/65aa120c66c169d7dce161b41bc6a22eea3b04fb/" />
+  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/7d9aa7914ff27a32aa3df916c1f6383f8be54cbd/" />
 
-  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/65aa120c66c169d7dce161b41bc6a22eea3b04fb/" />
+  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/7d9aa7914ff27a32aa3df916c1f6383f8be54cbd/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/65aa120c66c169d7dce161b41bc6a22eea3b04fb/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/7d9aa7914ff27a32aa3df916c1f6383f8be54cbd/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -107,9 +107,9 @@ title: 'CEE 498DS Project 11: Building Energy Predictions - Project Report'
 
 <small><em>
 This manuscript
-([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/65aa120c66c169d7dce161b41bc6a22eea3b04fb/))
+([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/7d9aa7914ff27a32aa3df916c1f6383f8be54cbd/))
 was automatically generated
-from [cathyxinchangli/cee498ds-project11@65aa120](https://github.com/cathyxinchangli/cee498ds-project11/tree/65aa120c66c169d7dce161b41bc6a22eea3b04fb)
+from [cathyxinchangli/cee498ds-project11@7d9aa79](https://github.com/cathyxinchangli/cee498ds-project11/tree/7d9aa7914ff27a32aa3df916c1f6383f8be54cbd)
 on December 6, 2020.
 </em></small>
 
@@ -480,6 +480,12 @@ and in the long run building foundations for dealing with larger data and more c
 Another challenge was data preprocessing. 
 
 
+
+
+## Reference list
+
+Zhang, Xiaoou Monica; Grolinger, Katarina and Capretz, Miriam E. M. 2019. Forecasting Residential Energy Consumption: Single Household Perspective. Published In:  2018 17th IEEE International Conference on Machine Learning and Applications (ICMLA). Orlando, FL, USA 17-20 December 2018.
+https://doi.org/10.1109/ICMLA.2018.00024
 
 
 ## References {.page_break_before}
