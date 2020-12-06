@@ -1,3 +1,4 @@
+allocator
 analysed
 ASHRAE
 Capretz
@@ -10,11 +11,15 @@ csv
 dataframe
 dataframes
 dataset
+Disegna
 EarlyStopping
 EDA
 EnergyStar
 essense
+Fathi
 FCM
+Ferrarini
+Ferrarini’s
 FFNN
 generalizable
 Grolinger
@@ -30,7 +35,7 @@ intial
 Kaggle
 kBTU
 KTH
-LightGBM
+lightgbm
 logarithmically
 LSTM
 MAPE
@@ -38,10 +43,12 @@ MBE
 mingyu
 Minyu
 mkbenja
+NRMSE
 oktas
 pre
 precip
 preprocessing
+Rastegarpour
 RMSLE
 RNN
 RNN’s

@@ -1,7 +1,7 @@
 content/01.abstract.md:7:timeframe
 content/02.introduction.md:4:indiviudal
-content/02.introduction.md:10:ASHRAE
-content/02.introduction.md:10:Kaggle
+content/02.introduction.md:11:ASHRAE
+content/02.introduction.md:11:Kaggle
 content/03.literature-review.md:2:Capretz
 content/03.literature-review.md:2:Grolinger
 content/03.literature-review.md:2:Zhang
@@ -58,6 +58,16 @@ content/03.literature-review.md:33:FFNN
 content/03.literature-review.md:33:FFNN
 content/03.literature-review.md:33:HME
 content/03.literature-review.md:33:SVM
+content/03.literature-review.md:35:Disegna
+content/03.literature-review.md:35:Fathi
+content/03.literature-review.md:35:Ferrarini
+content/03.literature-review.md:35:Rastegarpour
+content/03.literature-review.md:37:allocator
+content/03.literature-review.md:38:NRMSE
+content/03.literature-review.md:38:NRMSE
+content/03.literature-review.md:38:NRMSE
+content/03.literature-review.md:40:Ferrarini
+content/03.literature-review.md:40:Ferrarini's
 content/04.method.md:3:ashrae
 content/04.method.md:3:dataset
 content/04.method.md:3:kaggle
