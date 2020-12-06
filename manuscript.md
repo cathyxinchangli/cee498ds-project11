@@ -71,11 +71,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/b4dc5608a61d9dbabc1045a21ddc916178449397/" />
+  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/47f08f2028d21db703d03e3a2f42d65a87399bd5/" />
 
-  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/b4dc5608a61d9dbabc1045a21ddc916178449397/" />
+  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/47f08f2028d21db703d03e3a2f42d65a87399bd5/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/b4dc5608a61d9dbabc1045a21ddc916178449397/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/47f08f2028d21db703d03e3a2f42d65a87399bd5/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -107,9 +107,9 @@ title: 'CEE 498DS Project 11: Building Energy Predictions - Project Report'
 
 <small><em>
 This manuscript
-([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/b4dc5608a61d9dbabc1045a21ddc916178449397/))
+([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/47f08f2028d21db703d03e3a2f42d65a87399bd5/))
 was automatically generated
-from [cathyxinchangli/cee498ds-project11@b4dc560](https://github.com/cathyxinchangli/cee498ds-project11/tree/b4dc5608a61d9dbabc1045a21ddc916178449397)
+from [cathyxinchangli/cee498ds-project11@47f08f2](https://github.com/cathyxinchangli/cee498ds-project11/tree/47f08f2028d21db703d03e3a2f42d65a87399bd5)
 on December 6, 2020.
 </em></small>
 
@@ -532,10 +532,10 @@ for j in tqdm(range(int(np.ceil(test.shape[0]/step_size)))):
 
 
 ## Discussion
-### Performance of linear regression model
+### Performance of the linear regression model
 Is an obtained RMSLE of 4,5 the limit for linear regression? Most likely not. In the model and data preparation, several things can be made better. First, the datasets could be optimized even better. Site 13 was removed because the values were suspiciously high, as seen in the EDA. In this case, an even more in-depth "cleaning" could be made to locate the exact building (or several building) that is responsible for the data anomaly. This deeper cleaning was made for the other models, but not for the linear regression model. Furthermore, if categorical values could be implemented not only in the training, but also the prediction, perhaps a better score could be obtained. However, it must be realized that no matter how many parameters are added to a linear model, it will still only predict new values linearly. If many or strong non-linear relationships exist between the target variable and prediction features, a linear model will never be able to perform nearly as good as e.g. neural networks. This suggests that other AI-models such as Neural Networks must be used.
 
-### The performance of the RNN-LSTM model
+### Performance of the RNN-LSTM model
 The simple LSTM model was fairly effective, largely outperforming the baseline linear regression model but slightly underperforming than the lightgbm models. 
 Tuning attempted improved the performance marginally but steadily. Other tuning opportunities we hope to explore if we had more time include: 
 excluding some correlated features; 
@@ -544,8 +544,7 @@ other ways of handling missing data.
 
 It is hard to say for certain whether with more tuning, this three-layer RNN-LSTM would outperform our LightGBM models, but our best guess is no. 
 The trade-off between number of samples and number of timestamps means we are forced to leave behind part of the information from the raw data
-in training. This can potentially be viewed as a shortcoming for RNN-LSTM (or rather our way of handling it).
-
+in training. This can potentially be viewed as a shortcoming for RNN-LSTM (or rather our way of handling it). In hindsight, `building_id` proved to be an important predictor, but treating each building-meter pair as a sample forbade us to use `building_id` as a feature. This also potentially limited the performance of our RNN-LSTM model.
 
 ### Tree-based Model and Neural Networks
 ASSIGNED TO: Minyu & Zhiyi
@@ -557,7 +556,7 @@ A significant amount of time was spent on optimizing the memory usage;
 which is also helpful as that potentially has also improved the speed of training/predicting, 
 and in the long run building foundations for dealing with larger data and more complex problems and models in the future. 
 
-Another challenge was data preprocessing. 
+Another challenge was data preprocessing. For the LightGBM model, simple time features such as month of year, hour of day can be obtained pretty easily, but to further improve the model performance, lag features are recommended. However, we were not able to implement it in our model. As for RNN-LSTM, massaging the training data into a the same shape was challenging, and our decisions of truncating the data and treating each building-meter pair as a sample have probably limited its predicting power. 
 
 
 
