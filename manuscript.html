@@ -116,9 +116,9 @@
   <meta name="citation_fulltext_html_url" content="https://cathyxinchangli.github.io/cee498ds-project11/" />
   <meta name="citation_pdf_url" content="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/c5f757a8d0a36beb4571a1083eff629c84aa2287/" />
-  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/c5f757a8d0a36beb4571a1083eff629c84aa2287/" />
-  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/c5f757a8d0a36beb4571a1083eff629c84aa2287/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/3a83634376d9124ac966ea949749485356e7496d/" />
+  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/3a83634376d9124ac966ea949749485356e7496d/" />
+  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/3a83634376d9124ac966ea949749485356e7496d/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -132,9 +132,9 @@
 </header>
 <p><small><em>
 This manuscript
-(<a href="https://cathyxinchangli.github.io/cee498ds-project11/v/c5f757a8d0a36beb4571a1083eff629c84aa2287/">permalink</a>)
+(<a href="https://cathyxinchangli.github.io/cee498ds-project11/v/3a83634376d9124ac966ea949749485356e7496d/">permalink</a>)
 was automatically generated
-from <a href="https://github.com/cathyxinchangli/cee498ds-project11/tree/c5f757a8d0a36beb4571a1083eff629c84aa2287">cathyxinchangli/cee498ds-project11@c5f757a</a>
+from <a href="https://github.com/cathyxinchangli/cee498ds-project11/tree/3a83634376d9124ac966ea949749485356e7496d">cathyxinchangli/cee498ds-project11@3a83634</a>
 on December 6, 2020.
 </em></small></p>
 <h2 id="authors">Authors</h2>
@@ -170,11 +170,10 @@ Department of Civil and Environmental Engineering, University of Illinois at Urb
 <p>Three different AI-models were used. First, a linear regression model was tested as a baseline. It was discovered that the model performed poorly, with a final root mean squared logarithmic error (RMSLE) of 4.5. Merely linear prediction was not enough to obtain accurate predictions, which suggests that strong non-linear relashinships exist between the features and target variable (energy usage). Then, a three-layer Recurrent Neural Network with Long Short Term Memory was trained and tuned, with a test RMSLE of 1.6. The performance was better than linear regression but not impressive becuase of the simplicity of the model architecture and the trade-off between the number of data samples and the length of training period. Finally, the Light Gradient Boosting Machine was chosen because of its ability to deal with categorical variables and large structured dataset. Building one model for each meter type resulted in the best performance (test RMSLE = 1.2).</p>
 <h2 id="introduction">Introduction</h2>
 <p>By utilizing modern electric meters, it possible to collect and store enormous amount of data about building energy consumption. This data can be used to predict
-energy consumption and help energy providers manage energy (electricity) output and plan for energy peaks/lows. It can also help the individual resident keep track
-of their energy usage and perhaps even recommend energy saving actions.</p>
-<p>As the human population increases, it is vital to lower the current energy footprint of each individual and conserve the limited resources earth has to offer, to future generations. Each generation has a responsibility to manage resource consumption so that future generations’ ability to use the very same resources is not jeopardized.
-Household energy consumption is a big part of our total energy consumption, and new technology offers new ways of decreasing it.</p>
-<p>This project focuses on predicting building energy consumption based on the Kaggle competition “ASHRAE - Great Energy Predictor III”. The main goal of the project is first and foremost to create an AI-model that can predict the energy usage of a building as accurately as possible, based on different input data such as air temperature, building size etc. In addition to that, different AI-models are explored to investigate which one works the best for this particular competition.</p>
+energy consumption and help energy providers manage energy output and plan for energy peaks/lows. It can also help the individual resident keep track
+of their energy usage, as well as being analysed for possible energy saving retrofits.</p>
+<p>Most buildings that will exist by mid-century have already been built and in use. As the human population increases, it is vital to lower the energy footprint of existing buildings and conserve the limited resources Earth has to offer. This can be achieved by collecting detailed and complete energy use data of the exising buildings using smart meters, and feed the data into building energy models for analysis (Figure <a href="#fig:image1">2</a>). In recent years, machine learning (ML) algorithms have been explored to act in place of traditional physics-based building energy models and their performances validated.</p>
+<p>This project focuses on predicting building energy consumption based on the Kaggle competition “ASHRAE - Great Energy Predictor III”. The main goal of the project is first and foremost to create a ML model that can predict the energy usage of a building as accurately as possible, based on different input data such as air temperature, building size etc. In addition to that, different ML models are explored to investigate which one works the best for this particular competition.</p>
 <div id="fig:image1" class="fignos">
 <figure>
 <img src="images/intro-flowchart.png" alt="" /><figcaption><span>Figure 1:</span> Building retrofit flowchart.</figcaption>

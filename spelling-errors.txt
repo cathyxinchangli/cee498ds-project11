@@ -23,6 +23,7 @@ EI
 El
 EnergyStar
 essense
+exising
 Fathi
 FCM
 Ferrarini
@@ -49,7 +50,7 @@ logarithmically
 LSTM
 MAPE
 MBE
-mingyu
+Mingyu
 Minyu
 mkbenja
 NRMSE

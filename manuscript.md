@@ -71,11 +71,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/c5f757a8d0a36beb4571a1083eff629c84aa2287/" />
+  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/3a83634376d9124ac966ea949749485356e7496d/" />
 
-  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/c5f757a8d0a36beb4571a1083eff629c84aa2287/" />
+  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/3a83634376d9124ac966ea949749485356e7496d/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/c5f757a8d0a36beb4571a1083eff629c84aa2287/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/3a83634376d9124ac966ea949749485356e7496d/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -107,9 +107,9 @@ title: 'CEE 498DS Project 11: Building Energy Predictions - Project Report'
 
 <small><em>
 This manuscript
-([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/c5f757a8d0a36beb4571a1083eff629c84aa2287/))
+([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/3a83634376d9124ac966ea949749485356e7496d/))
 was automatically generated
-from [cathyxinchangli/cee498ds-project11@c5f757a](https://github.com/cathyxinchangli/cee498ds-project11/tree/c5f757a8d0a36beb4571a1083eff629c84aa2287)
+from [cathyxinchangli/cee498ds-project11@3a83634](https://github.com/cathyxinchangli/cee498ds-project11/tree/3a83634376d9124ac966ea949749485356e7496d)
 on December 6, 2020.
 </em></small>
 
@@ -159,13 +159,12 @@ Three different AI-models were used. First, a linear regression model was tested
 ## Introduction
 
 By utilizing modern electric meters, it possible to collect and store enormous amount of data about building energy consumption. This data can be used to predict
-energy consumption and help energy providers manage energy (electricity) output and plan for energy peaks/lows. It can also help the individual resident keep track
-of their energy usage and perhaps even recommend energy saving actions. 
+energy consumption and help energy providers manage energy output and plan for energy peaks/lows. It can also help the individual resident keep track
+of their energy usage, as well as being analysed for possible energy saving retrofits.
 
-As the human population increases, it is vital to lower the current energy footprint of each individual and conserve the limited resources earth has to offer, to future generations. Each generation has a responsibility to manage resource consumption so that future generations' ability to use the very same resources is not jeopardized.
-Household energy consumption is a big part of our total energy consumption, and new technology offers new ways of decreasing it.
+Most buildings that will exist by mid-century have already been built and in use. As the human population increases, it is vital to lower the energy footprint of existing buildings and conserve the limited resources Earth has to offer. This can be achieved by collecting detailed and complete energy use data of the exising buildings using smart meters, and feed the data into building energy models for analysis (Figure {@fig:image1}). In recent years, machine learning (ML) algorithms have been explored to act in place of traditional physics-based building energy models and their performances validated.
 
-This project focuses on predicting building energy consumption based on the Kaggle competition "ASHRAE - Great Energy Predictor III". The main goal of the project is first and foremost to create an AI-model that can predict the energy usage of a building as accurately as possible, based on different input data such as air temperature, building size etc. In addition to that, different AI-models are explored to investigate which one works the best for this particular competition.
+This project focuses on predicting building energy consumption based on the Kaggle competition "ASHRAE - Great Energy Predictor III". The main goal of the project is first and foremost to create a ML model that can predict the energy usage of a building as accurately as possible, based on different input data such as air temperature, building size etc. In addition to that, different ML models are explored to investigate which one works the best for this particular competition.
 
 ![Building retrofit flowchart.](images/intro-flowchart.png){#fig:image1}
 
