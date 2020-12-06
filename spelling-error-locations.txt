@@ -109,6 +109,7 @@ content/04.method.md:122:generalizable
 content/04.method.md:122:THRES
 content/04.method.md:125:heteorogenous
 content/04.method.md:125:varaibles
+content/04.method.md:129:RNN
 content/04.method.md:130:LSTM
 content/04.method.md:130:RNN
 content/04.method.md:132:LSTM
@@ -117,7 +118,9 @@ content/04.method.md:139:preprocessing
 content/04.method.md:145:LSTM
 content/04.method.md:145:RNN
 content/04.method.md:147:LSTM
+content/04.method.md:156:RNN
 content/04.method.md:166:EarlyStopping
+content/04.method.md:169:RNN
 content/04.method.md:171:intial
 content/04.method.md:173:Hyperparamter
 content/04.method.md:175:LSTM
@@ -131,12 +134,13 @@ content/04.method.md:184:LSTM
 content/04.method.md:185:LSTM
 content/04.method.md:188:THRES
 content/04.method.md:188:unsubmitted
+content/04.method.md:190:RNN
 content/04.method.md:191:dataset
 content/04.method.md:191:seperating
 content/04.method.md:191:traing
 content/04.method.md:193:dataframe
 content/04.method.md:193:dataframe
-content/04.method.md:213:LightGBM
+content/04.method.md:214:LightGBM
 content/linear-regression.md:5:Kaggle
 content/linear-regression.md:6:dataset
 content/linear-regression.md:9:Kaggle
