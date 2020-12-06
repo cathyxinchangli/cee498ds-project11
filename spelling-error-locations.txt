@@ -76,13 +76,10 @@ content/03.literature-review.md:49:Amasyali
 content/03.literature-review.md:49:El
 content/03.literature-review.md:49:Gohary
 content/03.literature-review.md:51:preprocessing
-content/03.literature-review.md:53:Amasyali
 content/03.literature-review.md:53:ASHRAE
 content/03.literature-review.md:53:ASHRAE’s
 content/03.literature-review.md:53:autoregressive
 content/03.literature-review.md:53:dataset
-content/03.literature-review.md:53:EI
-content/03.literature-review.md:53:Gohary
 content/03.literature-review.md:53:preprocessing
 content/03.literature-review.md:53:SVM
 content/03.literature-review.md:53:SVM
