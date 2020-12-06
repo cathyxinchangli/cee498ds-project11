@@ -30,12 +30,13 @@ intial
 Kaggle
 kBTU
 KTH
-LightGBM
+lightgbm
 logarithmically
 LSTM
 MAPE
 MBE
 Mingyu
+Minyu
 mkbenja
 oktas
 pre
@@ -55,6 +56,7 @@ THRES
 timestep
 timesteps
 traing
+underperforming
 unsubmitted
 Urbana
 varaibles

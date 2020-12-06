@@ -71,11 +71,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/eaead9b3e10c4843b37db44d2c65d6ac0593e6db/" />
+  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/b66789aad80067c16058f7c470066580a50f0bcd/" />
 
-  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/eaead9b3e10c4843b37db44d2c65d6ac0593e6db/" />
+  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/b66789aad80067c16058f7c470066580a50f0bcd/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/eaead9b3e10c4843b37db44d2c65d6ac0593e6db/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/b66789aad80067c16058f7c470066580a50f0bcd/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -107,9 +107,9 @@ title: 'CEE 498DS Project 11: Building Energy Predictions - Project Report'
 
 <small><em>
 This manuscript
-([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/eaead9b3e10c4843b37db44d2c65d6ac0593e6db/))
+([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/b66789aad80067c16058f7c470066580a50f0bcd/))
 was automatically generated
-from [cathyxinchangli/cee498ds-project11@eaead9b](https://github.com/cathyxinchangli/cee498ds-project11/tree/eaead9b3e10c4843b37db44d2c65d6ac0593e6db)
+from [cathyxinchangli/cee498ds-project11@b66789a](https://github.com/cathyxinchangli/cee498ds-project11/tree/b66789aad80067c16058f7c470066580a50f0bcd)
 on December 6, 2020.
 </em></small>
 
@@ -418,6 +418,34 @@ for bldg_id in test_full.building_id.unique():
 
 
 #### Tree-based Model: LightGBM
+
+
+
+
+## Discussion
+### The performance of the RNN-LSTM model
+The simple LSTM model was fairly effective, largely outperforming the baseline linear regression model but slightly underperforming than the lightgbm models. 
+Tuning attempted improved the performance marginally but steadily. Other tuning opportunities we hope to explore if we had more time include: 
+excluding some correlated features; 
+increasing model complexity by adding one or more layers; 
+other ways of handling missing data. 
+
+It is hard to say for certain whether with more tuning, this three-layer RNN-LSTM would outperform our LightGBM models, but our best guess is no. 
+The trade-off between number of samples and number of timestamps means we are forced to leave behind part of the information from the raw data
+in training. This can potentially be viewed as a shortcoming for RNN-LSTM (or rather our way of handling it).
+
+
+### Tree-based Model and Neural Networks
+ASSIGNED TO: Minyu & Zhiyi
+
+
+### Challenges
+The most significant challenge has been combating the limited memory resources. 
+A significant amount of time was spent on optimizing the memory usage; 
+which is also helpful as that potentially has also improved the speed of training/predicting, 
+and in the long run building foundations for dealing with larger data and more complex problems and models in the future. 
+
+Another challenge was data preprocessing. 
 
 
 
