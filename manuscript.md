@@ -71,11 +71,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/b66789aad80067c16058f7c470066580a50f0bcd/" />
+  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/4703c5d6310c63af2678ed86843dde0b57b0d3d9/" />
 
-  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/b66789aad80067c16058f7c470066580a50f0bcd/" />
+  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/4703c5d6310c63af2678ed86843dde0b57b0d3d9/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/b66789aad80067c16058f7c470066580a50f0bcd/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/4703c5d6310c63af2678ed86843dde0b57b0d3d9/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -107,9 +107,9 @@ title: 'CEE 498DS Project 11: Building Energy Predictions - Project Report'
 
 <small><em>
 This manuscript
-([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/b66789aad80067c16058f7c470066580a50f0bcd/))
+([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/4703c5d6310c63af2678ed86843dde0b57b0d3d9/))
 was automatically generated
-from [cathyxinchangli/cee498ds-project11@b66789a](https://github.com/cathyxinchangli/cee498ds-project11/tree/b66789aad80067c16058f7c470066580a50f0bcd)
+from [cathyxinchangli/cee498ds-project11@4703c5d](https://github.com/cathyxinchangli/cee498ds-project11/tree/4703c5d6310c63af2678ed86843dde0b57b0d3d9)
 on December 6, 2020.
 </em></small>
 
@@ -140,7 +140,7 @@ on December 6, 2020.
 
 + **Mingyu Sun**<br>
     · ![GitHub icon](images/github.svg){.inline_icon}
-    [TBD](https://github.com/TBD)<br>
+    [mingyu012](https://github.com/mingyu012)<br>
   <small>
      Department of Civil and Environmental Engineering, University of Illinois at Urbana-Champaign
   </small>

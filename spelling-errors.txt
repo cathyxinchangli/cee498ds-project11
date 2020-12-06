@@ -41,7 +41,7 @@ mkbenja
 oktas
 pre
 precip
-Preprocessing
+preprocessing
 RMSLE
 RNN
 RNN’s
@@ -51,7 +51,6 @@ sklearn
 Smakic
 SVM
 SVR
-TBD
 THRES
 timestep
 timesteps
