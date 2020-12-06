@@ -116,9 +116,9 @@
   <meta name="citation_fulltext_html_url" content="https://cathyxinchangli.github.io/cee498ds-project11/" />
   <meta name="citation_pdf_url" content="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/91fe22f85efd449336c0ac216afda7f20c82e3a4/" />
-  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/91fe22f85efd449336c0ac216afda7f20c82e3a4/" />
-  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/91fe22f85efd449336c0ac216afda7f20c82e3a4/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/cb9d7071cd8ec2409afc333628fd9c3c392ed9a4/" />
+  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/cb9d7071cd8ec2409afc333628fd9c3c392ed9a4/" />
+  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/cb9d7071cd8ec2409afc333628fd9c3c392ed9a4/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -132,9 +132,9 @@
 </header>
 <p><small><em>
 This manuscript
-(<a href="https://cathyxinchangli.github.io/cee498ds-project11/v/91fe22f85efd449336c0ac216afda7f20c82e3a4/">permalink</a>)
+(<a href="https://cathyxinchangli.github.io/cee498ds-project11/v/cb9d7071cd8ec2409afc333628fd9c3c392ed9a4/">permalink</a>)
 was automatically generated
-from <a href="https://github.com/cathyxinchangli/cee498ds-project11/tree/91fe22f85efd449336c0ac216afda7f20c82e3a4">cathyxinchangli/cee498ds-project11@91fe22f</a>
+from <a href="https://github.com/cathyxinchangli/cee498ds-project11/tree/cb9d7071cd8ec2409afc333628fd9c3c392ed9a4">cathyxinchangli/cee498ds-project11@cb9d707</a>
 on December 6, 2020.
 </em></small></p>
 <h2 id="authors">Authors</h2>
@@ -217,11 +217,6 @@ Zhang, Grolinger &amp; Capretz present the results for home #1 in Figure <a href
 <p>According to the figure 1 shown in the article (2019), we can tell that the model of black-box 1 has the smallest error, which means it is the most accurate model among these models both on a monthly and annual basis. The reason for its accuracy is that it uses more direct measurement data in the modeling process, unlike other models that convert part of the measurement data into other parameters before using it.</p>
 <p>In addition, although compared to Black-box model, the tuned Energy Plus model does not have that high accuracy rate, but its performance in the annual forecast fully meets industry requirements according to the Ferrarini’s summary (2019).</p>
 <p>In conclusion, at the end of the article, the author summarized the four models and affirmed the practicality of black-box and tuned Energy Plus model once again.</p>
-<h3 id="amasyali-k.-el-gohary-n.-m.-2018.-a-review-of-data-driven-building-energy-consumption-prediction-studies.">Amasyali, K., &amp; El-Gohary, N. M. (2018). A review of data-driven building energy consumption prediction studies.</h3>
-<p>Buildings cause a large portion of energy consumption across the world. To reduce the energy consumption, plenty of research has been conducted on predicting the energy consumption for different types of buildings. Two major approaches for predicting building energy consumption are: physical modeling (forward-modeling/white-box modeling) and data-driven modeling (black-box modeling). Physical models are based on detailed energy analysis which requires input information such as building geometry and construction materials. Since physical models rely heavily on the accurate input but the detailed input is often not available to the public, data-driven models based on the available energy consumption data has come to attention. The four typical steps in developing a data-driven model are: data collection, data preprocessing, model training and model testing.</p>
-<p>This paper (Amasyali &amp; EI-Gohary, 2017) provides a review of the existing data-driven building energy consumption models from a multivariate perspective. In this paper, the existing models are categorized based on the following criteria: 1. Scope of prediction. The scope of prediction is classified by types of building, temporal granularity, and type of energy consumption predicted. 2. Types of data. Data are classified into real data, simulated data and publicly available benchmark data such as ASHRAE’s Great Building Energy Predictor Shootout dataset. 3. Types of features used in the machine learning algorithms, such as building characteristics, occupant energy use behavior, and outdoor weather conditions. 4. Data sizes, which is related to the collection period of the energy consumption data. 5. Data preprocessing techniques such as data cleaning, data integration, data transformation and data reduction. 6. Machine learning algorithms. The widely used model training algorithms in this field includes: SVM, ANN, decision trees, and other statistical algorithms such as multiple linear regression, general linear regression, autoregressive integrated moving average, Bayesian regression, polynomial regression, etc. Each algorithm has its benefits and drawbacks and should be chosen based on the available data and the goal of the project. For example, statistical algorithms are usually easy to be understood and explained, while the model accuracy might be not as good as SVM and ANN models. 6. Model performance evaluation. The widely used criteria for testing the model performance are the coefficient of variance, mean absolute percentage error, and root mean square error.</p>
-<p>The limitations of the existing models are also summarized in this paper. First, data-driven models may perform poorly with new datasets. Thus, the usage of a data-driven model might be limited to certain data ranges. Second, since the data-driven models are black-box models, it is hard to interpret the physical meanings of the models to gain better understanding of buildings’ energy consumption. Thus, hybrid models which combine physical modeling and data-driven modeling can balance the benefits and drawbacks of both modeling approaches.</p>
-<p>After reading this paper, we can narrow down the possible models for the project based on the available data provided in Kaggle. Since the meter data is time series data, statistical models such as the autoregressive model or autoregressive integrated moving average might be preferred.</p>
 <h2 id="methods">Methods</h2>
 <h3 id="exploratory-data-analysis-1">Exploratory Data Analysis</h3>
 <p>Five data files are provided in the competition dataset. The file names and the contents of each file are detailed below (adapted from the <a href="https://www.kaggle.com/c/ashrae-energy-prediction/data">competition site</a>).</p>
@@ -296,10 +291,7 @@ A valid sample submission containing <code>row_id</code> to match your predictio
 </figure>
 </div>
 <h4 id="target-variable-meter-readings">Target Variable: Meter Readings</h4>
-<p>ASSIGNED TO: Mingyu
-<strong>Please feel free to remove this or change, I just added it to make it easier to know what should be included here</strong>
-When analyzing the meter readings, it was discovered that some measurements were suspiciously high. After analyzing each meter type, It was found that meter 2 (steam) was responsible for the unusually high values. After this discovery, each site was analyzed, and the data anomaly was located to site 13. The first graph shows the mean hourly steam readings for site 13. The second graph shows all meter readings for all sites. It is clear that the readings are much larger in the first graph. Also, the shape of the graph is dictated by site 13.</p>
-<p><strong>Will add pictures</strong></p>
+<p>ASSIGNED TO: Mingyu</p>
 <h4 id="weather-data">Weather Data</h4>
 <p><code>weather_train</code> has 2016 hourly weather data, and <code>weather_test</code> has 2017~18 hourly weather data. The time series plots for all variables of both the training and test periods are shown below (<a href="#fig:image4">6</a>).</p>
 <div id="fig:image4" class="fignos">
@@ -459,7 +451,7 @@ Since we constructed traing dataset by seperating samples based on building_id a
 <span id="cb3-14"><a href="#cb3-14"></a>        <span class="kw">del</span> v</span>
 <span id="cb3-15"><a href="#cb3-15"></a>    <span class="kw">del</span> bldg</span></code></pre></div>
 <h4 id="tree-based-model-lightgbm">Tree-based Model: LightGBM</h4>
-<h2 id="introduction-of-light-gradient-boosting-machine">Introduction of Light Gradient Boosting Machine</h2>
+<p>Here is some text.</p>
 <h2 id="discussion">Discussion</h2>
 <h3 id="performance-of-linear-regression-model">Performance of linear regression model</h3>
 <p>Is an obtained RMSLE of 4,5 the limit for linear regression? Most likely not. In the model and data preparation, several things can be made better. First, the datasets could be optimized even better. Site 13 was removed because the values were suspiciously high, as seen in the EDA. In this case, an even more in-depth “cleaning” could be made to locate the exact building (or several building) that is responsible for the data anomaly. This deeper cleaning was made for the other models, but not for the linear regression model. Furthermore, if categorical values could be implemented not only in the training, but also the prediction, perhaps a better score could be obtained. However, it must be realized that no matter how many parameters are added to a linear model, it will still only predict new values linearly. If many or strong non-linear relationships exist between the target variable and prediction features, a linear model will never be able to perform nearly as good as e.g. neural networks. This suggests that other AI-models such as Neural Networks must be used.</p>

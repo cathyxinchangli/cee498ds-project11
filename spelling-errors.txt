@@ -1,9 +1,6 @@
 allocator
-Amasyali
 analysed
 ASHRAE
-ASHRAE’s
-autoregressive
 Capretz
 cathyxinchangli
 Champaign
@@ -18,8 +15,6 @@ datasets
 Disegna
 EarlyStopping
 EDA
-EI
-El
 EnergyStar
 essense
 Fathi
@@ -28,7 +23,6 @@ Ferrarini
 Ferrarini’s
 FFNN
 generalizable
-Gohary
 Grolinger
 heatmap
 hectopascals
@@ -48,7 +42,7 @@ logarithmically
 LSTM
 MAPE
 MBE
-mingyu
+Mingyu
 Minyu
 mkbenja
 NRMSE
