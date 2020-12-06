@@ -116,9 +116,9 @@
   <meta name="citation_fulltext_html_url" content="https://cathyxinchangli.github.io/cee498ds-project11/" />
   <meta name="citation_pdf_url" content="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/47f08f2028d21db703d03e3a2f42d65a87399bd5/" />
-  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/47f08f2028d21db703d03e3a2f42d65a87399bd5/" />
-  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/47f08f2028d21db703d03e3a2f42d65a87399bd5/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/e674e54310ac4469b1f258a652709bea93f0975a/" />
+  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/e674e54310ac4469b1f258a652709bea93f0975a/" />
+  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/e674e54310ac4469b1f258a652709bea93f0975a/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -132,9 +132,9 @@
 </header>
 <p><small><em>
 This manuscript
-(<a href="https://cathyxinchangli.github.io/cee498ds-project11/v/47f08f2028d21db703d03e3a2f42d65a87399bd5/">permalink</a>)
+(<a href="https://cathyxinchangli.github.io/cee498ds-project11/v/e674e54310ac4469b1f258a652709bea93f0975a/">permalink</a>)
 was automatically generated
-from <a href="https://github.com/cathyxinchangli/cee498ds-project11/tree/47f08f2028d21db703d03e3a2f42d65a87399bd5">cathyxinchangli/cee498ds-project11@47f08f2</a>
+from <a href="https://github.com/cathyxinchangli/cee498ds-project11/tree/e674e54310ac4469b1f258a652709bea93f0975a">cathyxinchangli/cee498ds-project11@e674e54</a>
 on December 6, 2020.
 </em></small></p>
 <h2 id="authors">Authors</h2>
@@ -456,10 +456,10 @@ Since we constructed traing dataset by seperating samples based on building_id a
 <span id="cb3-14"><a href="#cb3-14"></a>        <span class="kw">del</span> v</span>
 <span id="cb3-15"><a href="#cb3-15"></a>    <span class="kw">del</span> bldg</span></code></pre></div>
 <h4 id="tree-based-model-lightgbm">Tree-based Model: LightGBM</h4>
-<h2 id="introduction-of-light-gradient-boosting-machine">Introduction of Light Gradient Boosting Machine</h2>
-<p>I’m a person.</p>
-<h2 id="model-analysis-of-mingyu">Model analysis of Mingyu</h2>
-<h2 id="another-way-of-lightgbm">Another way of LightGBM</h2>
+<p><strong>Introduction of Light Gradient Boosting Machine</strong><br>
+I’m a person.</p>
+<p><strong>Model analysis of Mingyu</strong><br></p>
+<p><strong>Another way of LightGBM</strong><br></p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>data <span class="op">=</span> [<span class="st">&quot;building_id&quot;</span>, <span class="st">&quot;primary_use&quot;</span>, <span class="st">&quot;hour&quot;</span>, <span class="st">&quot;day&quot;</span>, <span class="st">&quot;weekend&quot;</span>, <span class="st">&quot;month&quot;</span>, <span class="st">&quot;meter&quot;</span>,<span class="st">&quot;square_feet&quot;</span>, <span class="st">&quot;year_built&quot;</span>, <span class="st">&quot;air_temperature&quot;</span>, <span class="st">&quot;cloud_coverage&quot;</span>,<span class="st">&quot;dew_temperature&quot;</span>]</span>
 <span id="cb4-2"><a href="#cb4-2"></a>num_folds <span class="op">=</span> <span class="dv">3</span></span>
 <span id="cb4-3"><a href="#cb4-3"></a>kf <span class="op">=</span> KFold(n_splits <span class="op">=</span> num_folds, shuffle <span class="op">=</span> <span class="va">False</span>, random_state <span class="op">=</span> <span class="dv">42</span>)</span>
@@ -497,7 +497,7 @@ Since we constructed traing dataset by seperating samples based on building_id a
 <span id="cb4-35"><a href="#cb4-35"></a>                           )</span>
 <span id="cb4-36"><a href="#cb4-36"></a>    models.append(model)</span>
 <span id="cb4-37"><a href="#cb4-37"></a>    evals_results.append(evals_result)</span></code></pre></div>
-<h2 id="feature-important">Feature Important</h2>
+<p><strong>Feature Importance</strong></p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="cf">for</span> model, evals_result <span class="kw">in</span> <span class="bu">zip</span>(models, evals_results):</span>
 <span id="cb5-2"><a href="#cb5-2"></a>    f, (ax1, ax2) <span class="op">=</span> plt.subplots(nrows <span class="op">=</span> <span class="dv">1</span>, ncols <span class="op">=</span> <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">15</span>, <span class="dv">6</span>))</span>
 <span id="cb5-3"><a href="#cb5-3"></a>    lgb.plot_importance(model, ax<span class="op">=</span>ax1)</span>
