@@ -6,7 +6,7 @@ author-meta:
 - Mingyu Sun
 bibliography:
 - content/manual-references.json
-date-meta: '2020-12-06'
+date-meta: '2020-12-07'
 header-includes: '<!--
 
   Manubot generated metadata rendered from header-includes-template.html.
@@ -25,9 +25,9 @@ header-includes: '<!--
 
   <meta property="twitter:title" content="CEE 498DS Project 11: Building Energy Predictions - Project Report" />
 
-  <meta name="dc.date" content="2020-12-06" />
+  <meta name="dc.date" content="2020-12-07" />
 
-  <meta name="citation_publication_date" content="2020-12-06" />
+  <meta name="citation_publication_date" content="2020-12-07" />
 
   <meta name="dc.language" content="en-US" />
 
@@ -71,11 +71,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/667cbfe77f3d5f4d1411da4c3ebf22010eaa93c0/" />
+  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/b0665b231dbabb112c768cde1257f60c1b019e8a/" />
 
-  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/667cbfe77f3d5f4d1411da4c3ebf22010eaa93c0/" />
+  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/b0665b231dbabb112c768cde1257f60c1b019e8a/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/667cbfe77f3d5f4d1411da4c3ebf22010eaa93c0/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/b0665b231dbabb112c768cde1257f60c1b019e8a/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -107,10 +107,10 @@ title: 'CEE 498DS Project 11: Building Energy Predictions - Project Report'
 
 <small><em>
 This manuscript
-([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/667cbfe77f3d5f4d1411da4c3ebf22010eaa93c0/))
+([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/b0665b231dbabb112c768cde1257f60c1b019e8a/))
 was automatically generated
-from [cathyxinchangli/cee498ds-project11@667cbfe](https://github.com/cathyxinchangli/cee498ds-project11/tree/667cbfe77f3d5f4d1411da4c3ebf22010eaa93c0)
-on December 6, 2020.
+from [cathyxinchangli/cee498ds-project11@b0665b2](https://github.com/cathyxinchangli/cee498ds-project11/tree/b0665b231dbabb112c768cde1257f60c1b019e8a)
+on December 7, 2020.
 </em></small>
 
 ## Authors
@@ -232,51 +232,51 @@ After reading this paper, we can narrow down the possible models for the project
 ### Exploratory Data Analysis
 Five data files are provided in the competition dataset. The file names and the contents of each file are detailed below (adapted from the [competition site](https://www.kaggle.com/c/ashrae-energy-prediction/data)).
 
-**train.csv**
-- `building_id` - Foreign key for the building metadata.
-- `meter` - The meter id code. Read as {0: electricity, 1: chilledwater, 2: steam, 3: hotwater}. Not every building has all meter types.
-- `timestamp` - When the measurement was taken
-- `meter_reading` - The target variable. Energy consumption in kWh (or equivalent, except site 0 electric meter readings which are in kBTU). Note that this is real data with measurement error, which may impose a baseline level of modeling error. 
+**train.csv**<br>
+- `building_id` - Foreign key for the building metadata.<br>
+- `meter` - The meter id code. Read as {0: electricity, 1: chilledwater, 2: steam, 3: hotwater}. Not every building has all meter types.<br>
+- `timestamp` - When the measurement was taken.<br>
+- `meter_reading` - The target variable. Energy consumption in kWh (or equivalent, except site 0 electric meter readings which are in kBTU). Note that this is real data with measurement error, which may impose a baseline level of modeling error. <br>
 
-**building_meta.csv**
-- `site_id` - Foreign key for the weather files.
-- `building_id` - Foreign key for training.csv
-- `primary_use` - Indicator of the primary category of activities for the building based on EnergyStar property type definitions
-- `square_feet` - Gross floor area of the building
-- `year_built` - Year building was opened
-- `floor_count` - Number of floors of the building
+**building_meta.csv**<br>
+- `site_id` - Foreign key for the weather files.<br>
+- `building_id` - Foreign key for training.csv<br>
+- `primary_use` - Indicator of the primary category of activities for the building based on EnergyStar property type definitions<br>
+- `square_feet` - Gross floor area of the building<br>
+- `year_built` - Year building was opened<br>
+- `floor_count` - Number of floors of the building<br>
 
 **weather_[train/test].csv** <br>
-Weather data from a meteorological station as close as possible to the site.
-- `site_id`
-- `air_temperature` - Degrees Celsius
-- `cloud_coverage` - Portion of the sky covered in clouds, in oktas
-- `dew_temperature` - Degrees Celsius
-- `precip_depth_1_hr` - Millimeters
-- `sea_level_pressure` - Millibar/hectopascals
-- `wind_direction` - Compass direction (0-360)
-- `wind_speed` - Meters per second
+Weather data from a meteorological station as close as possible to the site.<br>
+- `site_id`<br>
+- `air_temperature` - Degrees Celsius<br>
+- `cloud_coverage` - Portion of the sky covered in clouds, in oktas<br>
+- `dew_temperature` - Degrees Celsius<br>
+- `precip_depth_1_hr` - Millimeters<br>
+- `sea_level_pressure` - Millibar/hectopascals<br>
+- `wind_direction` - Compass direction (0-360)<br>
+- `wind_speed` - Meters per second<br>
 
 **test.csv** <br>
-The submission files use row numbers for ID codes in order to save space on the file uploads. test.csv has no feature data; it exists to help get predictions into the correct order.
-- `row_id` - Row id for your submission file
-- `building_id` - Building id code
-- `meter` - The meter id code
-- `timestamp` - Timestamps for the test data period
+The submission files use row numbers for ID codes in order to save space on the file uploads. test.csv has no feature data; it exists to help get predictions into the correct order.<br>
+- `row_id` - Row id for your submission file<br>
+- `building_id` - Building id code<br>
+- `meter` - The meter id code<br>
+- `timestamp` - Timestamps for the test data period<br>
 
 **sample_submission.csv** <br>
-A valid sample submission containing `row_id` to match your predictions.
+A valid sample submission containing `row_id` to match your predictions.<br>
 
 All floats in the solution file were truncated to four decimal places. There are gaps in some of the meter readings for both the train and test sets. Gaps in the test set are not revealed or scored.
 
 #### Missing values
-Here are the number (percentage) of missing values in each dataframes:
-1. **Missing data in bldg_meta**: <br>
+Here are the number (percentage) of missing values in each dataframes:<br>
+1. Missing data in bldg_meta: <br>
     - primary_use: 	0 (0.0%)<br>
     - year_built: 	774 (53.4%)<br>
     - square_feet: 	0 (0.0%)<br>
     - floor_count: 	1094 (75.5%) <br>
-2. **Missing data in weather_train**:<br>
+2. Missing data in weather_train:<br>
     - air_temperature: 	55 (0.0%)<br>
     - cloud_coverage: 	69173 (49.5%)<br>
     - dew_temperature: 	113 (0.1%)<br>
@@ -284,7 +284,7 @@ Here are the number (percentage) of missing values in each dataframes:
     - sea_level_pressure: 	10618 (7.6%)<br>
     - wind_direction: 	6268 (4.5%)<br>
     - wind_speed: 	304 (0.2%) <br>
-3. **Missing data in weather_test**:<br>
+3. Missing data in weather_test:<br>
     - air_temperature: 	104 (0.0%)<br>
     - cloud_coverage: 	140448 (50.7%)<br>
     - dew_temperature: 	327 (0.1%)<br>
@@ -296,11 +296,11 @@ Here are the number (percentage) of missing values in each dataframes:
 As we can see, some features such as `year_built`, `floor_count` and `air_temperature`, are missing over half of all entries. Special attention should be given to these variables when filling in the missing values to avoid losing raw training data while minimizing artificial influence.
 
 #### Building Metadata
-There are in total 16 sites, labeled 0~15 (`site_id`), containing 1449 buildings. Each building is identified with a unique `building_id` independent from the `site_id`, from 0 to 1448. The number of buildings in each site differ greatly, as shown in {@fig:image4}.
+There are in total 16 sites, labeled 0~15 (`site_id`), containing 1449 buildings. Each building is identified with a unique `building_id` independent from the `site_id`, from 0 to 1448. The number of buildings in each site differ greatly, as shown in Figure {@fig:image4}.
 
 ![Number of buildings in each site.](images/num-buildings-in-sites.png){#fig:image4}
 
-There are 16 primary use types, with a mix of residential and commercial buildings, mostly built after the 1950s. Both the building square footage and floor counts are approximately logarithmically distributed, meaning most buildings are relatively small, single- to multi-story buildings ({@fig:image5}). There's a fairly strong correlation (correlation coefficient = 0.53) between building square footage and floor counts, as we could expect, and a small but positive correlation between the constructed year and the building size (0.11). 
+There are 16 primary use types, with a mix of residential and commercial buildings, mostly built after the 1950s. Both the building square footage and floor counts are approximately logarithmically distributed, meaning most buildings are relatively small, single- to multi-story buildings (Figure {@fig:image5}). There's a fairly strong correlation (correlation coefficient = 0.53) between building square footage and floor counts, as we could expect, and a small but positive correlation between the constructed year and the building size (0.11). 
 
 ![Distribution of features in building_metadata.](images/bldg-meta-features-dist.png){#fig:image5}
 
@@ -316,12 +316,12 @@ When analyzing the meter readings, it was discovered that some measurements were
 
 
 #### Weather Data
-`weather_train` has 2016 hourly weather data, and `weather_test` has 2017~18 hourly weather data. The time series plots for all variables of both the training and test periods are shown below ({@fig:image9}).
+`weather_train` has 2016 hourly weather data, and `weather_test` has 2017~18 hourly weather data. The time series plots for all variables of both the training and test periods are shown below (Figure {@fig:image9}).
 
 ![Time series plots of weather variables.](images/weather-data-time-series.png){#fig:image9}
 
 #### Correlations
-Putting `building_metadata`, `train` and `weather_train` together, we can generate the correlation between each features and the target variable. The heat map below ({@fig:image10}) shows that the correlation between variables range from -0.32 to 0.98, but no individual features have significant correlation with the target variable `meter_reading`. The top 5 most features most correlated with `meter_reading` are building square footage (0.13), number of floors (0.13), year of construction (0.11), meter type (0.077), and sites (0.047). This suggests that building metadata are potentially important predictors for our machine learning models, and the missing values need to be treated with care.
+Putting `building_metadata`, `train` and `weather_train` together, we can generate the correlation between each features and the target variable. The heat map below (Figure {@fig:image10}) shows that the correlation between variables range from -0.32 to 0.98, but no individual features have significant correlation with the target variable `meter_reading`. The top 5 most features most correlated with `meter_reading` are building square footage (0.13), number of floors (0.13), year of construction (0.11), meter type (0.077), and sites (0.047). This suggests that building metadata are potentially important predictors for our machine learning models, and the missing values need to be treated with care.
 
 In addition, some features show rather strong correlations with each other, such as: `square_feet` and `floor_count` (0.58); `air_temperature` and `dew_temperature` (0.75); `wind_direction` and `wind_speed` (0.43). This may provide insights to imputation of the missing values.
 

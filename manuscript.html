@@ -8,7 +8,7 @@
   <meta name="author" content="Benjamin Smakic" />
   <meta name="author" content="Zhiyi Yang" />
   <meta name="author" content="Mingyu Sun" />
-  <meta name="dcterms.date" content="2020-12-06" />
+  <meta name="dcterms.date" content="2020-12-07" />
   <meta name="keywords" content="(TBD, keeping the originals for now) markdown, publishing, manubot" />
   <title>CEE 498DS Project 11: Building Energy Predictions - Project Report</title>
   <style>
@@ -93,8 +93,8 @@
   <meta name="citation_title" content="CEE 498DS Project 11: Building Energy Predictions - Project Report" />
   <meta property="og:title" content="CEE 498DS Project 11: Building Energy Predictions - Project Report" />
   <meta property="twitter:title" content="CEE 498DS Project 11: Building Energy Predictions - Project Report" />
-  <meta name="dc.date" content="2020-12-06" />
-  <meta name="citation_publication_date" content="2020-12-06" />
+  <meta name="dc.date" content="2020-12-07" />
+  <meta name="citation_publication_date" content="2020-12-07" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -116,9 +116,9 @@
   <meta name="citation_fulltext_html_url" content="https://cathyxinchangli.github.io/cee498ds-project11/" />
   <meta name="citation_pdf_url" content="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/667cbfe77f3d5f4d1411da4c3ebf22010eaa93c0/" />
-  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/667cbfe77f3d5f4d1411da4c3ebf22010eaa93c0/" />
-  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/667cbfe77f3d5f4d1411da4c3ebf22010eaa93c0/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/b0665b231dbabb112c768cde1257f60c1b019e8a/" />
+  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/b0665b231dbabb112c768cde1257f60c1b019e8a/" />
+  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/b0665b231dbabb112c768cde1257f60c1b019e8a/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -132,10 +132,10 @@
 </header>
 <p><small><em>
 This manuscript
-(<a href="https://cathyxinchangli.github.io/cee498ds-project11/v/667cbfe77f3d5f4d1411da4c3ebf22010eaa93c0/">permalink</a>)
+(<a href="https://cathyxinchangli.github.io/cee498ds-project11/v/b0665b231dbabb112c768cde1257f60c1b019e8a/">permalink</a>)
 was automatically generated
-from <a href="https://github.com/cathyxinchangli/cee498ds-project11/tree/667cbfe77f3d5f4d1411da4c3ebf22010eaa93c0">cathyxinchangli/cee498ds-project11@667cbfe</a>
-on December 6, 2020.
+from <a href="https://github.com/cathyxinchangli/cee498ds-project11/tree/b0665b231dbabb112c768cde1257f60c1b019e8a">cathyxinchangli/cee498ds-project11@b0665b2</a>
+on December 7, 2020.
 </em></small></p>
 <h2 id="authors">Authors</h2>
 <ul>
@@ -223,45 +223,45 @@ The biggest strength of the paper is the execution of the chosen methods to achi
 <h2 id="methods">Methods</h2>
 <h3 id="exploratory-data-analysis">Exploratory Data Analysis</h3>
 <p>Five data files are provided in the competition dataset. The file names and the contents of each file are detailed below (adapted from the <a href="https://www.kaggle.com/c/ashrae-energy-prediction/data">competition site</a>).</p>
-<p><strong>train.csv</strong>
-- <code>building_id</code> - Foreign key for the building metadata.
-- <code>meter</code> - The meter id code. Read as {0: electricity, 1: chilledwater, 2: steam, 3: hotwater}. Not every building has all meter types.
-- <code>timestamp</code> - When the measurement was taken
-- <code>meter_reading</code> - The target variable. Energy consumption in kWh (or equivalent, except site 0 electric meter readings which are in kBTU). Note that this is real data with measurement error, which may impose a baseline level of modeling error.</p>
-<p><strong>building_meta.csv</strong>
-- <code>site_id</code> - Foreign key for the weather files.
-- <code>building_id</code> - Foreign key for training.csv
-- <code>primary_use</code> - Indicator of the primary category of activities for the building based on EnergyStar property type definitions
-- <code>square_feet</code> - Gross floor area of the building
-- <code>year_built</code> - Year building was opened
-- <code>floor_count</code> - Number of floors of the building</p>
+<p><strong>train.csv</strong><br>
+- <code>building_id</code> - Foreign key for the building metadata.<br>
+- <code>meter</code> - The meter id code. Read as {0: electricity, 1: chilledwater, 2: steam, 3: hotwater}. Not every building has all meter types.<br>
+- <code>timestamp</code> - When the measurement was taken.<br>
+- <code>meter_reading</code> - The target variable. Energy consumption in kWh (or equivalent, except site 0 electric meter readings which are in kBTU). Note that this is real data with measurement error, which may impose a baseline level of modeling error. <br></p>
+<p><strong>building_meta.csv</strong><br>
+- <code>site_id</code> - Foreign key for the weather files.<br>
+- <code>building_id</code> - Foreign key for training.csv<br>
+- <code>primary_use</code> - Indicator of the primary category of activities for the building based on EnergyStar property type definitions<br>
+- <code>square_feet</code> - Gross floor area of the building<br>
+- <code>year_built</code> - Year building was opened<br>
+- <code>floor_count</code> - Number of floors of the building<br></p>
 <p><strong>weather_[train/test].csv</strong> <br>
-Weather data from a meteorological station as close as possible to the site.
-- <code>site_id</code>
-- <code>air_temperature</code> - Degrees Celsius
-- <code>cloud_coverage</code> - Portion of the sky covered in clouds, in oktas
-- <code>dew_temperature</code> - Degrees Celsius
-- <code>precip_depth_1_hr</code> - Millimeters
-- <code>sea_level_pressure</code> - Millibar/hectopascals
-- <code>wind_direction</code> - Compass direction (0-360)
-- <code>wind_speed</code> - Meters per second</p>
+Weather data from a meteorological station as close as possible to the site.<br>
+- <code>site_id</code><br>
+- <code>air_temperature</code> - Degrees Celsius<br>
+- <code>cloud_coverage</code> - Portion of the sky covered in clouds, in oktas<br>
+- <code>dew_temperature</code> - Degrees Celsius<br>
+- <code>precip_depth_1_hr</code> - Millimeters<br>
+- <code>sea_level_pressure</code> - Millibar/hectopascals<br>
+- <code>wind_direction</code> - Compass direction (0-360)<br>
+- <code>wind_speed</code> - Meters per second<br></p>
 <p><strong>test.csv</strong> <br>
-The submission files use row numbers for ID codes in order to save space on the file uploads. test.csv has no feature data; it exists to help get predictions into the correct order.
-- <code>row_id</code> - Row id for your submission file
-- <code>building_id</code> - Building id code
-- <code>meter</code> - The meter id code
-- <code>timestamp</code> - Timestamps for the test data period</p>
+The submission files use row numbers for ID codes in order to save space on the file uploads. test.csv has no feature data; it exists to help get predictions into the correct order.<br>
+- <code>row_id</code> - Row id for your submission file<br>
+- <code>building_id</code> - Building id code<br>
+- <code>meter</code> - The meter id code<br>
+- <code>timestamp</code> - Timestamps for the test data period<br></p>
 <p><strong>sample_submission.csv</strong> <br>
-A valid sample submission containing <code>row_id</code> to match your predictions.</p>
+A valid sample submission containing <code>row_id</code> to match your predictions.<br></p>
 <p>All floats in the solution file were truncated to four decimal places. There are gaps in some of the meter readings for both the train and test sets. Gaps in the test set are not revealed or scored.</p>
 <h4 id="missing-values">Missing values</h4>
-<p>Here are the number (percentage) of missing values in each dataframes:
-1. <strong>Missing data in bldg_meta</strong>: <br>
+<p>Here are the number (percentage) of missing values in each dataframes:<br>
+1. Missing data in bldg_meta: <br>
 - primary_use: 0 (0.0%)<br>
 - year_built: 774 (53.4%)<br>
 - square_feet: 0 (0.0%)<br>
 - floor_count: 1094 (75.5%) <br>
-2. <strong>Missing data in weather_train</strong>:<br>
+2. Missing data in weather_train:<br>
 - air_temperature: 55 (0.0%)<br>
 - cloud_coverage: 69173 (49.5%)<br>
 - dew_temperature: 113 (0.1%)<br>
@@ -269,7 +269,7 @@ A valid sample submission containing <code>row_id</code> to match your predictio
 - sea_level_pressure: 10618 (7.6%)<br>
 - wind_direction: 6268 (4.5%)<br>
 - wind_speed: 304 (0.2%) <br>
-3. <strong>Missing data in weather_test</strong>:<br>
+3. Missing data in weather_test:<br>
 - air_temperature: 104 (0.0%)<br>
 - cloud_coverage: 140448 (50.7%)<br>
 - dew_temperature: 327 (0.1%)<br>
@@ -279,13 +279,13 @@ A valid sample submission containing <code>row_id</code> to match your predictio
 - wind_speed: 460 (0.2%)<br></p>
 <p>As we can see, some features such as <code>year_built</code>, <code>floor_count</code> and <code>air_temperature</code>, are missing over half of all entries. Special attention should be given to these variables when filling in the missing values to avoid losing raw training data while minimizing artificial influence.</p>
 <h4 id="building-metadata">Building Metadata</h4>
-<p>There are in total 16 sites, labeled 0~15 (<code>site_id</code>), containing 1449 buildings. Each building is identified with a unique <code>building_id</code> independent from the <code>site_id</code>, from 0 to 1448. The number of buildings in each site differ greatly, as shown in <a href="#fig:image4">4</a>.</p>
+<p>There are in total 16 sites, labeled 0~15 (<code>site_id</code>), containing 1449 buildings. Each building is identified with a unique <code>building_id</code> independent from the <code>site_id</code>, from 0 to 1448. The number of buildings in each site differ greatly, as shown in Figure <a href="#fig:image4">4</a>.</p>
 <div id="fig:image4" class="fignos">
 <figure>
 <img src="images/num-buildings-in-sites.png" alt="" /><figcaption><span>Figure 4:</span> Number of buildings in each site.</figcaption>
 </figure>
 </div>
-<p>There are 16 primary use types, with a mix of residential and commercial buildings, mostly built after the 1950s. Both the building square footage and floor counts are approximately logarithmically distributed, meaning most buildings are relatively small, single- to multi-story buildings (<a href="#fig:image5">5</a>). There’s a fairly strong correlation (correlation coefficient = 0.53) between building square footage and floor counts, as we could expect, and a small but positive correlation between the constructed year and the building size (0.11).</p>
+<p>There are 16 primary use types, with a mix of residential and commercial buildings, mostly built after the 1950s. Both the building square footage and floor counts are approximately logarithmically distributed, meaning most buildings are relatively small, single- to multi-story buildings (Figure <a href="#fig:image5">5</a>). There’s a fairly strong correlation (correlation coefficient = 0.53) between building square footage and floor counts, as we could expect, and a small but positive correlation between the constructed year and the building size (0.11).</p>
 <div id="fig:image5" class="fignos">
 <figure>
 <img src="images/bldg-meta-features-dist.png" alt="" /><figcaption><span>Figure 5:</span> Distribution of features in building_metadata.</figcaption>
@@ -298,14 +298,14 @@ A valid sample submission containing <code>row_id</code> to match your predictio
 <img src="images/all-sites.png" id="fig:image7" alt="Combined meters profile of all sites." />
 <img src="images/site-13-removed.png" id="fig:image8" alt="Combined meters profile of all sites excluding site 13." /></p>
 <h4 id="weather-data">Weather Data</h4>
-<p><code>weather_train</code> has 2016 hourly weather data, and <code>weather_test</code> has 2017~18 hourly weather data. The time series plots for all variables of both the training and test periods are shown below (<a href="#fig:image9">6</a>).</p>
+<p><code>weather_train</code> has 2016 hourly weather data, and <code>weather_test</code> has 2017~18 hourly weather data. The time series plots for all variables of both the training and test periods are shown below (Figure <a href="#fig:image9">6</a>).</p>
 <div id="fig:image9" class="fignos">
 <figure>
 <img src="images/weather-data-time-series.png" alt="" /><figcaption><span>Figure 6:</span> Time series plots of weather variables.</figcaption>
 </figure>
 </div>
 <h4 id="correlations">Correlations</h4>
-<p>Putting <code>building_metadata</code>, <code>train</code> and <code>weather_train</code> together, we can generate the correlation between each features and the target variable. The heat map below (<a href="#fig:image10">7</a>) shows that the correlation between variables range from -0.32 to 0.98, but no individual features have significant correlation with the target variable <code>meter_reading</code>. The top 5 most features most correlated with <code>meter_reading</code> are building square footage (0.13), number of floors (0.13), year of construction (0.11), meter type (0.077), and sites (0.047). This suggests that building metadata are potentially important predictors for our machine learning models, and the missing values need to be treated with care.</p>
+<p>Putting <code>building_metadata</code>, <code>train</code> and <code>weather_train</code> together, we can generate the correlation between each features and the target variable. The heat map below (Figure <a href="#fig:image10">7</a>) shows that the correlation between variables range from -0.32 to 0.98, but no individual features have significant correlation with the target variable <code>meter_reading</code>. The top 5 most features most correlated with <code>meter_reading</code> are building square footage (0.13), number of floors (0.13), year of construction (0.11), meter type (0.077), and sites (0.047). This suggests that building metadata are potentially important predictors for our machine learning models, and the missing values need to be treated with care.</p>
 <p>In addition, some features show rather strong correlations with each other, such as: <code>square_feet</code> and <code>floor_count</code> (0.58); <code>air_temperature</code> and <code>dew_temperature</code> (0.75); <code>wind_direction</code> and <code>wind_speed</code> (0.43). This may provide insights to imputation of the missing values.</p>
 <div id="fig:image10" class="fignos">
 <figure>
