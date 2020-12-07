@@ -116,9 +116,9 @@
   <meta name="citation_fulltext_html_url" content="https://cathyxinchangli.github.io/cee498ds-project11/" />
   <meta name="citation_pdf_url" content="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/2942c1d86497c95ccad1a25c917751ec993c4f1e/" />
-  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/2942c1d86497c95ccad1a25c917751ec993c4f1e/" />
-  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/2942c1d86497c95ccad1a25c917751ec993c4f1e/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/289ad45437daa23f3e2abc3a1ea831351ab40378/" />
+  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/289ad45437daa23f3e2abc3a1ea831351ab40378/" />
+  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/289ad45437daa23f3e2abc3a1ea831351ab40378/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -132,9 +132,9 @@
 </header>
 <p><small><em>
 This manuscript
-(<a href="https://cathyxinchangli.github.io/cee498ds-project11/v/2942c1d86497c95ccad1a25c917751ec993c4f1e/">permalink</a>)
+(<a href="https://cathyxinchangli.github.io/cee498ds-project11/v/289ad45437daa23f3e2abc3a1ea831351ab40378/">permalink</a>)
 was automatically generated
-from <a href="https://github.com/cathyxinchangli/cee498ds-project11/tree/2942c1d86497c95ccad1a25c917751ec993c4f1e">cathyxinchangli/cee498ds-project11@2942c1d</a>
+from <a href="https://github.com/cathyxinchangli/cee498ds-project11/tree/289ad45437daa23f3e2abc3a1ea831351ab40378">cathyxinchangli/cee498ds-project11@289ad45</a>
 on December 7, 2020.
 </em></small></p>
 <h2 id="authors">Authors</h2>
@@ -406,9 +406,8 @@ We attempted to improve the model performance by adjusting the following element
 * Model architecture: whether to have dropout or not at the LSTM layer;
 * <code>THRES</code> value: a higher threshold means less samples but more training time steps, and vice versa.
 * Hyperparameters: such as learning rate, number of epochs and number of samples to shuffle.</p>
-<p>Table {<span class="citation" data-cites="tbl">[<span class="citeproc-not-found" data-reference-id="tbl"><strong>???</strong></span>]</span>: table1} below summarizes the changes we made for three of the submissions, as well as the scores. Note the score for the competition is Root Mean Squared Logarithmic Error (RMSLE) as defined by the competition.</p>
-<p>Table 1: Summary of key adjustments made for three submissions using RNN-LSTM.
-{#tbl:table1}</p>
+<p>Table 1 below summarizes the changes we made for three of the submissions, as well as the scores. Note the score for the competition is Root Mean Squared Logarithmic Error (RMSLE) as defined by the competition.</p>
+<p>Table 1: Summary of key adjustments made for three submissions using RNN-LSTM.</p>
 <table>
 <colgroup>
 <col style="width: 6%" />
@@ -567,9 +566,8 @@ LGBM is sensitive to overfitting, and thus, several ways were taken to aviod ove
 2. set up early_stopping_condition: The model will stop training if the validation metric is not improving after the last early stopping round. If the early_stopping_round is set to be too large, the change of overfitting increases.
 3. lambda_l1 and lambda_l2: Avoiding overfitting uses regularizations.
 4. num_leaves: By setting up the maximum number of leaves of a tree, overfitting can be controlled.</p>
-<p>Table ?? below shows the overfitting issue while the <code>num_leaves</code> increasing:</p>
-<p>Table 2: <code>num_leaves</code> and the resulted test scores.
-{#tbl:table2}</p>
+<p>Table 2 below shows the overfitting issue while the <code>num_leaves</code> increasing:</p>
+<p>Table 2: <code>num_leaves</code> and the resulted test scores.</p>
 <table>
 <thead>
 <tr class="header">
@@ -627,9 +625,8 @@ In ‘LightGBM model #1’, we built one model for each meter type, while in ‘
 <img src="images/FeatureImportance.png" alt="" /><figcaption><span>Figure 14:</span> Feature Importance in LightGBM model #2.</figcaption>
 </figure>
 </div>
-<p>From Figure <a href="#fig:image14">14</a>, ‘meter_type’ is the fourth most important feature, thus, it is reasonable to build a seperated model for each meter type, and doing so did improve the model performance. The test scores for LGBM model #1 and #2 are summarized in Table ?? below.</p>
-<p>Table 3: Test scores for LGBM model #1 and #2.
-{#tbl:table3}</p>
+<p>From Figure <a href="#fig:image14">14</a>, ‘meter_type’ is the fourth most important feature, thus, it is reasonable to build a seperated model for each meter type, and doing so did improve the model performance. The test scores for LGBM model #1 and #2 are summarized in Table 3 below.</p>
+<p>Table 3: Test scores for LGBM model #1 and #2.</p>
 <table>
 <thead>
 <tr class="header">
@@ -651,7 +648,8 @@ In ‘LightGBM model #1’, we built one model for each meter type, while in ‘
 <h2 id="discussion">Discussion</h2>
 <h3 id="implications-of-the-rmsle-score">Implications of the RMSLE score</h3>
 <p>Table ?? below summaries the best performances for each model type. Our model of choice is the meter-type-specific LGBM models, with a test score of 1.15. This translates to an RMSE of about 100 kWh. It may seems to a rather large error on itself, but the training data tells us that the target variable <code>meter_reading</code> has a mean of ~460 kWh and a standard deviation of ~4,200 kWh; in comparison, this 100 kWh error seems acceptable. Moreover, while we only achieved 2,161/3,614 in ranking, our score was only 0.12 higher than the top score, which is marginal. As most of us only had negligible experiences in data science, ML or even Python, achieving such a score is no small feat and a great encouragement.</p>
-<p>Table X: Best performances for each model type. {#tbl:table4}</p>
+<p>Table X: Best performances for each model type.
+{#tbl:table4}</p>
 <table>
 <colgroup>
 <col style="width: 23%" />

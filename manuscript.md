@@ -71,11 +71,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/2942c1d86497c95ccad1a25c917751ec993c4f1e/" />
+  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/289ad45437daa23f3e2abc3a1ea831351ab40378/" />
 
-  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/2942c1d86497c95ccad1a25c917751ec993c4f1e/" />
+  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/289ad45437daa23f3e2abc3a1ea831351ab40378/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/2942c1d86497c95ccad1a25c917751ec993c4f1e/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/289ad45437daa23f3e2abc3a1ea831351ab40378/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -107,9 +107,9 @@ title: 'CEE 498DS Project 11: Building Energy Predictions - Project Report'
 
 <small><em>
 This manuscript
-([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/2942c1d86497c95ccad1a25c917751ec993c4f1e/))
+([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/289ad45437daa23f3e2abc3a1ea831351ab40378/))
 was automatically generated
-from [cathyxinchangli/cee498ds-project11@2942c1d](https://github.com/cathyxinchangli/cee498ds-project11/tree/2942c1d86497c95ccad1a25c917751ec993c4f1e)
+from [cathyxinchangli/cee498ds-project11@289ad45](https://github.com/cathyxinchangli/cee498ds-project11/tree/289ad45437daa23f3e2abc3a1ea831351ab40378)
 on December 7, 2020.
 </em></small>
 
@@ -428,10 +428,9 @@ We attempted to improve the model performance by adjusting the following element
 * `THRES` value: a higher threshold means less samples but more training time steps, and vice versa. 
 * Hyperparameters: such as learning rate, number of epochs and number of samples to shuffle.
 
-Table {@tbl: table1} below summarizes the changes we made for three of the submissions, as well as the scores. Note the score for the competition is Root Mean Squared Logarithmic Error (RMSLE) as defined by the competition.
+Table 1 below summarizes the changes we made for three of the submissions, as well as the scores. Note the score for the competition is Root Mean Squared Logarithmic Error (RMSLE) as defined by the competition.
 
 Table 1: Summary of key adjustments made for three submissions using RNN-LSTM.
-{#tbl:table1}
 
 | Submission | Model Architecture  | `THRES` | Learning Rate                                     | Shuffle, Batch | EarlyStopping | Scores (Training, Testing) |
 |------------|---------------------|-----------------------------------|---------------------------------------------------|----------------|---------------|----------------------------|
@@ -580,10 +579,9 @@ LGBM is sensitive to overfitting, and thus, several ways were taken to aviod ove
 3. lambda_l1 and lambda_l2: Avoiding overfitting uses regularizations.
 4. num_leaves: By setting up the maximum number of leaves of a tree, overfitting can be controlled.
 
-Table {@tbl:table2} below shows the overfitting issue while the `num_leaves` increasing:
+Table 2 below shows the overfitting issue while the `num_leaves` increasing:
 
 Table 2: `num_leaves` and the resulted test scores.
-{#tbl:table2}
 
 | `num_leaves` for model of meter 0~3 | Test score  | 
 |----------------------|--------------|
@@ -626,10 +624,9 @@ In 'LightGBM model #1', we built one model for each meter type, while in 'LightG
 
 ![Feature Importance in LightGBM model #2.](images/FeatureImportance.png){#fig:image14}
 
-From Figure {@fig:image14}, 'meter_type' is the fourth most important feature, thus, it is reasonable to build a seperated model for each meter type, and doing so did improve the model performance. The test scores for LGBM model #1 and #2 are summarized in Table {@tbl:table3} below.
+From Figure {@fig:image14}, 'meter_type' is the fourth most important feature, thus, it is reasonable to build a seperated model for each meter type, and doing so did improve the model performance. The test scores for LGBM model #1 and #2 are summarized in Table 3 below.
 
 Table 3: Test scores for LGBM model #1 and #2.
-{#tbl:table3}
 
 | LGBM model | Test score  | 
 |----------------------|--------------|
@@ -641,7 +638,8 @@ Table 3: Test scores for LGBM model #1 and #2.
 ### Implications of the RMSLE score
 Table {@tbl:table4} below summaries the best performances for each model type. Our model of choice is the meter-type-specific LGBM models, with a test score of 1.15. This translates to an RMSE of about 100 kWh. It may seems to a rather large error on itself, but the training data tells us that the target variable `meter_reading` has a mean of ~460 kWh and a standard deviation of ~4,200 kWh; in comparison, this 100 kWh error seems acceptable. Moreover, while we only achieved 2,161/3,614 in ranking, our score was only 0.12 higher than the top score, which is marginal. As most of us only had negligible experiences in data science, ML or even Python, achieving such a score is no small feat and a great encouragement.
 
-Table X: Best performances for each model type. {#tbl:table4}
+Table X: Best performances for each model type.
+{#tbl:table4}
 
 | **Model** | **Key Hyperparameters**  | **Training Score** | **Test Score (highest 0.93)** | **Approx. Rank (out of 3,614)** |
 |:-----------------|:-------------:|:-------------:|:-------------:|:-------------:|
