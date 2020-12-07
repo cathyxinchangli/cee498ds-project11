@@ -48,13 +48,13 @@ Kaggle
 kBTU
 KTH
 LGBM
-lightgbm
+LightGBM
 logarithmically
 LSTM
 MAPE
 MBE
 mdoel
-Mingyu
+mingyu
 minimised
 mkbenja
 NRMSE
