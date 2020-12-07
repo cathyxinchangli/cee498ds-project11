@@ -116,9 +116,9 @@
   <meta name="citation_fulltext_html_url" content="https://cathyxinchangli.github.io/cee498ds-project11/" />
   <meta name="citation_pdf_url" content="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/9d7db6fd02a2075ef561bb0ddc8f07825e537239/" />
-  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/9d7db6fd02a2075ef561bb0ddc8f07825e537239/" />
-  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/9d7db6fd02a2075ef561bb0ddc8f07825e537239/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/5e0a29f9fcefdad670efc68b3166822d4ab935fc/" />
+  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/5e0a29f9fcefdad670efc68b3166822d4ab935fc/" />
+  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/5e0a29f9fcefdad670efc68b3166822d4ab935fc/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -132,9 +132,9 @@
 </header>
 <p><small><em>
 This manuscript
-(<a href="https://cathyxinchangli.github.io/cee498ds-project11/v/9d7db6fd02a2075ef561bb0ddc8f07825e537239/">permalink</a>)
+(<a href="https://cathyxinchangli.github.io/cee498ds-project11/v/5e0a29f9fcefdad670efc68b3166822d4ab935fc/">permalink</a>)
 was automatically generated
-from <a href="https://github.com/cathyxinchangli/cee498ds-project11/tree/9d7db6fd02a2075ef561bb0ddc8f07825e537239">cathyxinchangli/cee498ds-project11@9d7db6f</a>
+from <a href="https://github.com/cathyxinchangli/cee498ds-project11/tree/5e0a29f9fcefdad670efc68b3166822d4ab935fc">cathyxinchangli/cee498ds-project11@5e0a29f</a>
 on December 7, 2020.
 </em></small></p>
 <h2 id="authors">Authors</h2>
@@ -456,8 +456,15 @@ Since we constructed traing dataset by seperating samples based on building_id a
 <span id="cb3-14"><a href="#cb3-14"></a>        <span class="kw">del</span> v</span>
 <span id="cb3-15"><a href="#cb3-15"></a>    <span class="kw">del</span> bldg</span></code></pre></div>
 <h4 id="tree-based-model-lightgbm">Tree-based Model: LightGBM</h4>
-<p><strong>LightGBM model –Mingyu Sun</strong><br>
-<strong>Data Preprocessing</strong><br>
+<p>**Introduction</p>
+<p>LightGBM is an abbreviation for Light Gradient Boosting Machine, a free open source gradient enhancement framework for machine learning.It is an ensemble model of decision trees which are trained in sequence. Following is the advantage of the LightGBM:</p>
+<p>First of all, LGBM is a faster training algorithm compared to other tree-based algorithms. For example, its histogram-based splitting. Finding the exact optimal split is very costly when the dataset is large, since it involves testing every possible split point. By using a histogram-based, or we can say quantile-based solution, the splitting procedure is much faster.</p>
+<p>Secondly, Similarly to the histogram-based algorithm, the continuous variables are replaced with discrete bins which largely reduce the memory usage.</p>
+<p>Thirdly, lgbm is good at dealing with categorical data. For instance, fisher method is a very excellent LGBM method. In fact, the Fisher method, also known as Fisher’s combined feasibility test, is a data fuse or “meta-analysis” technique. Developed and named by Ronald Fisher. It is used as the basis for combining the results of several independent tests based on a common hypothesis. Instead of one-hot encoding, which significantly increases the size of the dataset, fisher’s method is used to find the optimal split of categorical variables, which means none of the encoding method is needed.</p>
+<p>Last but not least, lgbm is good at dealing with large dataset.</p>
+<p>However, the LightGBM still have some disadvantages. The main disadvantage of lgbm is it’s sensitive to overfitting. And methods such as controlling the number of leaves can be used to address this problem</p>
+<p><strong>LightGBM model –Mingyu Sun</strong><br></p>
+<p><strong>Data Preprocessing</strong><br>
 The general data preprocessing is similar to the ‘Training Data Preprocessing’ section in RNN-LSTM. Thus, this section will only discuss the differences of the data preparation between LGBM and RNN-LSTM.</p>
 <p><strong>Engineered Date-Time Features</strong><br>
 Meter_reading is time series data, and extracting the data-time features is necessary in order to treat time series forecasting as a supervised learning problem. In this model, ‘Month of a year’, ‘Day of a month’, ‘Day of a week’, and ‘Hour in a day’ are the engineered time-related features. To better extract the time features, Fast Fourier Transformation can be used to reveal the predominant frequency of time series data. Lag features can also be further added since the meter_reading might be related to the weather variables at previous timestamps.</p>
@@ -639,6 +646,9 @@ LGBM is sensitive to overfitting, and thus, several ways were taken to aviod ove
 <span id="cb9-4"><a href="#cb9-4"></a>    lgb.plot_metric(evals_result, metric<span class="op">=</span><span class="st">&#39;rmse&#39;</span>, ax<span class="op">=</span>ax2)</span>
 <span id="cb9-5"><a href="#cb9-5"></a></span>
 <span id="cb9-6"><a href="#cb9-6"></a>plt.show()</span></code></pre></div>
+<figure>
+<img src="images/FeatureImportance.png" alt="" />
+</figure>
 <div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a><span class="im">from</span> tqdm <span class="im">import</span> tqdm</span>
 <span id="cb10-2"><a href="#cb10-2"></a></span>
 <span id="cb10-3"><a href="#cb10-3"></a>step_size <span class="op">=</span> <span class="dv">100000</span></span>
