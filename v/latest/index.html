@@ -116,9 +116,9 @@
   <meta name="citation_fulltext_html_url" content="https://cathyxinchangli.github.io/cee498ds-project11/" />
   <meta name="citation_pdf_url" content="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/38a814df861678aaea0c34fc40b0cf75e6fd3863/" />
-  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/38a814df861678aaea0c34fc40b0cf75e6fd3863/" />
-  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/38a814df861678aaea0c34fc40b0cf75e6fd3863/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/2b4f24bac07eef4a8c53745f3d5481f3468a4f0e/" />
+  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/2b4f24bac07eef4a8c53745f3d5481f3468a4f0e/" />
+  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/2b4f24bac07eef4a8c53745f3d5481f3468a4f0e/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -132,9 +132,9 @@
 </header>
 <p><small><em>
 This manuscript
-(<a href="https://cathyxinchangli.github.io/cee498ds-project11/v/38a814df861678aaea0c34fc40b0cf75e6fd3863/">permalink</a>)
+(<a href="https://cathyxinchangli.github.io/cee498ds-project11/v/2b4f24bac07eef4a8c53745f3d5481f3468a4f0e/">permalink</a>)
 was automatically generated
-from <a href="https://github.com/cathyxinchangli/cee498ds-project11/tree/38a814df861678aaea0c34fc40b0cf75e6fd3863">cathyxinchangli/cee498ds-project11@38a814d</a>
+from <a href="https://github.com/cathyxinchangli/cee498ds-project11/tree/2b4f24bac07eef4a8c53745f3d5481f3468a4f0e">cathyxinchangli/cee498ds-project11@2b4f24b</a>
 on December 7, 2020.
 </em></small></p>
 <h2 id="authors">Authors</h2>
@@ -297,17 +297,21 @@ A valid sample submission containing <code>row_id</code> to match your predictio
 <p><img src="images/site13_steam.png" id="fig:image6" alt="Steam profile at site 13." />
 <img src="images/all-sites.png" id="fig:image7" alt="Combined meters profile of all sites." />
 <img src="images/site-13-removed.png" id="fig:image8" alt="Combined meters profile of all sites excluding site 13." /></p>
-<h4 id="weather-data">Weather Data</h4>
-<p><code>weather_train</code> has 2016 hourly weather data, and <code>weather_test</code> has 2017~18 hourly weather data. The time series plots for all variables of both the training and test periods are shown below (Figure <a href="#fig:image9">6</a>).</p>
-<div id="fig:image9" class="fignos">
+<p>Since meter reading is time series data, it is helpful to study the predominant frequency in the data. The following figures show how the meter_reading change in different month of a year and in different hours during a day.
+<img src="images/monthy_meter_reading.png" id="fig:image9" alt="Monthly meter reading" />
+<img src="images/hourly_meter_reading.png" id="fig:image10" alt="Hourly meter reading" /></p>
+<p>Figure 9 and 10 indicate the meter reading changes significantly during different months and different hours in a day, which makes ‘month_in_a_year’, and ‘hour_in_a_day’ possible date-time features.
+#### Weather Data
+<code>weather_train</code> has 2016 hourly weather data, and <code>weather_test</code> has 2017~18 hourly weather data. The time series plots for all variables of both the training and test periods are shown below (Figure ??).</p>
+<div id="fig:image11" class="fignos">
 <figure>
-<img src="images/weather-data-time-series.png" alt="" /><figcaption><span>Figure 6:</span> Time series plots of weather variables.</figcaption>
+<img src="images/weather-data-time-series.PNG" alt="" /><figcaption><span>Figure 6:</span> Time series plots of weather variables.</figcaption>
 </figure>
 </div>
 <h4 id="correlations">Correlations</h4>
-<p>Putting <code>building_metadata</code>, <code>train</code> and <code>weather_train</code> together, we can generate the correlation between each features and the target variable. The heat map below (Figure <a href="#fig:image10">7</a>) shows that the correlation between variables range from -0.32 to 0.98, but no individual features have significant correlation with the target variable <code>meter_reading</code>. The top 5 most features most correlated with <code>meter_reading</code> are building square footage (0.13), number of floors (0.13), year of construction (0.11), meter type (0.077), and sites (0.047). This suggests that building metadata are potentially important predictors for our machine learning models, and the missing values need to be treated with care.</p>
+<p>Putting <code>building_metadata</code>, <code>train</code> and <code>weather_train</code> together, we can generate the correlation between each features and the target variable. The heat map below (Figure ??) shows that the correlation between variables range from -0.32 to 0.98, but no individual features have significant correlation with the target variable <code>meter_reading</code>. The top 5 most features most correlated with <code>meter_reading</code> are building square footage (0.13), number of floors (0.13), year of construction (0.11), meter type (0.077), and sites (0.047). This suggests that building metadata are potentially important predictors for our machine learning models, and the missing values need to be treated with care.</p>
 <p>In addition, some features show rather strong correlations with each other, such as: <code>square_feet</code> and <code>floor_count</code> (0.58); <code>air_temperature</code> and <code>dew_temperature</code> (0.75); <code>wind_direction</code> and <code>wind_speed</code> (0.43). This may provide insights to imputation of the missing values.</p>
-<div id="fig:image10" class="fignos">
+<div id="fig:image12" class="fignos">
 <figure>
 <img src="images/heatmap.png" alt="" /><figcaption><span>Figure 7:</span> Correlations heatmap.</figcaption>
 </figure>
@@ -455,7 +459,7 @@ Since we constructed traing dataset by seperating samples based on building_id a
 <span id="cb3-13"><a href="#cb3-13"></a>        test.loc[(test.building_id<span class="op">==</span>bldg_id)<span class="op">&amp;</span>(test.meter<span class="op">==</span>m), <span class="st">&#39;meter_reading&#39;</span>] <span class="op">=</span> v</span>
 <span id="cb3-14"><a href="#cb3-14"></a>        <span class="kw">del</span> v</span>
 <span id="cb3-15"><a href="#cb3-15"></a>    <span class="kw">del</span> bldg</span></code></pre></div>
-<h4 id="tree-based-model-lightgbm">Tree-based Model: LightGBM</h4>
+<h4 id="tree-based-model-light-gradient-boosting-machine-lgbm">Tree-based Model: Light Gradient Boosting Machine (LGBM)</h4>
 <p><strong>Introduction</strong><br></p>
 <p>LightGBM is an abbreviation for Light Gradient Boosting Machine, a free open source gradient enhancement framework for machine learning.It is an ensemble model of decision trees which are trained in sequence.1.Each tree will be built based on the previous tree’s error. Finally, predictions will be made by the sum of all of those trees. And errors are minimised by using the gradient method.</p>
 <p>Following is the advantage of the LightGBM:</p>
@@ -588,7 +592,7 @@ LGBM is sensitive to overfitting, and thus, several ways were taken to aviod ove
 <span id="cb7-19"><a href="#cb7-19"></a>test_y_3 <span class="op">=</span> generate_results(test_all,target_meter <span class="op">=</span> <span class="dv">3</span>, models <span class="op">=</span> models_3, batch_size <span class="op">=</span> <span class="dv">100000</span>)</span></code></pre></div>
 <p>Since the log(meter_reading) is used in the model training, the np.expm1() in the function ‘create_predictions’ transfer the predictions to the original values. np.concatenate() is used to combine the predictions from the four models.</p>
 <p>The histograms of ‘meter_reading’ can indicate the accuracy of the models. For each meter type, if the histograms of the meter_reading from the training data and the prediction are similar, then the model is reasonable. Histograms of meter_type=0 is provided below as an example.</p>
-<div id="fig:image11" class="fignos">
+<div id="fig:image13" class="fignos">
 <figure>
 <img src="images/training_prediction.png" alt="" /><figcaption><span>Figure 8:</span> Histograms of meter_reading of meter type 0</figcaption>
 </figure>
@@ -596,7 +600,7 @@ LGBM is sensitive to overfitting, and thus, several ways were taken to aviod ove
 <p><strong>LightGBM model #2: predicting meter_reading in one model</strong><br>
 ‘LightGBM model #1’ built each model for each meter type, while ‘LightGBM model #2’ built one model to predict the meter reading with meter_type as a categorical feature.</p>
 <p>The following figure indicates the feature importance in ‘LightGBM model #2’.
-<img src="images/FeatureImportance.png" id="fig:image11" alt="Feature Importance in LightGBM model #2" /></p>
+<img src="images/FeatureImportance.png" id="fig:image14" alt="Feature Importance in LightGBM model #2" /></p>
 <p>‘meter_type’ is the fourth important feature as indicated in the above figure. Thus, it’s reasonable to build seperated model for each meter type.</p>
 <table>
 <thead>
