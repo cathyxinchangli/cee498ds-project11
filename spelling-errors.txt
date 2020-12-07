@@ -54,7 +54,7 @@ LSTM
 MAPE
 MBE
 mdoel
-Mingyu
+mingyu
 Minyu
 mkbenja
 NRMSE

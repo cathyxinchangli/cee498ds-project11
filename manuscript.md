@@ -71,11 +71,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/791d1be0f2197bd0429fd999179bc6e204d59e15/" />
+  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/9d7db6fd02a2075ef561bb0ddc8f07825e537239/" />
 
-  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/791d1be0f2197bd0429fd999179bc6e204d59e15/" />
+  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/9d7db6fd02a2075ef561bb0ddc8f07825e537239/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/791d1be0f2197bd0429fd999179bc6e204d59e15/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/9d7db6fd02a2075ef561bb0ddc8f07825e537239/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -107,9 +107,9 @@ title: 'CEE 498DS Project 11: Building Energy Predictions - Project Report'
 
 <small><em>
 This manuscript
-([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/791d1be0f2197bd0429fd999179bc6e204d59e15/))
+([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/9d7db6fd02a2075ef561bb0ddc8f07825e537239/))
 was automatically generated
-from [cathyxinchangli/cee498ds-project11@791d1be](https://github.com/cathyxinchangli/cee498ds-project11/tree/791d1be0f2197bd0429fd999179bc6e204d59e15)
+from [cathyxinchangli/cee498ds-project11@9d7db6f](https://github.com/cathyxinchangli/cee498ds-project11/tree/9d7db6fd02a2075ef561bb0ddc8f07825e537239)
 on December 7, 2020.
 </em></small>
 
