@@ -116,9 +116,9 @@
   <meta name="citation_fulltext_html_url" content="https://cathyxinchangli.github.io/cee498ds-project11/" />
   <meta name="citation_pdf_url" content="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/5e0a29f9fcefdad670efc68b3166822d4ab935fc/" />
-  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/5e0a29f9fcefdad670efc68b3166822d4ab935fc/" />
-  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/5e0a29f9fcefdad670efc68b3166822d4ab935fc/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/38a814df861678aaea0c34fc40b0cf75e6fd3863/" />
+  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/38a814df861678aaea0c34fc40b0cf75e6fd3863/" />
+  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/38a814df861678aaea0c34fc40b0cf75e6fd3863/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -132,9 +132,9 @@
 </header>
 <p><small><em>
 This manuscript
-(<a href="https://cathyxinchangli.github.io/cee498ds-project11/v/5e0a29f9fcefdad670efc68b3166822d4ab935fc/">permalink</a>)
+(<a href="https://cathyxinchangli.github.io/cee498ds-project11/v/38a814df861678aaea0c34fc40b0cf75e6fd3863/">permalink</a>)
 was automatically generated
-from <a href="https://github.com/cathyxinchangli/cee498ds-project11/tree/5e0a29f9fcefdad670efc68b3166822d4ab935fc">cathyxinchangli/cee498ds-project11@5e0a29f</a>
+from <a href="https://github.com/cathyxinchangli/cee498ds-project11/tree/38a814df861678aaea0c34fc40b0cf75e6fd3863">cathyxinchangli/cee498ds-project11@38a814d</a>
 on December 7, 2020.
 </em></small></p>
 <h2 id="authors">Authors</h2>
@@ -456,14 +456,15 @@ Since we constructed traing dataset by seperating samples based on building_id a
 <span id="cb3-14"><a href="#cb3-14"></a>        <span class="kw">del</span> v</span>
 <span id="cb3-15"><a href="#cb3-15"></a>    <span class="kw">del</span> bldg</span></code></pre></div>
 <h4 id="tree-based-model-lightgbm">Tree-based Model: LightGBM</h4>
-<p>**Introduction</p>
-<p>LightGBM is an abbreviation for Light Gradient Boosting Machine, a free open source gradient enhancement framework for machine learning.It is an ensemble model of decision trees which are trained in sequence. Following is the advantage of the LightGBM:</p>
-<p>First of all, LGBM is a faster training algorithm compared to other tree-based algorithms. For example, its histogram-based splitting. Finding the exact optimal split is very costly when the dataset is large, since it involves testing every possible split point. By using a histogram-based, or we can say quantile-based solution, the splitting procedure is much faster.</p>
+<p><strong>Introduction</strong><br></p>
+<p>LightGBM is an abbreviation for Light Gradient Boosting Machine, a free open source gradient enhancement framework for machine learning.It is an ensemble model of decision trees which are trained in sequence.1.Each tree will be built based on the previous tree’s error. Finally, predictions will be made by the sum of all of those trees. And errors are minimised by using the gradient method.</p>
+<p>Following is the advantage of the LightGBM:</p>
+<p>First of all, LGBM is a faster training algorithm compared to other tree-based algorithms. For example, its histogram-based splitting. Finding the exact optimal split is very costly when the dataset is large, since it involves testing every possible split point. By using a histogram-based (quantile-based) solution, the splitting procedure is much faster.</p>
 <p>Secondly, Similarly to the histogram-based algorithm, the continuous variables are replaced with discrete bins which largely reduce the memory usage.</p>
 <p>Thirdly, lgbm is good at dealing with categorical data. For instance, fisher method is a very excellent LGBM method. In fact, the Fisher method, also known as Fisher’s combined feasibility test, is a data fuse or “meta-analysis” technique. Developed and named by Ronald Fisher. It is used as the basis for combining the results of several independent tests based on a common hypothesis. Instead of one-hot encoding, which significantly increases the size of the dataset, fisher’s method is used to find the optimal split of categorical variables, which means none of the encoding method is needed.</p>
 <p>Last but not least, lgbm is good at dealing with large dataset.</p>
-<p>However, the LightGBM still have some disadvantages. The main disadvantage of lgbm is it’s sensitive to overfitting. And methods such as controlling the number of leaves can be used to address this problem</p>
-<p><strong>LightGBM model –Mingyu Sun</strong><br></p>
+<p>However, the LightGBM still have some disadvantages. The main disadvantage of lgbm is it’s sensitive to overfitting. And methods such as regularizations, and controlling the number of leaves can be used to address this problem.</p>
+<p><strong>LightGBM model #1: predicting meter_reading by meter type</strong><br></p>
 <p><strong>Data Preprocessing</strong><br>
 The general data preprocessing is similar to the ‘Training Data Preprocessing’ section in RNN-LSTM. Thus, this section will only discuss the differences of the data preparation between LGBM and RNN-LSTM.</p>
 <p><strong>Engineered Date-Time Features</strong><br>
@@ -587,79 +588,34 @@ LGBM is sensitive to overfitting, and thus, several ways were taken to aviod ove
 <span id="cb7-19"><a href="#cb7-19"></a>test_y_3 <span class="op">=</span> generate_results(test_all,target_meter <span class="op">=</span> <span class="dv">3</span>, models <span class="op">=</span> models_3, batch_size <span class="op">=</span> <span class="dv">100000</span>)</span></code></pre></div>
 <p>Since the log(meter_reading) is used in the model training, the np.expm1() in the function ‘create_predictions’ transfer the predictions to the original values. np.concatenate() is used to combine the predictions from the four models.</p>
 <p>The histograms of ‘meter_reading’ can indicate the accuracy of the models. For each meter type, if the histograms of the meter_reading from the training data and the prediction are similar, then the model is reasonable. Histograms of meter_type=0 is provided below as an example.</p>
+<div id="fig:image11" class="fignos">
+<figure>
+<img src="images/training_prediction.png" alt="" /><figcaption><span>Figure 8:</span> Histograms of meter_reading of meter type 0</figcaption>
+</figure>
+</div>
+<p><strong>LightGBM model #2: predicting meter_reading in one model</strong><br>
+‘LightGBM model #1’ built each model for each meter type, while ‘LightGBM model #2’ built one model to predict the meter reading with meter_type as a categorical feature.</p>
+<p>The following figure indicates the feature importance in ‘LightGBM model #2’.
+<img src="images/FeatureImportance.png" id="fig:image11" alt="Feature Importance in LightGBM model #2" /></p>
+<p>‘meter_type’ is the fourth important feature as indicated in the above figure. Thus, it’s reasonable to build seperated model for each meter type.</p>
 <table>
 <thead>
 <tr class="header">
-<th style="text-align: center;">Meter Type 0 Training Data</th>
-<th style="text-align: center;">Meter Type 0 Predictions</th>
+<th>LGBM models</th>
+<th>Competition score</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;"><img src="images/training.PNG" title="fig:" /></td>
-<td style="text-align: center;"><img src="images/prediction.PNG" title="fig:" /></td>
+<td>model 1 (by meter type)</td>
+<td>1.154</td>
+</tr>
+<tr class="even">
+<td>model 2</td>
+<td>1.37</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Another way of LightGBM</strong><br></p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a>data <span class="op">=</span> [<span class="st">&quot;building_id&quot;</span>, <span class="st">&quot;primary_use&quot;</span>, <span class="st">&quot;hour&quot;</span>, <span class="st">&quot;day&quot;</span>, <span class="st">&quot;weekend&quot;</span>, <span class="st">&quot;month&quot;</span>, <span class="st">&quot;meter&quot;</span>,<span class="st">&quot;square_feet&quot;</span>, <span class="st">&quot;year_built&quot;</span>, <span class="st">&quot;air_temperature&quot;</span>, <span class="st">&quot;cloud_coverage&quot;</span>,<span class="st">&quot;dew_temperature&quot;</span>]</span>
-<span id="cb8-2"><a href="#cb8-2"></a>num_folds <span class="op">=</span> <span class="dv">3</span></span>
-<span id="cb8-3"><a href="#cb8-3"></a>kf <span class="op">=</span> KFold(n_splits <span class="op">=</span> num_folds, shuffle <span class="op">=</span> <span class="va">False</span>, random_state <span class="op">=</span> <span class="dv">42</span>)</span>
-<span id="cb8-4"><a href="#cb8-4"></a>error <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb8-5"><a href="#cb8-5"></a>models <span class="op">=</span> []</span>
-<span id="cb8-6"><a href="#cb8-6"></a>evals_results <span class="op">=</span> []</span>
-<span id="cb8-7"><a href="#cb8-7"></a><span class="cf">for</span> i, (train_index, test_index) <span class="kw">in</span> <span class="bu">enumerate</span>(kf.split(train)):</span>
-<span id="cb8-8"><a href="#cb8-8"></a>    <span class="cf">if</span> i <span class="op">+</span> <span class="dv">1</span> <span class="op">&lt;</span> num_folds:</span>
-<span id="cb8-9"><a href="#cb8-9"></a>        <span class="cf">continue</span></span>
-<span id="cb8-10"><a href="#cb8-10"></a>    <span class="bu">print</span>(train_index.<span class="bu">max</span>(), test_index.<span class="bu">min</span>())</span>
-<span id="cb8-11"><a href="#cb8-11"></a>    train_X <span class="op">=</span> train[data].iloc[train_index]</span>
-<span id="cb8-12"><a href="#cb8-12"></a>    test_X <span class="op">=</span> train[data].iloc[test_index]</span>
-<span id="cb8-13"><a href="#cb8-13"></a>    train_y <span class="op">=</span> target.iloc[train_index]</span>
-<span id="cb8-14"><a href="#cb8-14"></a>    test_y <span class="op">=</span> target.iloc[test_index]</span>
-<span id="cb8-15"><a href="#cb8-15"></a>    </span>
-<span id="cb8-16"><a href="#cb8-16"></a>    lgb_train <span class="op">=</span> lgb.Dataset(train_X[train_y <span class="op">&gt;</span> <span class="dv">0</span>], train_y[train_y <span class="op">&gt;</span> <span class="dv">0</span>])</span>
-<span id="cb8-17"><a href="#cb8-17"></a>    lgb_test <span class="op">=</span> lgb.Dataset(test_X[test_y <span class="op">&gt;</span> <span class="dv">0</span>] , test_y[test_y <span class="op">&gt;</span> <span class="dv">0</span>])</span>
-<span id="cb8-18"><a href="#cb8-18"></a>    evals_result <span class="op">=</span> {}</span>
-<span id="cb8-19"><a href="#cb8-19"></a>    params <span class="op">=</span> {</span>
-<span id="cb8-20"><a href="#cb8-20"></a>            <span class="st">&#39;boosting_type&#39;</span>: <span class="st">&#39;gbdt&#39;</span>,</span>
-<span id="cb8-21"><a href="#cb8-21"></a>            <span class="st">&#39;objective&#39;</span>: <span class="st">&#39;regression&#39;</span>,</span>
-<span id="cb8-22"><a href="#cb8-22"></a>            <span class="st">&#39;metric&#39;</span>: {<span class="st">&#39;rmse&#39;</span>},</span>
-<span id="cb8-23"><a href="#cb8-23"></a>            <span class="st">&#39;learning_rate&#39;</span>: <span class="fl">0.6</span>,</span>
-<span id="cb8-24"><a href="#cb8-24"></a>            <span class="st">&#39;feature_fraction&#39;</span>: <span class="fl">0.7</span>,</span>
-<span id="cb8-25"><a href="#cb8-25"></a>            <span class="st">&#39;bagging_fraction&#39;</span>: <span class="fl">0.7</span>,</span>
-<span id="cb8-26"><a href="#cb8-26"></a>            <span class="st">&#39;bagging_freq&#39;</span> : <span class="dv">4</span></span>
-<span id="cb8-27"><a href="#cb8-27"></a>            }</span>
-<span id="cb8-28"><a href="#cb8-28"></a>    model <span class="op">=</span> lgb.train(params,</span>
-<span id="cb8-29"><a href="#cb8-29"></a>                lgb_train,</span>
-<span id="cb8-30"><a href="#cb8-30"></a>                num_boost_round<span class="op">=</span><span class="dv">2000</span>,</span>
-<span id="cb8-31"><a href="#cb8-31"></a>                valid_sets<span class="op">=</span>(lgb_train, lgb_test),</span>
-<span id="cb8-32"><a href="#cb8-32"></a>               early_stopping_rounds<span class="op">=</span><span class="dv">30</span>,</span>
-<span id="cb8-33"><a href="#cb8-33"></a>               verbose_eval <span class="op">=</span> <span class="dv">25</span>,</span>
-<span id="cb8-34"><a href="#cb8-34"></a>               evals_result <span class="op">=</span> evals_result</span>
-<span id="cb8-35"><a href="#cb8-35"></a>                           )</span>
-<span id="cb8-36"><a href="#cb8-36"></a>    models.append(model)</span>
-<span id="cb8-37"><a href="#cb8-37"></a>    evals_results.append(evals_result)</span></code></pre></div>
-<p><strong>Feature Importance</strong></p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a><span class="cf">for</span> model, evals_result <span class="kw">in</span> <span class="bu">zip</span>(models, evals_results):</span>
-<span id="cb9-2"><a href="#cb9-2"></a>    f, (ax1, ax2) <span class="op">=</span> plt.subplots(nrows <span class="op">=</span> <span class="dv">1</span>, ncols <span class="op">=</span> <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">15</span>, <span class="dv">6</span>))</span>
-<span id="cb9-3"><a href="#cb9-3"></a>    lgb.plot_importance(model, ax<span class="op">=</span>ax1)</span>
-<span id="cb9-4"><a href="#cb9-4"></a>    lgb.plot_metric(evals_result, metric<span class="op">=</span><span class="st">&#39;rmse&#39;</span>, ax<span class="op">=</span>ax2)</span>
-<span id="cb9-5"><a href="#cb9-5"></a></span>
-<span id="cb9-6"><a href="#cb9-6"></a>plt.show()</span></code></pre></div>
-<figure>
-<img src="images/FeatureImportance.png" alt="" />
-</figure>
-<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a><span class="im">from</span> tqdm <span class="im">import</span> tqdm</span>
-<span id="cb10-2"><a href="#cb10-2"></a></span>
-<span id="cb10-3"><a href="#cb10-3"></a>step_size <span class="op">=</span> <span class="dv">100000</span></span>
-<span id="cb10-4"><a href="#cb10-4"></a>res <span class="op">=</span> []</span>
-<span id="cb10-5"><a href="#cb10-5"></a>i <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb10-6"><a href="#cb10-6"></a><span class="cf">for</span> j <span class="kw">in</span> tqdm(<span class="bu">range</span>(<span class="bu">int</span>(np.ceil(test.shape[<span class="dv">0</span>]<span class="op">/</span>step_size)))):</span>
-<span id="cb10-7"><a href="#cb10-7"></a>    r <span class="op">=</span> np.zeros(test.iloc[i:i<span class="op">+</span>step_size].shape[<span class="dv">0</span>])</span>
-<span id="cb10-8"><a href="#cb10-8"></a>    <span class="cf">for</span> model <span class="kw">in</span> models:</span>
-<span id="cb10-9"><a href="#cb10-9"></a>        r <span class="op">+=</span> np.expm1(model.predict(test.iloc[i:i<span class="op">+</span>step_size], num_iteration<span class="op">=</span>model.best_iteration)) <span class="op">/</span> <span class="bu">len</span>(models)</span>
-<span id="cb10-10"><a href="#cb10-10"></a>    res <span class="op">=</span> np.append(res,r)</span>
-<span id="cb10-11"><a href="#cb10-11"></a>    i <span class="op">+=</span> step_size</span></code></pre></div>
 <h2 id="discussion">Discussion</h2>
 <h3 id="performance-of-the-linear-regression-model">Performance of the linear regression model</h3>
 <p>Is an obtained RMSLE of 4,5 the limit for linear regression? Most likely not. In the model and data preparation, several things can be made better. First, the datasets could be optimized even better. Site 13 was removed because the values were suspiciously high, as seen in the EDA. In this case, an even more in-depth “cleaning” could be made to locate the exact building (or several building) that is responsible for the data anomaly. This deeper cleaning was made for the other models, but not for the linear regression model. Furthermore, if categorical values could be implemented not only in the training, but also the prediction, perhaps a better score could be obtained. However, it must be realized that no matter how many parameters are added to a linear model, it will still only predict new values linearly. If many or strong non-linear relationships exist between the target variable and prediction features, a linear model will never be able to perform nearly as good as e.g. neural networks. This suggests that other AI-models such as Neural Networks must be used.</p>
@@ -673,7 +629,10 @@ other ways of handling missing data.</p>
 The trade-off between number of samples and number of timestamps means we are forced to leave behind part of the information from the raw data
 in training. This can potentially be viewed as a shortcoming for RNN-LSTM (or rather our way of handling it). In hindsight, <code>building_id</code> proved to be an important predictor, but treating each building-meter pair as a sample forbade us to use <code>building_id</code> as a feature. This also potentially limited the performance of our RNN-LSTM model.</p>
 <h3 id="tree-based-model-and-neural-networks">Tree-based Model and Neural Networks</h3>
-<p>ASSIGNED TO: Minyu &amp; Zhiyi</p>
+<p>The dataset in this project is well-structured tabulated data, which is natural for tree-based algorithms. Neural networks usually outperform tree-based algorithms with unstructured data such as images, text, and audio data. And in general, tree-based algorithms are faster to train compared to neural networks.</p>
+<p>Moreover, there are several important categorical features in the dataset, such as building_id, site_id, primary_use, month_of_a_year, etc. Among those features, building_id has 1449 classes, which is impossible to one-hot encode due to the RAM limit. Since LGBM deals with categorical variables using fisher’s method, none of the encoding procedures are required.</p>
+<p>Lastly, the dataset of the project is relatively large. With advantages such as the ability to reduce memory usage, LGBM is a reasonable choice.</p>
+<p>It’s worth noticing that LGBM is more sensitive to overfitting compared to other tree-based algorithms such as random forest.</p>
 <h3 id="challenges">Challenges</h3>
 <p>The most significant challenge has been combating the limited memory resources.
 A significant amount of time was spent on optimizing the memory usage;
