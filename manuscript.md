@@ -71,11 +71,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/57d31477da99479149718744ede1545061265dc5/" />
+  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/93ac63067ba481e3c0e8e8b73532a794d4db669a/" />
 
-  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/57d31477da99479149718744ede1545061265dc5/" />
+  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/93ac63067ba481e3c0e8e8b73532a794d4db669a/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/57d31477da99479149718744ede1545061265dc5/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/93ac63067ba481e3c0e8e8b73532a794d4db669a/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -107,9 +107,9 @@ title: 'CEE 498DS Project 11: Building Energy Predictions - Project Report'
 
 <small><em>
 This manuscript
-([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/57d31477da99479149718744ede1545061265dc5/))
+([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/93ac63067ba481e3c0e8e8b73532a794d4db669a/))
 was automatically generated
-from [cathyxinchangli/cee498ds-project11@57d3147](https://github.com/cathyxinchangli/cee498ds-project11/tree/57d31477da99479149718744ede1545061265dc5)
+from [cathyxinchangli/cee498ds-project11@93ac630](https://github.com/cathyxinchangli/cee498ds-project11/tree/93ac63067ba481e3c0e8e8b73532a794d4db669a)
 on December 7, 2020.
 </em></small>
 
@@ -306,8 +306,6 @@ There are 16 primary use types, with a mix of residential and commercial buildin
 
 #### Target Variable: Meter Readings
 
-**Please feel free to remove this or change, I just added it to make it easier to know what should be included here**
-
 When analyzing the meter readings, it was discovered that some measurements were suspiciously high. After analyzing each meter type, It was found that meter 2 (steam) was responsible for the unusually high values. After this discovery, each site was analyzed, and the data anomaly was located to site 13. Figure {@fig:image6} shows the mean hourly steam readings for site 13. Figure {@fig:image7} shows all meter readings for all sites. Lastly Figure {@fig:image8} illustrates all meter readings when site 13 was removed. It is clear that the readings are much larger in the first two graphs. Also, the shape of the graph is dictated by site 13.
 
 ![Steam profile at site 13.](images/site13_steam.png){#fig:image6}
@@ -322,7 +320,7 @@ Since meter reading is time series data, it is helpful to study the predominant 
 
 ![Hourly meter reading](images/hourly_meter_reading.PNG){#fig:image10}
 
-Figure 9 and 10 indicate the meter reading changes significantly during different months and different hours in a day, which makes 'month_in_a_year', and 'hour_in_a_day' possible date-time features.
+Figure {@fig:image9} and {@fig:image10} indicate the meter reading changes significantly during different months and different hours in a day, which makes `month_in_a_year`, and `hour_in_a_day` potentially good date-time features.
 
 #### Weather Data
 `weather_train` has 2016 hourly weather data, and `weather_test` has 2017~18 hourly weather data. The time series plots for all variables of both the training and test periods are shown below (Figure {@fig:image11}).
@@ -340,10 +338,10 @@ In addition, some features show rather strong correlations with each other, such
 #### Baseline: Linear Regression
 This section will cover how a linear regression model was constructed in order to predict household energy consumption, as well as discuss the limitations of a linear model. 
 
-**Training data preprocessing**
+**Training data preprocessing**<br>
 As it has been described earlier in this section sections, the data used for this Kaggle competition came in three different files: train data, building metadata and weather train data. Since the dataset contains over 20 million readings and numerous features, issues with RAM usage had to be dealt with. The main problem was that not all desirable features could be included in the before RAM usage hit the limit. It was crucial to identify the most predictive features and not include meaningless features which would increase unneccesary RAM usage. In addition to that, a memory saving function was utilized, which changed the data types to be less memory demanding. Lastly, the three datasets were loaded with only the desired columns, to further reduce unneccesary RAM usage.
 
-**Linear regression model**
+**Linear regression model**<br>
 The linear regression model was created by adding a feature layer with all the desired numerical and categorical features and then adding a dense layer for linear regression. First, missing values in a column were replaced with the mean of that column. In order to create a feature layer, the features used for the prediction had to be converted to tensors. Lastly, categorical features had to be one-hot encoded before being added to the feature layer.
 
 The best public score (RMSLE) that could be obtained with this linear model was 4.5 (4.24 private score).
@@ -467,7 +465,7 @@ for bldg_id in test_full.building_id.unique():
 
 #### Tree-based Model: Light Gradient Boosting Machine (LGBM)
 
-**Introduction**<br>
+**Introduction to LGBM**<br>
 
 LightGBM is an abbreviation for Light Gradient Boosting Machine, a free open source gradient enhancement framework for machine learning.It is an ensemble model of decision trees which are trained in sequence.1.Each tree will be built based on the previous tree’s error. Finally, predictions will be made by the sum of all of those trees. And errors are minimised by using the gradient method.
 
@@ -481,7 +479,7 @@ Thirdly, lgbm is good at dealing with categorical data. For instance, fisher met
  
 Last but not least, lgbm is good at dealing with large dataset.
  
-However, the LightGBM still have some disadvantages. The main disadvantage of lgbm is it’s sensitive to overfitting. And methods such as regularizations, and controlling the number of leaves can be used to address this problem.
+However, the LightGBM still have some disadvantages. The main disadvantage of lgbm is it is sensitive to overfitting. And methods such as regularizations, and controlling the number of leaves can be used to address this problem.
 
 **LightGBM model #1: predicting meter_reading by meter type**<br>
 
@@ -618,17 +616,16 @@ The histograms of 'meter_reading' can indicate the accuracy of the models. For e
 ![Histograms of meter_reading of meter type 0 (left: training, right: prediction).](images/training_prediction.PNG){#fig:image13 Left:training Right:prediction}
 
 **LightGBM model #2: predicting meter_reading in one model**<br>
-'LightGBM model #1' built each model for each meter type, while 'LightGBM model #2' built one model to predict the meter reading with meter_type as a categorical feature.  
+In 'LightGBM model #1', we built one model for each meter type, while in 'LightGBM model #2' one model was constructed to predict the meter reading for all meter types, with meter_type as a categorical feature. The structure and code for this model is very similar to LightGBM model #1 so they are omitted here. This model allows us to compare the feature importance for all features. Figure {@fig:image14} shows the feature importance in 'LightGBM model #2'.
 
-Figure {@fig:image14} illustrates the feature importance in 'LightGBM model #2'.
 ![Feature Importance in LightGBM model #2.](images/FeatureImportance.png){#fig:image14}
 
-'meter_type' is the fourth most important feature as indicated in the above Figure {@fig:image14}. Thus, it is reasonable to build seperated model for each meter type. The test scores for LGBM model 1 and 2 are summarized below.
+From Figure {@fig:image14}, 'meter_type' is the fourth most important feature, thus, it is reasonable to build a seperated model for each meter type, and doing so did improve the model performance. The test scores for LGBM model #1 and #2 are summarized below.
 
-| LGBM models | Test score  | 
+| LGBM model | Test score  | 
 |----------------------|--------------|
-| model 1 (by meter type)    | 1.154  |
-| model 2  |  1.37 |
+| #1 (one model for each meter type)    | 1.15  |
+| #2 (one model for all meter types) |  1.37 |
 
 
 ## Discussion
