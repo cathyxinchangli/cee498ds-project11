@@ -71,11 +71,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/a18e78d9789a5946b9027521df2a5ec9dcc98ded/" />
+  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/667cbfe77f3d5f4d1411da4c3ebf22010eaa93c0/" />
 
-  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/a18e78d9789a5946b9027521df2a5ec9dcc98ded/" />
+  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/667cbfe77f3d5f4d1411da4c3ebf22010eaa93c0/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/a18e78d9789a5946b9027521df2a5ec9dcc98ded/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/667cbfe77f3d5f4d1411da4c3ebf22010eaa93c0/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -107,9 +107,9 @@ title: 'CEE 498DS Project 11: Building Energy Predictions - Project Report'
 
 <small><em>
 This manuscript
-([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/a18e78d9789a5946b9027521df2a5ec9dcc98ded/))
+([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/667cbfe77f3d5f4d1411da4c3ebf22010eaa93c0/))
 was automatically generated
-from [cathyxinchangli/cee498ds-project11@a18e78d](https://github.com/cathyxinchangli/cee498ds-project11/tree/a18e78d9789a5946b9027521df2a5ec9dcc98ded)
+from [cathyxinchangli/cee498ds-project11@667cbfe](https://github.com/cathyxinchangli/cee498ds-project11/tree/667cbfe77f3d5f4d1411da4c3ebf22010eaa93c0)
 on December 6, 2020.
 </em></small>
 
@@ -559,17 +559,6 @@ and in the long run building foundations for dealing with larger data and more c
 Another challenge was data preprocessing. For the LightGBM model, simple time features such as month of year, hour of day can be obtained pretty easily, but to further improve the model performance, lag features are recommended. However, we were not able to implement it in our model. As for RNN-LSTM, massaging the training data into a the same shape was challenging, and our decisions of truncating the data and treating each building-meter pair as a sample have probably limited its predicting power. 
 
 
-
-
-## Reference list
-
-[@zhang2019]: doi:10.1109/ICMLA.2018.00024
-
-[@edwards2012]: doi:10.1016/j.enbuild.2012.03.010
-
-[@ferrarini2019]: doi:10.1109/ETFA.2019.8869151
-
-[@amasyali2018]: doi:10.1016/j.rser.2017.04.095
 
 
 ## References {.page_break_before}
