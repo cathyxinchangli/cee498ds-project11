@@ -71,11 +71,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/2b4f24bac07eef4a8c53745f3d5481f3468a4f0e/" />
+  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/ca5c1043ebb89f490002d384857b9e9686601bdd/" />
 
-  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/2b4f24bac07eef4a8c53745f3d5481f3468a4f0e/" />
+  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/ca5c1043ebb89f490002d384857b9e9686601bdd/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/2b4f24bac07eef4a8c53745f3d5481f3468a4f0e/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/ca5c1043ebb89f490002d384857b9e9686601bdd/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -107,9 +107,9 @@ title: 'CEE 498DS Project 11: Building Energy Predictions - Project Report'
 
 <small><em>
 This manuscript
-([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/2b4f24bac07eef4a8c53745f3d5481f3468a4f0e/))
+([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/ca5c1043ebb89f490002d384857b9e9686601bdd/))
 was automatically generated
-from [cathyxinchangli/cee498ds-project11@2b4f24b](https://github.com/cathyxinchangli/cee498ds-project11/tree/2b4f24bac07eef4a8c53745f3d5481f3468a4f0e)
+from [cathyxinchangli/cee498ds-project11@ca5c104](https://github.com/cathyxinchangli/cee498ds-project11/tree/ca5c1043ebb89f490002d384857b9e9686601bdd)
 on December 7, 2020.
 </em></small>
 
@@ -315,8 +315,8 @@ When analyzing the meter readings, it was discovered that some measurements were
 ![Combined meters profile of all sites excluding site 13.](images/site-13-removed.png){#fig:image8}
 
 Since meter reading is time series data, it is helpful to study the predominant frequency in the data. The following figures show how the meter_reading change in different month of a year and in different hours during a day. 
-![Monthly meter reading](images/monthy_meter_reading.png){#fig:image9}
-![Hourly meter reading](images/hourly_meter_reading.png){#fig:image10}
+![Monthly meter reading](images/monthy_meter_reading.PNG){#fig:image9}
+![Hourly meter reading](images/hourly_meter_reading.PNG){#fig:image10}
 
 Figure 9 and 10 indicate the meter reading changes significantly during different months and different hours in a day, which makes 'month_in_a_year', and 'hour_in_a_day' possible date-time features.
 #### Weather Data

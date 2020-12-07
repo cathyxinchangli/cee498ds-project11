@@ -54,7 +54,7 @@ LSTM
 MAPE
 MBE
 mdoel
-Mingyu
+mingyu
 minimised
 mkbenja
 NRMSE
@@ -64,7 +64,7 @@ overfitting
 pre
 precip
 predictipn
-Preprocessing
+preprocessing
 probelm
 quantile
 Rastegarpour
