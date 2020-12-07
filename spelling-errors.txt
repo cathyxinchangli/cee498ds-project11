@@ -48,7 +48,7 @@ Kaggle
 kBTU
 KTH
 LGBM
-LightGBM
+lightgbm
 logarithmically
 LSTM
 MAPE
@@ -64,7 +64,7 @@ ome
 overfitting
 pre
 precip
-Preprocessing
+preprocessing
 probelm
 quantile
 Rastegarpour

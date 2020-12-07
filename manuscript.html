@@ -116,9 +116,9 @@
   <meta name="citation_fulltext_html_url" content="https://cathyxinchangli.github.io/cee498ds-project11/" />
   <meta name="citation_pdf_url" content="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/289ad45437daa23f3e2abc3a1ea831351ab40378/" />
-  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/289ad45437daa23f3e2abc3a1ea831351ab40378/" />
-  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/289ad45437daa23f3e2abc3a1ea831351ab40378/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/9e906638fe3bd60c263a3b471a5aa28c80787162/" />
+  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/9e906638fe3bd60c263a3b471a5aa28c80787162/" />
+  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/9e906638fe3bd60c263a3b471a5aa28c80787162/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -132,9 +132,9 @@
 </header>
 <p><small><em>
 This manuscript
-(<a href="https://cathyxinchangli.github.io/cee498ds-project11/v/289ad45437daa23f3e2abc3a1ea831351ab40378/">permalink</a>)
+(<a href="https://cathyxinchangli.github.io/cee498ds-project11/v/9e906638fe3bd60c263a3b471a5aa28c80787162/">permalink</a>)
 was automatically generated
-from <a href="https://github.com/cathyxinchangli/cee498ds-project11/tree/289ad45437daa23f3e2abc3a1ea831351ab40378">cathyxinchangli/cee498ds-project11@289ad45</a>
+from <a href="https://github.com/cathyxinchangli/cee498ds-project11/tree/9e906638fe3bd60c263a3b471a5aa28c80787162">cathyxinchangli/cee498ds-project11@9e90663</a>
 on December 7, 2020.
 </em></small></p>
 <h2 id="authors">Authors</h2>
@@ -647,47 +647,46 @@ In ‘LightGBM model #1’, we built one model for each meter type, while in ‘
 </table>
 <h2 id="discussion">Discussion</h2>
 <h3 id="implications-of-the-rmsle-score">Implications of the RMSLE score</h3>
-<p>Table ?? below summaries the best performances for each model type. Our model of choice is the meter-type-specific LGBM models, with a test score of 1.15. This translates to an RMSE of about 100 kWh. It may seems to a rather large error on itself, but the training data tells us that the target variable <code>meter_reading</code> has a mean of ~460 kWh and a standard deviation of ~4,200 kWh; in comparison, this 100 kWh error seems acceptable. Moreover, while we only achieved 2,161/3,614 in ranking, our score was only 0.12 higher than the top score, which is marginal. As most of us only had negligible experiences in data science, ML or even Python, achieving such a score is no small feat and a great encouragement.</p>
-<p>Table X: Best performances for each model type.
-{#tbl:table4}</p>
+<p>Table 4 below summaries the best performances for each model type. Our model of choice is the meter-type-specific LGBM models, with a test score of 1.15. This translates to an RMSE of about 100 kWh. It may seems to a rather large error on itself, but the training data tells us that the target variable <code>meter_reading</code> has a mean of ~460 kWh and a standard deviation of ~4,200 kWh; in comparison, this 100 kWh error seems acceptable. Moreover, while we only achieved 2,161/3,614 in ranking, our score was only 0.12 higher than the top score, which is marginal. As most of us only had negligible experiences in data science, ML or even Python, achieving such a score is no small feat and a great encouragement.</p>
+<p>Table 4: Best performances for each model type.</p>
 <table>
 <colgroup>
 <col style="width: 23%" />
 <col style="width: 19%" />
 <col style="width: 19%" />
 <col style="width: 19%" />
-<col style="width: 19%" />
+<col style="width: 17%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;"><strong>Model</strong></th>
-<th style="text-align: center;"><strong>Key Hyperparameters</strong></th>
-<th style="text-align: center;"><strong>Training Score</strong></th>
-<th style="text-align: center;"><strong>Test Score (highest 0.93)</strong></th>
-<th style="text-align: center;"><strong>Approx. Rank (out of 3,614)</strong></th>
+<th><strong>Model</strong></th>
+<th><strong>Key Hyperparameters</strong></th>
+<th><strong>Training Score</strong></th>
+<th><strong>Test Score (highest 0.93)</strong></th>
+<th><strong>Approx. Rank (out of 3,614)</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Linear Regression</td>
-<td style="text-align: center;">learning_rate = 1e-3</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">4.5</td>
-<td style="text-align: center;">Bottom</td>
+<td>Linear Regression</td>
+<td>learning_rate = 1e-3</td>
+<td>-</td>
+<td>4.5</td>
+<td>Bottom</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">3-layer RNN-LSTM</td>
-<td style="text-align: center;">dropout=0.2, learning_rate=5e-4/1e-4, training timesteps=8,000</td>
-<td style="text-align: center;">1.65</td>
-<td style="text-align: center;">1.62</td>
-<td style="text-align: center;">2,900~3,080</td>
+<td>3-layer RNN-LSTM</td>
+<td>dropout=0.2, learning_rate=5e-4/1e-4, training timesteps=8,000</td>
+<td>1.65</td>
+<td>1.62</td>
+<td>2,900~3,080</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">LGBM</td>
-<td style="text-align: center;">ome model for each meter (0~3), learning_rate=0.1, num_leaves=50</td>
-<td style="text-align: center;">(0~3) 0.57; 1.23; 1.36; 1.37</td>
-<td style="text-align: center;">1.15</td>
-<td style="text-align: center;">2,161~2,167</td>
+<td>LGBM</td>
+<td>ome model for each meter (0~3), learning_rate=0.1, num_leaves=50</td>
+<td>(0~3) 0.57; 1.23; 1.36; 1.37</td>
+<td>1.15</td>
+<td>2,161~2,167</td>
 </tr>
 </tbody>
 </table>
