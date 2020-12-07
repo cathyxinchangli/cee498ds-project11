@@ -63,7 +63,6 @@ oktas
 overfitting
 pre
 precip
-predictipn
 preprocessing
 probelm
 quantile
