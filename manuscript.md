@@ -71,11 +71,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/6ba25e1964afe73971c78d246aad85c07bfe6634/" />
+  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/0b8e03cd949c8741c4e9796d6510520c79fe9a83/" />
 
-  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/6ba25e1964afe73971c78d246aad85c07bfe6634/" />
+  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/0b8e03cd949c8741c4e9796d6510520c79fe9a83/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/6ba25e1964afe73971c78d246aad85c07bfe6634/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/0b8e03cd949c8741c4e9796d6510520c79fe9a83/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -107,9 +107,9 @@ title: 'CEE 498DS Project 11: Building Energy Predictions - Project Report'
 
 <small><em>
 This manuscript
-([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/6ba25e1964afe73971c78d246aad85c07bfe6634/))
+([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/0b8e03cd949c8741c4e9796d6510520c79fe9a83/))
 was automatically generated
-from [cathyxinchangli/cee498ds-project11@6ba25e1](https://github.com/cathyxinchangli/cee498ds-project11/tree/6ba25e1964afe73971c78d246aad85c07bfe6634)
+from [cathyxinchangli/cee498ds-project11@0b8e03c](https://github.com/cathyxinchangli/cee498ds-project11/tree/0b8e03cd949c8741c4e9796d6510520c79fe9a83)
 on December 7, 2020.
 </em></small>
 
@@ -633,10 +633,9 @@ Table 3: Test scores for LGBM model #1 and #2. {#tbl:table3}
 
 ## Discussion
 ### Implications of the RMSLE score
-Table {@tbl:tableX} below summaries the best performances for each model type. Our model of choice is the meter-type-specific LGBM models, with a test score of 1.15. This translates to an RMSE of about 100 kWh. It may seems to a rather large error on itself, but the training data tells us that the target variable `meter_reading` has a mean of ~460 kWh and a standard deviation of ~4,200 kWh; in comparison, this 100 kWh error seems acceptable. Moreover, while we only achieved 2,161/3,614 in ranking, our score was only 0.12 higher than the top score, which is marginal. As most of us only had negligible experiences in data science, ML or even Python, achieving such a score is no small feat and a great encouragement.
+Table {@tbl:table4} below summaries the best performances for each model type. Our model of choice is the meter-type-specific LGBM models, with a test score of 1.15. This translates to an RMSE of about 100 kWh. It may seems to a rather large error on itself, but the training data tells us that the target variable `meter_reading` has a mean of ~460 kWh and a standard deviation of ~4,200 kWh; in comparison, this 100 kWh error seems acceptable. Moreover, while we only achieved 2,161/3,614 in ranking, our score was only 0.12 higher than the top score, which is marginal. As most of us only had negligible experiences in data science, ML or even Python, achieving such a score is no small feat and a great encouragement.
 
-Table X: Best performances for each model type.
-{#tbl:tableX}
+Table X: Best performances for each model type. {#tbl:table4}
 
 | **Model** | **Key Hyperparameters**  | **Training Score** | **Test Score (highest 0.93)** | **Approx. Rank (out of 3,614)** |
 |:-----------------|:-------------:|:-------------:|:-------------:|:-------------:|

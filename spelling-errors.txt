@@ -47,14 +47,14 @@ intial
 Kaggle
 kBTU
 KTH
-lgbm
+LGBM
 lightgbm
 logarithmically
 LSTM
 MAPE
 MBE
 mdoel
-mingyu
+Mingyu
 minimised
 mkbenja
 NRMSE
@@ -83,7 +83,6 @@ sklearn
 Smakic
 SVM
 SVR
-tableX
 THRES
 timeframe
 timestep
