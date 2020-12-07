@@ -71,11 +71,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/5e0a29f9fcefdad670efc68b3166822d4ab935fc/" />
+  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/38a814df861678aaea0c34fc40b0cf75e6fd3863/" />
 
-  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/5e0a29f9fcefdad670efc68b3166822d4ab935fc/" />
+  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/38a814df861678aaea0c34fc40b0cf75e6fd3863/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/5e0a29f9fcefdad670efc68b3166822d4ab935fc/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/38a814df861678aaea0c34fc40b0cf75e6fd3863/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -107,9 +107,9 @@ title: 'CEE 498DS Project 11: Building Energy Predictions - Project Report'
 
 <small><em>
 This manuscript
-([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/5e0a29f9fcefdad670efc68b3166822d4ab935fc/))
+([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/38a814df861678aaea0c34fc40b0cf75e6fd3863/))
 was automatically generated
-from [cathyxinchangli/cee498ds-project11@5e0a29f](https://github.com/cathyxinchangli/cee498ds-project11/tree/5e0a29f9fcefdad670efc68b3166822d4ab935fc)
+from [cathyxinchangli/cee498ds-project11@38a814d](https://github.com/cathyxinchangli/cee498ds-project11/tree/38a814df861678aaea0c34fc40b0cf75e6fd3863)
 on December 7, 2020.
 </em></small>
 
@@ -457,11 +457,14 @@ for bldg_id in test_full.building_id.unique():
 
 
 #### Tree-based Model: LightGBM
-**Introduction
 
-LightGBM is an abbreviation for Light Gradient Boosting Machine, a free open source gradient enhancement framework for machine learning.It is an ensemble model of decision trees which are trained in sequence. Following is the advantage of the LightGBM:
+**Introduction**<br>
 
-First of all, LGBM is a faster training algorithm compared to other tree-based algorithms. For example, its histogram-based splitting. Finding the exact optimal split is very costly when the dataset is large, since it involves testing every possible split point. By using a histogram-based, or we can say quantile-based solution, the splitting procedure is much faster.
+LightGBM is an abbreviation for Light Gradient Boosting Machine, a free open source gradient enhancement framework for machine learning.It is an ensemble model of decision trees which are trained in sequence.1.Each tree will be built based on the previous tree’s error. Finally, predictions will be made by the sum of all of those trees. And errors are minimised by using the gradient method.
+
+Following is the advantage of the LightGBM:
+
+First of all, LGBM is a faster training algorithm compared to other tree-based algorithms. For example, its histogram-based splitting. Finding the exact optimal split is very costly when the dataset is large, since it involves testing every possible split point. By using a histogram-based (quantile-based) solution, the splitting procedure is much faster.
  
 Secondly, Similarly to the histogram-based algorithm, the continuous variables are replaced with discrete bins which largely reduce the memory usage.
  
@@ -469,10 +472,9 @@ Thirdly, lgbm is good at dealing with categorical data. For instance, fisher met
  
 Last but not least, lgbm is good at dealing with large dataset.
  
-However, the LightGBM still have some disadvantages. The main disadvantage of lgbm is it’s sensitive to overfitting. And methods such as controlling the number of leaves can be used to address this problem
+However, the LightGBM still have some disadvantages. The main disadvantage of lgbm is it’s sensitive to overfitting. And methods such as regularizations, and controlling the number of leaves can be used to address this problem.
 
-
-**LightGBM model --Mingyu Sun**<br>
+**LightGBM model #1: predicting meter_reading by meter type**<br>
 
 **Data Preprocessing**<br>
 The general data preprocessing is similar to the 'Training Data Preprocessing' section in RNN-LSTM. Thus, this section will only discuss the differences of the data preparation between LGBM and RNN-LSTM.
@@ -602,76 +604,20 @@ Since the log(meter_reading) is used in the model training, the np.expm1() in th
 
 The histograms of 'meter_reading' can indicate the accuracy of the models. For each meter type, if the histograms of the meter_reading from the training data and the prediction are similar, then the model is reasonable. Histograms of meter_type=0 is provided below as an example.
 
-Meter Type 0 Training Data | Meter Type 0 Predictions
-:-------------------------:|:-------------------------:
-![](images/training.PNG)   | ![](images/prediction.PNG)
+![Histograms of meter_reading of meter type 0](images/training_prediction.png){#fig:image11 Left:training Right:predictipn}
 
-**Another way of LightGBM**<br>
+**LightGBM model #2: predicting meter_reading in one model**<br>
+'LightGBM model #1' built each model for each meter type, while 'LightGBM model #2' built one model to predict the meter reading with meter_type as a categorical feature.  
 
+The following figure indicates the feature importance in 'LightGBM model #2'.
+![Feature Importance in LightGBM model #2](images/FeatureImportance.png){#fig:image11}
 
-```python
-data = ["building_id", "primary_use", "hour", "day", "weekend", "month", "meter","square_feet", "year_built", "air_temperature", "cloud_coverage","dew_temperature"]
-num_folds = 3
-kf = KFold(n_splits = num_folds, shuffle = False, random_state = 42)
-error = 0
-models = []
-evals_results = []
-for i, (train_index, test_index) in enumerate(kf.split(train)):
-    if i + 1 < num_folds:
-        continue
-    print(train_index.max(), test_index.min())
-    train_X = train[data].iloc[train_index]
-    test_X = train[data].iloc[test_index]
-    train_y = target.iloc[train_index]
-    test_y = target.iloc[test_index]
-    
-    lgb_train = lgb.Dataset(train_X[train_y > 0], train_y[train_y > 0])
-    lgb_test = lgb.Dataset(test_X[test_y > 0] , test_y[test_y > 0])
-    evals_result = {}
-    params = {
-            'boosting_type': 'gbdt',
-            'objective': 'regression',
-            'metric': {'rmse'},
-            'learning_rate': 0.6,
-            'feature_fraction': 0.7,
-            'bagging_fraction': 0.7,
-            'bagging_freq' : 4
-            }
-    model = lgb.train(params,
-                lgb_train,
-                num_boost_round=2000,
-                valid_sets=(lgb_train, lgb_test),
-               early_stopping_rounds=30,
-               verbose_eval = 25,
-               evals_result = evals_result
-                           )
-    models.append(model)
-    evals_results.append(evals_result)
-```
+'meter_type' is the fourth important feature as indicated in the above figure. Thus, it's reasonable to build seperated model for each meter type.
 
-**Feature Importance**
-``` python
-for model, evals_result in zip(models, evals_results):
-    f, (ax1, ax2) = plt.subplots(nrows = 1, ncols = 2, figsize=(15, 6))
-    lgb.plot_importance(model, ax=ax1)
-    lgb.plot_metric(evals_result, metric='rmse', ax=ax2)
-
-plt.show()
-```
-![](images/FeatureImportance.png)
-```python
-from tqdm import tqdm
-
-step_size = 100000
-res = []
-i = 0
-for j in tqdm(range(int(np.ceil(test.shape[0]/step_size)))):
-    r = np.zeros(test.iloc[i:i+step_size].shape[0])
-    for model in models:
-        r += np.expm1(model.predict(test.iloc[i:i+step_size], num_iteration=model.best_iteration)) / len(models)
-    res = np.append(res,r)
-    i += step_size
-```
+| LGBM models | Competition score  | 
+|----------------------|--------------|
+| model 1 (by meter type)    | 1.154  |
+| model 2  |  1.37 |
 
 
 ## Discussion
@@ -690,8 +636,13 @@ The trade-off between number of samples and number of timestamps means we are fo
 in training. This can potentially be viewed as a shortcoming for RNN-LSTM (or rather our way of handling it). In hindsight, `building_id` proved to be an important predictor, but treating each building-meter pair as a sample forbade us to use `building_id` as a feature. This also potentially limited the performance of our RNN-LSTM model.
 
 ### Tree-based Model and Neural Networks
-ASSIGNED TO: Minyu & Zhiyi
+The dataset in this project is well-structured tabulated data, which is natural for tree-based algorithms. Neural networks usually outperform tree-based algorithms with unstructured data such as images, text, and audio data. And in general, tree-based algorithms are faster to train compared to neural networks.
 
+Moreover, there are several important categorical features in the dataset, such as building_id, site_id, primary_use, month_of_a_year, etc. Among those features, building_id has 1449 classes, which is impossible to one-hot encode due to the RAM limit. Since LGBM deals with categorical variables using fisher's method, none of the encoding procedures are required. 
+
+Lastly, the dataset of the project is relatively large. With advantages such as the ability to reduce memory usage, LGBM is a reasonable choice.
+
+It's worth noticing that LGBM is more sensitive to overfitting compared to other tree-based algorithms such as random forest. 
 
 ### Challenges
 The most significant challenge has been combating the limited memory resources. 
