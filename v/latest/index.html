@@ -116,9 +116,9 @@
   <meta name="citation_fulltext_html_url" content="https://cathyxinchangli.github.io/cee498ds-project11/" />
   <meta name="citation_pdf_url" content="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/b0665b231dbabb112c768cde1257f60c1b019e8a/" />
-  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/b0665b231dbabb112c768cde1257f60c1b019e8a/" />
-  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/b0665b231dbabb112c768cde1257f60c1b019e8a/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/3a870102e7a51360b5321fc7fb505c7e0c1643ab/" />
+  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/3a870102e7a51360b5321fc7fb505c7e0c1643ab/" />
+  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/3a870102e7a51360b5321fc7fb505c7e0c1643ab/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -132,9 +132,9 @@
 </header>
 <p><small><em>
 This manuscript
-(<a href="https://cathyxinchangli.github.io/cee498ds-project11/v/b0665b231dbabb112c768cde1257f60c1b019e8a/">permalink</a>)
+(<a href="https://cathyxinchangli.github.io/cee498ds-project11/v/3a870102e7a51360b5321fc7fb505c7e0c1643ab/">permalink</a>)
 was automatically generated
-from <a href="https://github.com/cathyxinchangli/cee498ds-project11/tree/b0665b231dbabb112c768cde1257f60c1b019e8a">cathyxinchangli/cee498ds-project11@b0665b2</a>
+from <a href="https://github.com/cathyxinchangli/cee498ds-project11/tree/3a870102e7a51360b5321fc7fb505c7e0c1643ab">cathyxinchangli/cee498ds-project11@3a87010</a>
 on December 7, 2020.
 </em></small></p>
 <h2 id="authors">Authors</h2>
@@ -456,65 +456,200 @@ Since we constructed traing dataset by seperating samples based on building_id a
 <span id="cb3-14"><a href="#cb3-14"></a>        <span class="kw">del</span> v</span>
 <span id="cb3-15"><a href="#cb3-15"></a>    <span class="kw">del</span> bldg</span></code></pre></div>
 <h4 id="tree-based-model-lightgbm">Tree-based Model: LightGBM</h4>
-<p><strong>Introduction of Light Gradient Boosting Machine</strong><br>
-I’m a person.</p>
-<p><strong>Model analysis of Mingyu</strong><br></p>
+<p><strong>LightGBM model –Mingyu Sun</strong><br>
+<strong>Data Preprocessing</strong><br>
+The general data preprocessing is similar to the ‘Training Data Preprocessing’ section in RNN-LSTM. Thus, this section will only discuss the differences of the data preparation between LGBM and RNN-LSTM.</p>
+<p><strong>Engineered Date-Time Features</strong><br>
+Meter_reading is time series data, and extracting the data-time features is necessary in order to treat time series forecasting as a supervised learning problem. In this model, ‘Month of a year’, ‘Day of a month’, ‘Day of a week’, and ‘Hour in a day’ are the engineered time-related features. To better extract the time features, Fast Fourier Transformation can be used to reveal the predominant frequency of time series data. Lag features can also be further added since the meter_reading might be related to the weather variables at previous timestamps.</p>
+<p><strong>Features in LGBM</strong><br>
+After feature selection, the following features are included in the LGBM model: ‘square_feet’ ‘year_built’, ‘floor_count’,‘air_temperature’, ‘cloud_coverage’, ‘dew_temperature’, ‘building_id’, ‘site_id’,‘primary_use’,‘dayofweek’,‘meter’,‘hour’,‘day’,‘month’. Among these features, ‘building_id’, ‘site_id’, ‘primary_use’, and the four engineered time features are taken as categorical variables.</p>
+<p><strong>NaN values</strong><br>
+As shown in the EDA, the percentage of missing values are relatively high in ‘year_built’, ‘floor_count’, ‘cloud_coverage’, ‘air_temperature’, and ‘dew_temperature’. The methods used to deal with the missing values can result in very different results in the model. The missing values in these columns are dealt in different ways.</p>
+<p>For ‘cloud_coverage’, ‘air_temperature’, and ‘dew_temperature’, a missing value is filled with the mean by averaging the values from the same day of the same month at the same site . This is because weather related variables change over site, month, and the day in a month. For ‘floor_count’, the mean value of the floor_count column is used to fill in the missing values. For ‘year_built’, the missing values remain without further operation. LGBM will ignore missing values during a split, then allocate them to whichever side reduces the loss the most.</p>
+<p><strong>Preparing the dataset for the model</strong><br>
+There are four meter types in the project. Thus, four models are built for the four meter types seperately in order to tune the hypeparameters for each meter type. The training and testing datasets are seperately for the model of meter type 0, 1, 2, and 3 accordingly.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">def</span> create_x_y(train_df, target_meter):</span>
+<span id="cb4-2"><a href="#cb4-2"></a>    target_train_df <span class="op">=</span> train_df[train_df[<span class="st">&#39;meter&#39;</span>] <span class="op">==</span> target_meter]</span>
+<span id="cb4-3"><a href="#cb4-3"></a>    train_x <span class="op">=</span> target_train_df[feature_columns]</span>
+<span id="cb4-4"><a href="#cb4-4"></a>    train_y <span class="op">=</span> target_train_df[<span class="st">&#39;log_meter_reading&#39;</span>].values</span>
+<span id="cb4-5"><a href="#cb4-5"></a></span>
+<span id="cb4-6"><a href="#cb4-6"></a>    <span class="kw">del</span> target_train_df</span>
+<span id="cb4-7"><a href="#cb4-7"></a>    <span class="cf">return</span> train_x, train_y</span>
+<span id="cb4-8"><a href="#cb4-8"></a>train_x0, train_y0 <span class="op">=</span> create_x_y(train_all, target_meter<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb4-9"><a href="#cb4-9"></a>train_x1, train_y1 <span class="op">=</span> create_x_y(train_all, target_meter<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb4-10"><a href="#cb4-10"></a>train_x2, train_y2 <span class="op">=</span> create_x_y(train_all, target_meter<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb4-11"><a href="#cb4-11"></a>train_x3, train_y3 <span class="op">=</span> create_x_y(train_all, target_meter<span class="op">=</span><span class="dv">3</span>)</span></code></pre></div>
+<p><strong>LGBM Model Structure</strong><br></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">def</span> fit_models(train_df,target_meter,folds<span class="op">=</span><span class="dv">2</span>,seed<span class="op">=</span><span class="va">None</span>,shuffle<span class="op">=</span><span class="va">False</span>, num_rounds<span class="op">=</span><span class="dv">1500</span>,lr<span class="op">=</span><span class="fl">0.1</span>,bf<span class="op">=</span><span class="fl">0.1</span>,l2<span class="op">=</span><span class="fl">0.2</span>, nl <span class="op">=</span> <span class="dv">30</span>):</span>
+<span id="cb5-2"><a href="#cb5-2"></a>    kfold <span class="op">=</span> KFold(n_splits<span class="op">=</span>folds, shuffle <span class="op">=</span> shuffle, random_state <span class="op">=</span> seed)</span>
+<span id="cb5-3"><a href="#cb5-3"></a>    train_x, train_y <span class="op">=</span> create_x_y(train_df, target_meter)</span>
+<span id="cb5-4"><a href="#cb5-4"></a>    </span>
+<span id="cb5-5"><a href="#cb5-5"></a>    categoricals <span class="op">=</span> [train_x.columns.get_loc(c_col) <span class="cf">for</span> c_col <span class="kw">in</span> categorical_feacture]</span>
+<span id="cb5-6"><a href="#cb5-6"></a>    </span>
+<span id="cb5-7"><a href="#cb5-7"></a>    models <span class="op">=</span> []</span>
+<span id="cb5-8"><a href="#cb5-8"></a>    </span>
+<span id="cb5-9"><a href="#cb5-9"></a>    <span class="cf">for</span> train_idx, val_idx <span class="kw">in</span> kfold.split(train_x,train_y):</span>
+<span id="cb5-10"><a href="#cb5-10"></a>        xtrain <span class="op">=</span> train_x.iloc[train_idx,:]</span>
+<span id="cb5-11"><a href="#cb5-11"></a>        xval <span class="op">=</span> train_x.iloc[val_idx,:]</span>
+<span id="cb5-12"><a href="#cb5-12"></a>        ytrain <span class="op">=</span> train_y[train_idx]</span>
+<span id="cb5-13"><a href="#cb5-13"></a>        yval <span class="op">=</span> train_y[val_idx]</span>
+<span id="cb5-14"><a href="#cb5-14"></a></span>
+<span id="cb5-15"><a href="#cb5-15"></a>        params <span class="op">=</span> {<span class="st">&#39;boosting_type&#39;</span>: <span class="st">&#39;gbdt&#39;</span>,</span>
+<span id="cb5-16"><a href="#cb5-16"></a>                  <span class="st">&#39;objective&#39;</span>: <span class="st">&#39;regression&#39;</span>,</span>
+<span id="cb5-17"><a href="#cb5-17"></a>                  <span class="st">&#39;metric&#39;</span>: {<span class="st">&#39;rmse&#39;</span>}, </span>
+<span id="cb5-18"><a href="#cb5-18"></a>                  <span class="st">&#39;bagging_freq&#39;</span>: <span class="dv">5</span>, </span>
+<span id="cb5-19"><a href="#cb5-19"></a>                  <span class="st">&#39;bagging_fraction&#39;</span>: bf, </span>
+<span id="cb5-20"><a href="#cb5-20"></a>                  <span class="st">&#39;learning_rate&#39;</span>: lr, </span>
+<span id="cb5-21"><a href="#cb5-21"></a>                  <span class="st">&#39;num_leaves&#39;</span>: nl, </span>
+<span id="cb5-22"><a href="#cb5-22"></a>                  <span class="st">&#39;feature_fraction&#39;</span>: <span class="fl">0.9</span>, </span>
+<span id="cb5-23"><a href="#cb5-23"></a>                  <span class="st">&#39;lambda_l2&#39;</span>: l2  </span>
+<span id="cb5-24"><a href="#cb5-24"></a>        }</span>
+<span id="cb5-25"><a href="#cb5-25"></a>        </span>
+<span id="cb5-26"><a href="#cb5-26"></a>        early_stopping_condition <span class="op">=</span> <span class="dv">30</span> </span>
+<span id="cb5-27"><a href="#cb5-27"></a>        verbose_evaluation <span class="op">=</span> <span class="dv">20</span> </span>
+<span id="cb5-28"><a href="#cb5-28"></a>        </span>
+<span id="cb5-29"><a href="#cb5-29"></a>        lgb_train_ds <span class="op">=</span> lgbm.Dataset(xtrain, label <span class="op">=</span> ytrain, categorical_feature <span class="op">=</span> categoricals)</span>
+<span id="cb5-30"><a href="#cb5-30"></a>        lgb_val_ds <span class="op">=</span> lgbm.Dataset(xval, label <span class="op">=</span> yval, categorical_feature <span class="op">=</span> categoricals)</span>
+<span id="cb5-31"><a href="#cb5-31"></a>        </span>
+<span id="cb5-32"><a href="#cb5-32"></a>        model <span class="op">=</span> lgbm.train(params,</span>
+<span id="cb5-33"><a href="#cb5-33"></a>                           train_set <span class="op">=</span> lgb_train_ds,</span>
+<span id="cb5-34"><a href="#cb5-34"></a>                           num_boost_round <span class="op">=</span> num_rounds,</span>
+<span id="cb5-35"><a href="#cb5-35"></a>                           valid_sets <span class="op">=</span> (lgb_train_ds, lgb_val_ds),</span>
+<span id="cb5-36"><a href="#cb5-36"></a>                           early_stopping_rounds <span class="op">=</span> early_stopping_condition,</span>
+<span id="cb5-37"><a href="#cb5-37"></a>                           verbose_eval <span class="op">=</span> verbose_evaluation)</span>
+<span id="cb5-38"><a href="#cb5-38"></a>        </span>
+<span id="cb5-39"><a href="#cb5-39"></a>        models.append(model)</span>
+<span id="cb5-40"><a href="#cb5-40"></a>    <span class="cf">return</span> models</span></code></pre></div>
+<p>The model is built into the function fit_models to apply the same model four times.</p>
+<p><strong>K-fold Validation</strong><br>
+K-fold validation is built into the model to estimate the model’s performance before applying the model to the test data. The number of folds is initialized with 2, and will be updated in model fitting. With the number of folds equal to k, the dataset will be split into k groups. Each group will be taken as a hold out, and the mdoel trained on the other groups will be tested on the leave-out group.</p>
+<p><strong>Train the Model for Each Meter Type</strong><br></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>models_0 <span class="op">=</span> fit_models(train_all,target_meter<span class="op">=</span><span class="dv">0</span>,folds<span class="op">=</span><span class="dv">5</span>,num_rounds <span class="op">=</span> <span class="dv">1000</span>, lr <span class="op">=</span> <span class="fl">0.1</span>,bf <span class="op">=</span> <span class="fl">0.7</span>,l2 <span class="op">=</span> <span class="fl">0.2</span>,nl <span class="op">=</span> <span class="dv">50</span>)</span>
+<span id="cb6-2"><a href="#cb6-2"></a>models_1 <span class="op">=</span> fit_models(train_all,target_meter<span class="op">=</span><span class="dv">1</span>,folds<span class="op">=</span><span class="dv">5</span>,num_rounds <span class="op">=</span> <span class="dv">1000</span>, lr <span class="op">=</span> <span class="fl">0.1</span>,bf <span class="op">=</span> <span class="fl">0.7</span>,l2 <span class="op">=</span> <span class="fl">0.2</span>,nl <span class="op">=</span> <span class="dv">50</span>)</span>
+<span id="cb6-3"><a href="#cb6-3"></a>models_2 <span class="op">=</span> fit_models(train_all,target_meter<span class="op">=</span><span class="dv">2</span>,folds<span class="op">=</span><span class="dv">5</span>,num_rounds <span class="op">=</span> <span class="dv">1000</span>, lr <span class="op">=</span> <span class="fl">0.1</span>,bf <span class="op">=</span> <span class="fl">0.7</span>,l2 <span class="op">=</span> <span class="fl">0.2</span>, nl <span class="op">=</span> <span class="dv">50</span>)</span>
+<span id="cb6-4"><a href="#cb6-4"></a>models_3 <span class="op">=</span> fit_models(train_all,target_meter<span class="op">=</span><span class="dv">3</span>,folds<span class="op">=</span><span class="dv">5</span>,num_rounds <span class="op">=</span> <span class="dv">1000</span>, lr <span class="op">=</span> <span class="fl">0.1</span>,bf <span class="op">=</span> <span class="fl">0.7</span>,l2 <span class="op">=</span> <span class="fl">0.2</span>, nl <span class="op">=</span> <span class="dv">50</span>)</span></code></pre></div>
+<p><strong>LGBM Tunning</strong><br>
+LGBM is sensitive to overfitting, and thus, several ways were taken to aviod overfitting.
+1. k-fold validation: If the RMSE of the model on the training groups is decreasing, and the RMSE of the model on the validation group is not changing significantly with iterations, there might be overfitting probelm.
+2. set up early_stopping_condition: The model will stop training if the validation metric is not improving after the last early stopping round. If the early_stopping_round is set to be too large, the change of overfitting increases.
+3. lambda_l1 and lambda_l2: Avoiding overfitting uses regularizations.
+4. num_leaves: By setting up the maximum number of leaves of a tree, overfitting can be controlled.</p>
+<p>The table below shows the overfitting issue while the num_leaves increasing:</p>
+<table>
+<thead>
+<tr class="header">
+<th>num_leaves for model of each meter type</th>
+<th>submitted score</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>50, 50, 50, 50</td>
+<td>1.154</td>
+</tr>
+<tr class="even">
+<td>100, 150, 150, 100</td>
+<td>1.157</td>
+</tr>
+<tr class="odd">
+<td>100,200,200,150</td>
+<td>1.163</td>
+</tr>
+</tbody>
+</table>
+<p>The submitted score (RMSE) increases when the num_leaves increses, which indicates overfitting. Thus, num_leaves=50 is used for each model.</p>
+<p><strong>Predicting on Test Data</strong><br></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="kw">def</span> create_predictions(test_set, models, batch_size):</span>
+<span id="cb7-2"><a href="#cb7-2"></a>    i <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a>    ret <span class="op">=</span> []</span>
+<span id="cb7-4"><a href="#cb7-4"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">int</span>(np.ceil(test_set.shape[<span class="dv">0</span>] <span class="op">/</span> batch_size))):</span>
+<span id="cb7-5"><a href="#cb7-5"></a>        ret.append(np.expm1(<span class="bu">sum</span>([model.predict(test_set.iloc[i:i<span class="op">+</span>batch_size]) <span class="cf">for</span> model <span class="kw">in</span> models]) <span class="op">/</span> <span class="bu">len</span>(models)))</span>
+<span id="cb7-6"><a href="#cb7-6"></a>        i <span class="op">+=</span> batch_size</span>
+<span id="cb7-7"><a href="#cb7-7"></a>    <span class="cf">return</span> ret</span>
+<span id="cb7-8"><a href="#cb7-8"></a></span>
+<span id="cb7-9"><a href="#cb7-9"></a><span class="kw">def</span> generate_results(test_df, target_meter, models,batch_size <span class="op">=</span> <span class="dv">1</span>):</span>
+<span id="cb7-10"><a href="#cb7-10"></a>    test_x <span class="op">=</span> create_x(test_df,target_meter)</span>
+<span id="cb7-11"><a href="#cb7-11"></a>    gc.collect()</span>
+<span id="cb7-12"><a href="#cb7-12"></a></span>
+<span id="cb7-13"><a href="#cb7-13"></a>    test_y <span class="op">=</span> create_predictions(test_x,models,batch_size)</span>
+<span id="cb7-14"><a href="#cb7-14"></a>    <span class="cf">return</span> test_y</span>
+<span id="cb7-15"><a href="#cb7-15"></a></span>
+<span id="cb7-16"><a href="#cb7-16"></a>test_y_0 <span class="op">=</span> generate_results(test_all,target_meter <span class="op">=</span> <span class="dv">0</span>, models <span class="op">=</span> models_0, batch_size <span class="op">=</span> <span class="dv">100000</span>)</span>
+<span id="cb7-17"><a href="#cb7-17"></a>test_y_1 <span class="op">=</span> generate_results(test_all,target_meter <span class="op">=</span> <span class="dv">1</span>, models <span class="op">=</span> models_1, batch_size <span class="op">=</span> <span class="dv">100000</span>)</span>
+<span id="cb7-18"><a href="#cb7-18"></a>test_y_2 <span class="op">=</span> generate_results(test_all,target_meter <span class="op">=</span> <span class="dv">2</span>, models <span class="op">=</span> models_2, batch_size <span class="op">=</span> <span class="dv">100000</span>)</span>
+<span id="cb7-19"><a href="#cb7-19"></a>test_y_3 <span class="op">=</span> generate_results(test_all,target_meter <span class="op">=</span> <span class="dv">3</span>, models <span class="op">=</span> models_3, batch_size <span class="op">=</span> <span class="dv">100000</span>)</span></code></pre></div>
+<p>Since the log(meter_reading) is used in the model training, the np.expm1() in the function ‘create_predictions’ transfer the predictions to the original values. np.concatenate() is used to combine the predictions from the four models.</p>
+<p>The histograms of ‘meter_reading’ can indicate the accuracy of the models. For each meter type, if the histograms of the meter_reading from the training data and the prediction are similar, then the model is reasonable. Histograms of meter_type=0 is provided below as an example.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Meter Type 0 Training Data</th>
+<th style="text-align: center;">Meter Type 0 Predictions</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><img src="images/training.png" title="fig:" /></td>
+<td style="text-align: center;"><img src="images/prediction.png" title="fig:" /></td>
+</tr>
+</tbody>
+</table>
 <p><strong>Another way of LightGBM</strong><br></p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>data <span class="op">=</span> [<span class="st">&quot;building_id&quot;</span>, <span class="st">&quot;primary_use&quot;</span>, <span class="st">&quot;hour&quot;</span>, <span class="st">&quot;day&quot;</span>, <span class="st">&quot;weekend&quot;</span>, <span class="st">&quot;month&quot;</span>, <span class="st">&quot;meter&quot;</span>,<span class="st">&quot;square_feet&quot;</span>, <span class="st">&quot;year_built&quot;</span>, <span class="st">&quot;air_temperature&quot;</span>, <span class="st">&quot;cloud_coverage&quot;</span>,<span class="st">&quot;dew_temperature&quot;</span>]</span>
-<span id="cb4-2"><a href="#cb4-2"></a>num_folds <span class="op">=</span> <span class="dv">3</span></span>
-<span id="cb4-3"><a href="#cb4-3"></a>kf <span class="op">=</span> KFold(n_splits <span class="op">=</span> num_folds, shuffle <span class="op">=</span> <span class="va">False</span>, random_state <span class="op">=</span> <span class="dv">42</span>)</span>
-<span id="cb4-4"><a href="#cb4-4"></a>error <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb4-5"><a href="#cb4-5"></a>models <span class="op">=</span> []</span>
-<span id="cb4-6"><a href="#cb4-6"></a>evals_results <span class="op">=</span> []</span>
-<span id="cb4-7"><a href="#cb4-7"></a><span class="cf">for</span> i, (train_index, test_index) <span class="kw">in</span> <span class="bu">enumerate</span>(kf.split(train)):</span>
-<span id="cb4-8"><a href="#cb4-8"></a>    <span class="cf">if</span> i <span class="op">+</span> <span class="dv">1</span> <span class="op">&lt;</span> num_folds:</span>
-<span id="cb4-9"><a href="#cb4-9"></a>        <span class="cf">continue</span></span>
-<span id="cb4-10"><a href="#cb4-10"></a>    <span class="bu">print</span>(train_index.<span class="bu">max</span>(), test_index.<span class="bu">min</span>())</span>
-<span id="cb4-11"><a href="#cb4-11"></a>    train_X <span class="op">=</span> train[data].iloc[train_index]</span>
-<span id="cb4-12"><a href="#cb4-12"></a>    test_X <span class="op">=</span> train[data].iloc[test_index]</span>
-<span id="cb4-13"><a href="#cb4-13"></a>    train_y <span class="op">=</span> target.iloc[train_index]</span>
-<span id="cb4-14"><a href="#cb4-14"></a>    test_y <span class="op">=</span> target.iloc[test_index]</span>
-<span id="cb4-15"><a href="#cb4-15"></a>    </span>
-<span id="cb4-16"><a href="#cb4-16"></a>    lgb_train <span class="op">=</span> lgb.Dataset(train_X[train_y <span class="op">&gt;</span> <span class="dv">0</span>], train_y[train_y <span class="op">&gt;</span> <span class="dv">0</span>])</span>
-<span id="cb4-17"><a href="#cb4-17"></a>    lgb_test <span class="op">=</span> lgb.Dataset(test_X[test_y <span class="op">&gt;</span> <span class="dv">0</span>] , test_y[test_y <span class="op">&gt;</span> <span class="dv">0</span>])</span>
-<span id="cb4-18"><a href="#cb4-18"></a>    evals_result <span class="op">=</span> {}</span>
-<span id="cb4-19"><a href="#cb4-19"></a>    params <span class="op">=</span> {</span>
-<span id="cb4-20"><a href="#cb4-20"></a>            <span class="st">&#39;boosting_type&#39;</span>: <span class="st">&#39;gbdt&#39;</span>,</span>
-<span id="cb4-21"><a href="#cb4-21"></a>            <span class="st">&#39;objective&#39;</span>: <span class="st">&#39;regression&#39;</span>,</span>
-<span id="cb4-22"><a href="#cb4-22"></a>            <span class="st">&#39;metric&#39;</span>: {<span class="st">&#39;rmse&#39;</span>},</span>
-<span id="cb4-23"><a href="#cb4-23"></a>            <span class="st">&#39;learning_rate&#39;</span>: <span class="fl">0.6</span>,</span>
-<span id="cb4-24"><a href="#cb4-24"></a>            <span class="st">&#39;feature_fraction&#39;</span>: <span class="fl">0.7</span>,</span>
-<span id="cb4-25"><a href="#cb4-25"></a>            <span class="st">&#39;bagging_fraction&#39;</span>: <span class="fl">0.7</span>,</span>
-<span id="cb4-26"><a href="#cb4-26"></a>            <span class="st">&#39;bagging_freq&#39;</span> : <span class="dv">4</span></span>
-<span id="cb4-27"><a href="#cb4-27"></a>            }</span>
-<span id="cb4-28"><a href="#cb4-28"></a>    model <span class="op">=</span> lgb.train(params,</span>
-<span id="cb4-29"><a href="#cb4-29"></a>                lgb_train,</span>
-<span id="cb4-30"><a href="#cb4-30"></a>                num_boost_round<span class="op">=</span><span class="dv">2000</span>,</span>
-<span id="cb4-31"><a href="#cb4-31"></a>                valid_sets<span class="op">=</span>(lgb_train, lgb_test),</span>
-<span id="cb4-32"><a href="#cb4-32"></a>               early_stopping_rounds<span class="op">=</span><span class="dv">30</span>,</span>
-<span id="cb4-33"><a href="#cb4-33"></a>               verbose_eval <span class="op">=</span> <span class="dv">25</span>,</span>
-<span id="cb4-34"><a href="#cb4-34"></a>               evals_result <span class="op">=</span> evals_result</span>
-<span id="cb4-35"><a href="#cb4-35"></a>                           )</span>
-<span id="cb4-36"><a href="#cb4-36"></a>    models.append(model)</span>
-<span id="cb4-37"><a href="#cb4-37"></a>    evals_results.append(evals_result)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a>data <span class="op">=</span> [<span class="st">&quot;building_id&quot;</span>, <span class="st">&quot;primary_use&quot;</span>, <span class="st">&quot;hour&quot;</span>, <span class="st">&quot;day&quot;</span>, <span class="st">&quot;weekend&quot;</span>, <span class="st">&quot;month&quot;</span>, <span class="st">&quot;meter&quot;</span>,<span class="st">&quot;square_feet&quot;</span>, <span class="st">&quot;year_built&quot;</span>, <span class="st">&quot;air_temperature&quot;</span>, <span class="st">&quot;cloud_coverage&quot;</span>,<span class="st">&quot;dew_temperature&quot;</span>]</span>
+<span id="cb8-2"><a href="#cb8-2"></a>num_folds <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb8-3"><a href="#cb8-3"></a>kf <span class="op">=</span> KFold(n_splits <span class="op">=</span> num_folds, shuffle <span class="op">=</span> <span class="va">False</span>, random_state <span class="op">=</span> <span class="dv">42</span>)</span>
+<span id="cb8-4"><a href="#cb8-4"></a>error <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb8-5"><a href="#cb8-5"></a>models <span class="op">=</span> []</span>
+<span id="cb8-6"><a href="#cb8-6"></a>evals_results <span class="op">=</span> []</span>
+<span id="cb8-7"><a href="#cb8-7"></a><span class="cf">for</span> i, (train_index, test_index) <span class="kw">in</span> <span class="bu">enumerate</span>(kf.split(train)):</span>
+<span id="cb8-8"><a href="#cb8-8"></a>    <span class="cf">if</span> i <span class="op">+</span> <span class="dv">1</span> <span class="op">&lt;</span> num_folds:</span>
+<span id="cb8-9"><a href="#cb8-9"></a>        <span class="cf">continue</span></span>
+<span id="cb8-10"><a href="#cb8-10"></a>    <span class="bu">print</span>(train_index.<span class="bu">max</span>(), test_index.<span class="bu">min</span>())</span>
+<span id="cb8-11"><a href="#cb8-11"></a>    train_X <span class="op">=</span> train[data].iloc[train_index]</span>
+<span id="cb8-12"><a href="#cb8-12"></a>    test_X <span class="op">=</span> train[data].iloc[test_index]</span>
+<span id="cb8-13"><a href="#cb8-13"></a>    train_y <span class="op">=</span> target.iloc[train_index]</span>
+<span id="cb8-14"><a href="#cb8-14"></a>    test_y <span class="op">=</span> target.iloc[test_index]</span>
+<span id="cb8-15"><a href="#cb8-15"></a>    </span>
+<span id="cb8-16"><a href="#cb8-16"></a>    lgb_train <span class="op">=</span> lgb.Dataset(train_X[train_y <span class="op">&gt;</span> <span class="dv">0</span>], train_y[train_y <span class="op">&gt;</span> <span class="dv">0</span>])</span>
+<span id="cb8-17"><a href="#cb8-17"></a>    lgb_test <span class="op">=</span> lgb.Dataset(test_X[test_y <span class="op">&gt;</span> <span class="dv">0</span>] , test_y[test_y <span class="op">&gt;</span> <span class="dv">0</span>])</span>
+<span id="cb8-18"><a href="#cb8-18"></a>    evals_result <span class="op">=</span> {}</span>
+<span id="cb8-19"><a href="#cb8-19"></a>    params <span class="op">=</span> {</span>
+<span id="cb8-20"><a href="#cb8-20"></a>            <span class="st">&#39;boosting_type&#39;</span>: <span class="st">&#39;gbdt&#39;</span>,</span>
+<span id="cb8-21"><a href="#cb8-21"></a>            <span class="st">&#39;objective&#39;</span>: <span class="st">&#39;regression&#39;</span>,</span>
+<span id="cb8-22"><a href="#cb8-22"></a>            <span class="st">&#39;metric&#39;</span>: {<span class="st">&#39;rmse&#39;</span>},</span>
+<span id="cb8-23"><a href="#cb8-23"></a>            <span class="st">&#39;learning_rate&#39;</span>: <span class="fl">0.6</span>,</span>
+<span id="cb8-24"><a href="#cb8-24"></a>            <span class="st">&#39;feature_fraction&#39;</span>: <span class="fl">0.7</span>,</span>
+<span id="cb8-25"><a href="#cb8-25"></a>            <span class="st">&#39;bagging_fraction&#39;</span>: <span class="fl">0.7</span>,</span>
+<span id="cb8-26"><a href="#cb8-26"></a>            <span class="st">&#39;bagging_freq&#39;</span> : <span class="dv">4</span></span>
+<span id="cb8-27"><a href="#cb8-27"></a>            }</span>
+<span id="cb8-28"><a href="#cb8-28"></a>    model <span class="op">=</span> lgb.train(params,</span>
+<span id="cb8-29"><a href="#cb8-29"></a>                lgb_train,</span>
+<span id="cb8-30"><a href="#cb8-30"></a>                num_boost_round<span class="op">=</span><span class="dv">2000</span>,</span>
+<span id="cb8-31"><a href="#cb8-31"></a>                valid_sets<span class="op">=</span>(lgb_train, lgb_test),</span>
+<span id="cb8-32"><a href="#cb8-32"></a>               early_stopping_rounds<span class="op">=</span><span class="dv">30</span>,</span>
+<span id="cb8-33"><a href="#cb8-33"></a>               verbose_eval <span class="op">=</span> <span class="dv">25</span>,</span>
+<span id="cb8-34"><a href="#cb8-34"></a>               evals_result <span class="op">=</span> evals_result</span>
+<span id="cb8-35"><a href="#cb8-35"></a>                           )</span>
+<span id="cb8-36"><a href="#cb8-36"></a>    models.append(model)</span>
+<span id="cb8-37"><a href="#cb8-37"></a>    evals_results.append(evals_result)</span></code></pre></div>
 <p><strong>Feature Importance</strong></p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="cf">for</span> model, evals_result <span class="kw">in</span> <span class="bu">zip</span>(models, evals_results):</span>
-<span id="cb5-2"><a href="#cb5-2"></a>    f, (ax1, ax2) <span class="op">=</span> plt.subplots(nrows <span class="op">=</span> <span class="dv">1</span>, ncols <span class="op">=</span> <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">15</span>, <span class="dv">6</span>))</span>
-<span id="cb5-3"><a href="#cb5-3"></a>    lgb.plot_importance(model, ax<span class="op">=</span>ax1)</span>
-<span id="cb5-4"><a href="#cb5-4"></a>    lgb.plot_metric(evals_result, metric<span class="op">=</span><span class="st">&#39;rmse&#39;</span>, ax<span class="op">=</span>ax2)</span>
-<span id="cb5-5"><a href="#cb5-5"></a></span>
-<span id="cb5-6"><a href="#cb5-6"></a>plt.show()</span></code></pre></div>
-<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="im">from</span> tqdm <span class="im">import</span> tqdm</span>
-<span id="cb6-2"><a href="#cb6-2"></a></span>
-<span id="cb6-3"><a href="#cb6-3"></a>step_size <span class="op">=</span> <span class="dv">100000</span></span>
-<span id="cb6-4"><a href="#cb6-4"></a>res <span class="op">=</span> []</span>
-<span id="cb6-5"><a href="#cb6-5"></a>i <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb6-6"><a href="#cb6-6"></a><span class="cf">for</span> j <span class="kw">in</span> tqdm(<span class="bu">range</span>(<span class="bu">int</span>(np.ceil(test.shape[<span class="dv">0</span>]<span class="op">/</span>step_size)))):</span>
-<span id="cb6-7"><a href="#cb6-7"></a>    r <span class="op">=</span> np.zeros(test.iloc[i:i<span class="op">+</span>step_size].shape[<span class="dv">0</span>])</span>
-<span id="cb6-8"><a href="#cb6-8"></a>    <span class="cf">for</span> model <span class="kw">in</span> models:</span>
-<span id="cb6-9"><a href="#cb6-9"></a>        r <span class="op">+=</span> np.expm1(model.predict(test.iloc[i:i<span class="op">+</span>step_size], num_iteration<span class="op">=</span>model.best_iteration)) <span class="op">/</span> <span class="bu">len</span>(models)</span>
-<span id="cb6-10"><a href="#cb6-10"></a>    res <span class="op">=</span> np.append(res,r)</span>
-<span id="cb6-11"><a href="#cb6-11"></a>    i <span class="op">+=</span> step_size</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a><span class="cf">for</span> model, evals_result <span class="kw">in</span> <span class="bu">zip</span>(models, evals_results):</span>
+<span id="cb9-2"><a href="#cb9-2"></a>    f, (ax1, ax2) <span class="op">=</span> plt.subplots(nrows <span class="op">=</span> <span class="dv">1</span>, ncols <span class="op">=</span> <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">15</span>, <span class="dv">6</span>))</span>
+<span id="cb9-3"><a href="#cb9-3"></a>    lgb.plot_importance(model, ax<span class="op">=</span>ax1)</span>
+<span id="cb9-4"><a href="#cb9-4"></a>    lgb.plot_metric(evals_result, metric<span class="op">=</span><span class="st">&#39;rmse&#39;</span>, ax<span class="op">=</span>ax2)</span>
+<span id="cb9-5"><a href="#cb9-5"></a></span>
+<span id="cb9-6"><a href="#cb9-6"></a>plt.show()</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a><span class="im">from</span> tqdm <span class="im">import</span> tqdm</span>
+<span id="cb10-2"><a href="#cb10-2"></a></span>
+<span id="cb10-3"><a href="#cb10-3"></a>step_size <span class="op">=</span> <span class="dv">100000</span></span>
+<span id="cb10-4"><a href="#cb10-4"></a>res <span class="op">=</span> []</span>
+<span id="cb10-5"><a href="#cb10-5"></a>i <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb10-6"><a href="#cb10-6"></a><span class="cf">for</span> j <span class="kw">in</span> tqdm(<span class="bu">range</span>(<span class="bu">int</span>(np.ceil(test.shape[<span class="dv">0</span>]<span class="op">/</span>step_size)))):</span>
+<span id="cb10-7"><a href="#cb10-7"></a>    r <span class="op">=</span> np.zeros(test.iloc[i:i<span class="op">+</span>step_size].shape[<span class="dv">0</span>])</span>
+<span id="cb10-8"><a href="#cb10-8"></a>    <span class="cf">for</span> model <span class="kw">in</span> models:</span>
+<span id="cb10-9"><a href="#cb10-9"></a>        r <span class="op">+=</span> np.expm1(model.predict(test.iloc[i:i<span class="op">+</span>step_size], num_iteration<span class="op">=</span>model.best_iteration)) <span class="op">/</span> <span class="bu">len</span>(models)</span>
+<span id="cb10-10"><a href="#cb10-10"></a>    res <span class="op">=</span> np.append(res,r)</span>
+<span id="cb10-11"><a href="#cb10-11"></a>    i <span class="op">+=</span> step_size</span></code></pre></div>
 <h2 id="discussion">Discussion</h2>
 <h3 id="performance-of-the-linear-regression-model">Performance of the linear regression model</h3>
 <p>Is an obtained RMSLE of 4,5 the limit for linear regression? Most likely not. In the model and data preparation, several things can be made better. First, the datasets could be optimized even better. Site 13 was removed because the values were suspiciously high, as seen in the EDA. In this case, an even more in-depth “cleaning” could be made to locate the exact building (or several building) that is responsible for the data anomaly. This deeper cleaning was made for the other models, but not for the linear regression model. Furthermore, if categorical values could be implemented not only in the training, but also the prediction, perhaps a better score could be obtained. However, it must be realized that no matter how many parameters are added to a linear model, it will still only predict new values linearly. If many or strong non-linear relationships exist between the target variable and prediction features, a linear model will never be able to perform nearly as good as e.g. neural networks. This suggests that other AI-models such as Neural Networks must be used.</p>
