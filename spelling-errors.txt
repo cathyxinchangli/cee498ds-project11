@@ -48,7 +48,7 @@ Kaggle
 kBTU
 KTH
 lgbm
-LightGBM
+lightgbm
 logarithmically
 LSTM
 MAPE
@@ -70,6 +70,7 @@ quantile
 Rastegarpour
 regularizations
 relashinships
+RMLSE
 RMSE
 RMSLE
 RNN

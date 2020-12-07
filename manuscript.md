@@ -71,11 +71,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/b9f0ed75eb4f6252469fb2d13506c35ae38db1f4/" />
+  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/6ba25e1964afe73971c78d246aad85c07bfe6634/" />
 
-  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/b9f0ed75eb4f6252469fb2d13506c35ae38db1f4/" />
+  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/6ba25e1964afe73971c78d246aad85c07bfe6634/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/b9f0ed75eb4f6252469fb2d13506c35ae38db1f4/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/6ba25e1964afe73971c78d246aad85c07bfe6634/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -107,9 +107,9 @@ title: 'CEE 498DS Project 11: Building Energy Predictions - Project Report'
 
 <small><em>
 This manuscript
-([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/b9f0ed75eb4f6252469fb2d13506c35ae38db1f4/))
+([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/6ba25e1964afe73971c78d246aad85c07bfe6634/))
 was automatically generated
-from [cathyxinchangli/cee498ds-project11@b9f0ed7](https://github.com/cathyxinchangli/cee498ds-project11/tree/b9f0ed75eb4f6252469fb2d13506c35ae38db1f4)
+from [cathyxinchangli/cee498ds-project11@6ba25e1](https://github.com/cathyxinchangli/cee498ds-project11/tree/6ba25e1964afe73971c78d246aad85c07bfe6634)
 on December 7, 2020.
 </em></small>
 
@@ -428,8 +428,9 @@ We attempted to improve the model performance by adjusting the following element
 * `THRES` value: a higher threshold means less samples but more training time steps, and vice versa. 
 * Hyperparameters: such as learning rate, number of epochs and number of samples to shuffle.
 
-The following table summarizes the changes we made for three of the submissions, as well as the scores. Note the score for the competition is Root Mean Squared Logarithmic Error (RMSLE) as defined by the competition.
+Table {@tbl: table1} below summarizes the changes we made for three of the submissions, as well as the scores. Note the score for the competition is Root Mean Squared Logarithmic Error (RMSLE) as defined by the competition.
 
+Table 1: Summary of key adjustments made for three submissions using RNN-LSTM. {#tbl:table1}
 | Submission | Model Architecture  | `THRES` | Learning Rate                                     | Shuffle, Batch | EarlyStopping | Scores (Training, Testing) |
 |------------|---------------------|-----------------------------------|---------------------------------------------------|----------------|---------------|----------------------------|
 | 1          | LSTM w/o dropout    | 7,000                             | 1e-3 for 14/15 epochs, then 1e-4 for 10/20 epochs | 20, 10         | patience=3    | 1.696. 1.708               |
@@ -577,15 +578,16 @@ LGBM is sensitive to overfitting, and thus, several ways were taken to aviod ove
 3. lambda_l1 and lambda_l2: Avoiding overfitting uses regularizations.
 4. num_leaves: By setting up the maximum number of leaves of a tree, overfitting can be controlled.
 
-The table below shows the overfitting issue while the num_leaves increasing:
+Table {@tbl:table2} below shows the overfitting issue while the `num_leaves` increasing:
 
-| num_leaves for model of each meter type | submitted score  | 
+Table 2: `num_leaves` and the resulted test scores. {#tbl:table2}
+| `num_leaves` for model of meter 0~3 | Test score  | 
 |----------------------|--------------|
 | 50, 50, 50, 50           | 1.154  |
 | 100, 150, 150, 100       | 1.157  |
 | 100,200,200,150          | 1.163|
 
-The submitted score (RMSE) increases when the num_leaves increses, which indicates overfitting. Thus, num_leaves=50 is used for each model.
+The test score (RMLSE) increases when the `num_leaves` increses, which indicates overfitting. Thus, num_leaves=50 is used for each model.
 
 **Predicting on Test Data**<br>
 ```python
@@ -620,8 +622,9 @@ In 'LightGBM model #1', we built one model for each meter type, while in 'LightG
 
 ![Feature Importance in LightGBM model #2.](images/FeatureImportance.png){#fig:image14}
 
-From Figure {@fig:image14}, 'meter_type' is the fourth most important feature, thus, it is reasonable to build a seperated model for each meter type, and doing so did improve the model performance. The test scores for LGBM model #1 and #2 are summarized below.
+From Figure {@fig:image14}, 'meter_type' is the fourth most important feature, thus, it is reasonable to build a seperated model for each meter type, and doing so did improve the model performance. The test scores for LGBM model #1 and #2 are summarized in Table {@tbl:table3} below.
 
+Table 3: Test scores for LGBM model #1 and #2. {#tbl:table3}
 | LGBM model | Test score  | 
 |----------------------|--------------|
 | #1 (one model for each meter type)    | 1.15  |
@@ -639,9 +642,7 @@ Table X: Best performances for each model type.
 |:-----------------|:-------------:|:-------------:|:-------------:|:-------------:|
 | Linear Regression | learning_rate = 1e-3 | - | 4.5 | Bottom |
 | 3-layer RNN-LSTM |  dropout=0.2, learning_rate=5e-4/1e-4, training timesteps=8,000 | 1.65 | 1.62 | 2,900~3,080 |
-| LGBM | ome model for each meter, learning_rate=0.1, num_leaves=50 | 0.57; 1.23;
-1.36; 1.37
- | 1.15 | 2,161~2,167 |
+| LGBM | ome model for each meter (0~3), learning_rate=0.1, num_leaves=50 | (0~3) 0.57; 1.23; 1.36; 1.37 | 1.15 | 2,161~2,167 |
 
 ### Performance of the linear regression model
 Is an obtained RMSLE of 4,5 the limit for linear regression? Most likely not. In the model and data preparation, several things can be made better. First, the datasets could be optimized even better. Site 13 was removed because the values were suspiciously high, as seen in the EDA. In this case, an even more in-depth "cleaning" could be made to locate the exact building (or several building) that is responsible for the data anomaly. This deeper cleaning was made for the other models, but not for the linear regression model. Furthermore, if categorical values could be implemented not only in the training, but also the prediction, perhaps a better score could be obtained. However, it must be realized that no matter how many parameters are added to a linear model, it will still only predict new values linearly. If many or strong non-linear relationships exist between the target variable and prediction features, a linear model will never be able to perform nearly as good as e.g. neural networks. This suggests that other AI-models such as Neural Networks must be used.
