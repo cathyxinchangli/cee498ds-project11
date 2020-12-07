@@ -71,11 +71,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/93ac63067ba481e3c0e8e8b73532a794d4db669a/" />
+  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/b9f0ed75eb4f6252469fb2d13506c35ae38db1f4/" />
 
-  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/93ac63067ba481e3c0e8e8b73532a794d4db669a/" />
+  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/b9f0ed75eb4f6252469fb2d13506c35ae38db1f4/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/93ac63067ba481e3c0e8e8b73532a794d4db669a/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/b9f0ed75eb4f6252469fb2d13506c35ae38db1f4/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -107,9 +107,9 @@ title: 'CEE 498DS Project 11: Building Energy Predictions - Project Report'
 
 <small><em>
 This manuscript
-([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/93ac63067ba481e3c0e8e8b73532a794d4db669a/))
+([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/b9f0ed75eb4f6252469fb2d13506c35ae38db1f4/))
 was automatically generated
-from [cathyxinchangli/cee498ds-project11@93ac630](https://github.com/cathyxinchangli/cee498ds-project11/tree/93ac63067ba481e3c0e8e8b73532a794d4db669a)
+from [cathyxinchangli/cee498ds-project11@b9f0ed7](https://github.com/cathyxinchangli/cee498ds-project11/tree/b9f0ed75eb4f6252469fb2d13506c35ae38db1f4)
 on December 7, 2020.
 </em></small>
 
@@ -629,6 +629,20 @@ From Figure {@fig:image14}, 'meter_type' is the fourth most important feature, t
 
 
 ## Discussion
+### Implications of the RMSLE score
+Table {@tbl:tableX} below summaries the best performances for each model type. Our model of choice is the meter-type-specific LGBM models, with a test score of 1.15. This translates to an RMSE of about 100 kWh. It may seems to a rather large error on itself, but the training data tells us that the target variable `meter_reading` has a mean of ~460 kWh and a standard deviation of ~4,200 kWh; in comparison, this 100 kWh error seems acceptable. Moreover, while we only achieved 2,161/3,614 in ranking, our score was only 0.12 higher than the top score, which is marginal. As most of us only had negligible experiences in data science, ML or even Python, achieving such a score is no small feat and a great encouragement.
+
+Table X: Best performances for each model type.
+{#tbl:tableX}
+
+| **Model** | **Key Hyperparameters**  | **Training Score** | **Test Score (highest 0.93)** | **Approx. Rank (out of 3,614)** |
+|:-----------------|:-------------:|:-------------:|:-------------:|:-------------:|
+| Linear Regression | learning_rate = 1e-3 | - | 4.5 | Bottom |
+| 3-layer RNN-LSTM |  dropout=0.2, learning_rate=5e-4/1e-4, training timesteps=8,000 | 1.65 | 1.62 | 2,900~3,080 |
+| LGBM | ome model for each meter, learning_rate=0.1, num_leaves=50 | 0.57; 1.23;
+1.36; 1.37
+ | 1.15 | 2,161~2,167 |
+
 ### Performance of the linear regression model
 Is an obtained RMSLE of 4,5 the limit for linear regression? Most likely not. In the model and data preparation, several things can be made better. First, the datasets could be optimized even better. Site 13 was removed because the values were suspiciously high, as seen in the EDA. In this case, an even more in-depth "cleaning" could be made to locate the exact building (or several building) that is responsible for the data anomaly. This deeper cleaning was made for the other models, but not for the linear regression model. Furthermore, if categorical values could be implemented not only in the training, but also the prediction, perhaps a better score could be obtained. However, it must be realized that no matter how many parameters are added to a linear model, it will still only predict new values linearly. If many or strong non-linear relationships exist between the target variable and prediction features, a linear model will never be able to perform nearly as good as e.g. neural networks. This suggests that other AI-models such as Neural Networks must be used.
 
