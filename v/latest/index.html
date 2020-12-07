@@ -116,9 +116,9 @@
   <meta name="citation_fulltext_html_url" content="https://cathyxinchangli.github.io/cee498ds-project11/" />
   <meta name="citation_pdf_url" content="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/0b8e03cd949c8741c4e9796d6510520c79fe9a83/" />
-  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/0b8e03cd949c8741c4e9796d6510520c79fe9a83/" />
-  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/0b8e03cd949c8741c4e9796d6510520c79fe9a83/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/2942c1d86497c95ccad1a25c917751ec993c4f1e/" />
+  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/2942c1d86497c95ccad1a25c917751ec993c4f1e/" />
+  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/2942c1d86497c95ccad1a25c917751ec993c4f1e/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -132,9 +132,9 @@
 </header>
 <p><small><em>
 This manuscript
-(<a href="https://cathyxinchangli.github.io/cee498ds-project11/v/0b8e03cd949c8741c4e9796d6510520c79fe9a83/">permalink</a>)
+(<a href="https://cathyxinchangli.github.io/cee498ds-project11/v/2942c1d86497c95ccad1a25c917751ec993c4f1e/">permalink</a>)
 was automatically generated
-from <a href="https://github.com/cathyxinchangli/cee498ds-project11/tree/0b8e03cd949c8741c4e9796d6510520c79fe9a83">cathyxinchangli/cee498ds-project11@0b8e03c</a>
+from <a href="https://github.com/cathyxinchangli/cee498ds-project11/tree/2942c1d86497c95ccad1a25c917751ec993c4f1e">cathyxinchangli/cee498ds-project11@2942c1d</a>
 on December 7, 2020.
 </em></small></p>
 <h2 id="authors">Authors</h2>
@@ -407,13 +407,60 @@ We attempted to improve the model performance by adjusting the following element
 * <code>THRES</code> value: a higher threshold means less samples but more training time steps, and vice versa.
 * Hyperparameters: such as learning rate, number of epochs and number of samples to shuffle.</p>
 <p>Table {<span class="citation" data-cites="tbl">[<span class="citeproc-not-found" data-reference-id="tbl"><strong>???</strong></span>]</span>: table1} below summarizes the changes we made for three of the submissions, as well as the scores. Note the score for the competition is Root Mean Squared Logarithmic Error (RMSLE) as defined by the competition.</p>
-<p>Table 1: Summary of key adjustments made for three submissions using RNN-LSTM. {#tbl:table1}
-| Submission | Model Architecture | <code>THRES</code> | Learning Rate | Shuffle, Batch | EarlyStopping | Scores (Training, Testing) |
-|————|———————|———————————–|—————————————————|—————-|—————|—————————-|
-| 1 | LSTM w/o dropout | 7,000 | 1e-3 for 14/15 epochs, then 1e-4 for 10/20 epochs | 20, 10 | patience=3 | 1.696. 1.708 |
-| 2 | LSTM w/o dropout | 8,000 | 5e-4 for 25/25 epochs, then 1e-4 for 25/25 epochs | 50, 10 | patience=3 | 1.696, 1.681 |
-| 3 | LSTM w. dropout=0.2 | 8,000 | 5e-4 for 30/30 epochs, then 1e-4 for 30/30 epochs | 100, 10 | patience=3 | 1.651, 1.623 |
-<br></p>
+<p>Table 1: Summary of key adjustments made for three submissions using RNN-LSTM.
+{#tbl:table1}</p>
+<table>
+<colgroup>
+<col style="width: 6%" />
+<col style="width: 11%" />
+<col style="width: 19%" />
+<col style="width: 28%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 15%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Submission</th>
+<th>Model Architecture</th>
+<th><code>THRES</code></th>
+<th>Learning Rate</th>
+<th>Shuffle, Batch</th>
+<th>EarlyStopping</th>
+<th>Scores (Training, Testing)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>LSTM w/o dropout</td>
+<td>7,000</td>
+<td>1e-3 for 14/15 epochs, then 1e-4 for 10/20 epochs</td>
+<td>20, 10</td>
+<td>patience=3</td>
+<td>1.696. 1.708</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>LSTM w/o dropout</td>
+<td>8,000</td>
+<td>5e-4 for 25/25 epochs, then 1e-4 for 25/25 epochs</td>
+<td>50, 10</td>
+<td>patience=3</td>
+<td>1.696, 1.681</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>LSTM w. dropout=0.2</td>
+<td>8,000</td>
+<td>5e-4 for 30/30 epochs, then 1e-4 for 30/30 epochs</td>
+<td>100, 10</td>
+<td>patience=3</td>
+<td>1.651, 1.623</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
 <p>Changes from 1 to 2 were mainly to test the effect of THRES, and 2 to 3 to test the effect of dropout. Learning rate schedules etc. were also adjusted based on observations from other unsubmitted tries.</p>
 <p><strong>Applying RNN to Test Data</strong><br>
 Since we constructed traing dataset by seperating samples based on building_id and meter type, we also needed to do predictions accordingly, looping through each building and each of its meters (see code block below). We could not compile testing data into a single array because 1) it caused too much memory overhead; and 2) each building would have different length of time for predictions.</p>
@@ -521,12 +568,30 @@ LGBM is sensitive to overfitting, and thus, several ways were taken to aviod ove
 3. lambda_l1 and lambda_l2: Avoiding overfitting uses regularizations.
 4. num_leaves: By setting up the maximum number of leaves of a tree, overfitting can be controlled.</p>
 <p>Table ?? below shows the overfitting issue while the <code>num_leaves</code> increasing:</p>
-<p>Table 2: <code>num_leaves</code> and the resulted test scores. {#tbl:table2}
-| <code>num_leaves</code> for model of meter 0~3 | Test score |
-|———————-|————–|
-| 50, 50, 50, 50 | 1.154 |
-| 100, 150, 150, 100 | 1.157 |
-| 100,200,200,150 | 1.163|</p>
+<p>Table 2: <code>num_leaves</code> and the resulted test scores.
+{#tbl:table2}</p>
+<table>
+<thead>
+<tr class="header">
+<th><code>num_leaves</code> for model of meter 0~3</th>
+<th>Test score</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>50, 50, 50, 50</td>
+<td>1.154</td>
+</tr>
+<tr class="even">
+<td>100, 150, 150, 100</td>
+<td>1.157</td>
+</tr>
+<tr class="odd">
+<td>100,200,200,150</td>
+<td>1.163</td>
+</tr>
+</tbody>
+</table>
 <p>The test score (RMLSE) increases when the <code>num_leaves</code> increses, which indicates overfitting. Thus, num_leaves=50 is used for each model.</p>
 <p><strong>Predicting on Test Data</strong><br></p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="kw">def</span> create_predictions(test_set, models, batch_size):</span>
@@ -563,11 +628,26 @@ In ‘LightGBM model #1’, we built one model for each meter type, while in ‘
 </figure>
 </div>
 <p>From Figure <a href="#fig:image14">14</a>, ‘meter_type’ is the fourth most important feature, thus, it is reasonable to build a seperated model for each meter type, and doing so did improve the model performance. The test scores for LGBM model #1 and #2 are summarized in Table ?? below.</p>
-<p>Table 3: Test scores for LGBM model #1 and #2. {#tbl:table3}
-| LGBM model | Test score |
-|———————-|————–|
-| #1 (one model for each meter type) | 1.15 |
-| #2 (one model for all meter types) | 1.37 |</p>
+<p>Table 3: Test scores for LGBM model #1 and #2.
+{#tbl:table3}</p>
+<table>
+<thead>
+<tr class="header">
+<th>LGBM model</th>
+<th>Test score</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>#1 (one model for each meter type)</td>
+<td>1.15</td>
+</tr>
+<tr class="even">
+<td>#2 (one model for all meter types)</td>
+<td>1.37</td>
+</tr>
+</tbody>
+</table>
 <h2 id="discussion">Discussion</h2>
 <h3 id="implications-of-the-rmsle-score">Implications of the RMSLE score</h3>
 <p>Table ?? below summaries the best performances for each model type. Our model of choice is the meter-type-specific LGBM models, with a test score of 1.15. This translates to an RMSE of about 100 kWh. It may seems to a rather large error on itself, but the training data tells us that the target variable <code>meter_reading</code> has a mean of ~460 kWh and a standard deviation of ~4,200 kWh; in comparison, this 100 kWh error seems acceptable. Moreover, while we only achieved 2,161/3,614 in ranking, our score was only 0.12 higher than the top score, which is marginal. As most of us only had negligible experiences in data science, ML or even Python, achieving such a score is no small feat and a great encouragement.</p>
