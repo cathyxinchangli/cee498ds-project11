@@ -71,11 +71,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/3120ccf11e89c0a16cba027e1cf6ff28a73cd92e/" />
+  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/57d31477da99479149718744ede1545061265dc5/" />
 
-  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/3120ccf11e89c0a16cba027e1cf6ff28a73cd92e/" />
+  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/57d31477da99479149718744ede1545061265dc5/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/3120ccf11e89c0a16cba027e1cf6ff28a73cd92e/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/57d31477da99479149718744ede1545061265dc5/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -107,9 +107,9 @@ title: 'CEE 498DS Project 11: Building Energy Predictions - Project Report'
 
 <small><em>
 This manuscript
-([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/3120ccf11e89c0a16cba027e1cf6ff28a73cd92e/))
+([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/57d31477da99479149718744ede1545061265dc5/))
 was automatically generated
-from [cathyxinchangli/cee498ds-project11@3120ccf](https://github.com/cathyxinchangli/cee498ds-project11/tree/3120ccf11e89c0a16cba027e1cf6ff28a73cd92e)
+from [cathyxinchangli/cee498ds-project11@57d3147](https://github.com/cathyxinchangli/cee498ds-project11/tree/57d31477da99479149718744ede1545061265dc5)
 on December 7, 2020.
 </em></small>
 
@@ -311,14 +311,19 @@ There are 16 primary use types, with a mix of residential and commercial buildin
 When analyzing the meter readings, it was discovered that some measurements were suspiciously high. After analyzing each meter type, It was found that meter 2 (steam) was responsible for the unusually high values. After this discovery, each site was analyzed, and the data anomaly was located to site 13. Figure {@fig:image6} shows the mean hourly steam readings for site 13. Figure {@fig:image7} shows all meter readings for all sites. Lastly Figure {@fig:image8} illustrates all meter readings when site 13 was removed. It is clear that the readings are much larger in the first two graphs. Also, the shape of the graph is dictated by site 13.
 
 ![Steam profile at site 13.](images/site13_steam.png){#fig:image6}
+
 ![Combined meters profile of all sites.](images/all-sites.png){#fig:image7}
+
 ![Combined meters profile of all sites excluding site 13.](images/site-13-removed.png){#fig:image8}
 
 Since meter reading is time series data, it is helpful to study the predominant frequency in the data. The following figures show how the meter_reading change in different month of a year and in different hours during a day. 
-![Monthly meter reading time series.](images/monthy_meter_reading.PNG){#fig:image9}
-![Hourly meter reading time series.](images/hourly_meter_reading.PNG){#fig:image10}
+
+![Monthly meter reading](images/monthy_meter_reading.PNG){#fig:image9}
+
+![Hourly meter reading](images/hourly_meter_reading.PNG){#fig:image10}
 
 Figure 9 and 10 indicate the meter reading changes significantly during different months and different hours in a day, which makes 'month_in_a_year', and 'hour_in_a_day' possible date-time features.
+
 #### Weather Data
 `weather_train` has 2016 hourly weather data, and `weather_test` has 2017~18 hourly weather data. The time series plots for all variables of both the training and test periods are shown below (Figure {@fig:image11}).
 

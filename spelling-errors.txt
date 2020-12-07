@@ -54,7 +54,7 @@ LSTM
 MAPE
 MBE
 mdoel
-mingyu
+Mingyu
 minimised
 mkbenja
 NRMSE
