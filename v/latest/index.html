@@ -116,9 +116,9 @@
   <meta name="citation_fulltext_html_url" content="https://cathyxinchangli.github.io/cee498ds-project11/" />
   <meta name="citation_pdf_url" content="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/57d31477da99479149718744ede1545061265dc5/" />
-  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/57d31477da99479149718744ede1545061265dc5/" />
-  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/57d31477da99479149718744ede1545061265dc5/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/93ac63067ba481e3c0e8e8b73532a794d4db669a/" />
+  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/93ac63067ba481e3c0e8e8b73532a794d4db669a/" />
+  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/93ac63067ba481e3c0e8e8b73532a794d4db669a/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -132,9 +132,9 @@
 </header>
 <p><small><em>
 This manuscript
-(<a href="https://cathyxinchangli.github.io/cee498ds-project11/v/57d31477da99479149718744ede1545061265dc5/">permalink</a>)
+(<a href="https://cathyxinchangli.github.io/cee498ds-project11/v/93ac63067ba481e3c0e8e8b73532a794d4db669a/">permalink</a>)
 was automatically generated
-from <a href="https://github.com/cathyxinchangli/cee498ds-project11/tree/57d31477da99479149718744ede1545061265dc5">cathyxinchangli/cee498ds-project11@57d3147</a>
+from <a href="https://github.com/cathyxinchangli/cee498ds-project11/tree/93ac63067ba481e3c0e8e8b73532a794d4db669a">cathyxinchangli/cee498ds-project11@93ac630</a>
 on December 7, 2020.
 </em></small></p>
 <h2 id="authors">Authors</h2>
@@ -292,7 +292,6 @@ A valid sample submission containing <code>row_id</code> to match your predictio
 </figure>
 </div>
 <h4 id="target-variable-meter-readings">Target Variable: Meter Readings</h4>
-<p><strong>Please feel free to remove this or change, I just added it to make it easier to know what should be included here</strong></p>
 <p>When analyzing the meter readings, it was discovered that some measurements were suspiciously high. After analyzing each meter type, It was found that meter 2 (steam) was responsible for the unusually high values. After this discovery, each site was analyzed, and the data anomaly was located to site 13. Figure <a href="#fig:image6">6</a> shows the mean hourly steam readings for site 13. Figure <a href="#fig:image7">7</a> shows all meter readings for all sites. Lastly Figure <a href="#fig:image8">8</a> illustrates all meter readings when site 13 was removed. It is clear that the readings are much larger in the first two graphs. Also, the shape of the graph is dictated by site 13.</p>
 <div id="fig:image6" class="fignos">
 <figure>
@@ -320,7 +319,7 @@ A valid sample submission containing <code>row_id</code> to match your predictio
 <img src="images/hourly_meter_reading.PNG" alt="" /><figcaption><span>Figure 10:</span> Hourly meter reading</figcaption>
 </figure>
 </div>
-<p>Figure 9 and 10 indicate the meter reading changes significantly during different months and different hours in a day, which makes ‘month_in_a_year’, and ‘hour_in_a_day’ possible date-time features.</p>
+<p>Figure <a href="#fig:image9">9</a> and <a href="#fig:image10">10</a> indicate the meter reading changes significantly during different months and different hours in a day, which makes <code>month_in_a_year</code>, and <code>hour_in_a_day</code> potentially good date-time features.</p>
 <h4 id="weather-data">Weather Data</h4>
 <p><code>weather_train</code> has 2016 hourly weather data, and <code>weather_test</code> has 2017~18 hourly weather data. The time series plots for all variables of both the training and test periods are shown below (Figure <a href="#fig:image11">11</a>).</p>
 <div id="fig:image11" class="fignos">
@@ -339,9 +338,9 @@ A valid sample submission containing <code>row_id</code> to match your predictio
 <h3 id="machine-learning-models">Machine Learning Models</h3>
 <h4 id="baseline-linear-regression">Baseline: Linear Regression</h4>
 <p>This section will cover how a linear regression model was constructed in order to predict household energy consumption, as well as discuss the limitations of a linear model.</p>
-<p><strong>Training data preprocessing</strong>
+<p><strong>Training data preprocessing</strong><br>
 As it has been described earlier in this section sections, the data used for this Kaggle competition came in three different files: train data, building metadata and weather train data. Since the dataset contains over 20 million readings and numerous features, issues with RAM usage had to be dealt with. The main problem was that not all desirable features could be included in the before RAM usage hit the limit. It was crucial to identify the most predictive features and not include meaningless features which would increase unneccesary RAM usage. In addition to that, a memory saving function was utilized, which changed the data types to be less memory demanding. Lastly, the three datasets were loaded with only the desired columns, to further reduce unneccesary RAM usage.</p>
-<p><strong>Linear regression model</strong>
+<p><strong>Linear regression model</strong><br>
 The linear regression model was created by adding a feature layer with all the desired numerical and categorical features and then adding a dense layer for linear regression. First, missing values in a column were replaced with the mean of that column. In order to create a feature layer, the features used for the prediction had to be converted to tensors. Lastly, categorical features had to be one-hot encoded before being added to the feature layer.</p>
 <p>The best public score (RMSLE) that could be obtained with this linear model was 4.5 (4.24 private score).</p>
 <h4 id="neural-network-recurrent-neural-network-with-long-short-term-memory-rnn-lstm">Neural Network: Recurrent Neural Network with Long Short Term Memory (RNN-LSTM)</h4>
@@ -480,14 +479,14 @@ Since we constructed traing dataset by seperating samples based on building_id a
 <span id="cb3-14"><a href="#cb3-14"></a>        <span class="kw">del</span> v</span>
 <span id="cb3-15"><a href="#cb3-15"></a>    <span class="kw">del</span> bldg</span></code></pre></div>
 <h4 id="tree-based-model-light-gradient-boosting-machine-lgbm">Tree-based Model: Light Gradient Boosting Machine (LGBM)</h4>
-<p><strong>Introduction</strong><br></p>
+<p><strong>Introduction to LGBM</strong><br></p>
 <p>LightGBM is an abbreviation for Light Gradient Boosting Machine, a free open source gradient enhancement framework for machine learning.It is an ensemble model of decision trees which are trained in sequence.1.Each tree will be built based on the previous tree’s error. Finally, predictions will be made by the sum of all of those trees. And errors are minimised by using the gradient method.</p>
 <p>Following is the advantage of the LightGBM:</p>
 <p>First of all, LGBM is a faster training algorithm compared to other tree-based algorithms. For example, its histogram-based splitting. Finding the exact optimal split is very costly when the dataset is large, since it involves testing every possible split point. By using a histogram-based (quantile-based) solution, the splitting procedure is much faster.</p>
 <p>Secondly, Similarly to the histogram-based algorithm, the continuous variables are replaced with discrete bins which largely reduce the memory usage.</p>
 <p>Thirdly, lgbm is good at dealing with categorical data. For instance, fisher method is a very excellent LGBM method. In fact, the Fisher method, also known as Fisher’s combined feasibility test, is a data fuse or “meta-analysis” technique. Developed and named by Ronald Fisher. It is used as the basis for combining the results of several independent tests based on a common hypothesis. Instead of one-hot encoding, which significantly increases the size of the dataset, fisher’s method is used to find the optimal split of categorical variables, which means none of the encoding method is needed.</p>
 <p>Last but not least, lgbm is good at dealing with large dataset.</p>
-<p>However, the LightGBM still have some disadvantages. The main disadvantage of lgbm is it’s sensitive to overfitting. And methods such as regularizations, and controlling the number of leaves can be used to address this problem.</p>
+<p>However, the LightGBM still have some disadvantages. The main disadvantage of lgbm is it is sensitive to overfitting. And methods such as regularizations, and controlling the number of leaves can be used to address this problem.</p>
 <p><strong>LightGBM model #1: predicting meter_reading by meter type</strong><br></p>
 <p><strong>Data Preprocessing</strong><br>
 The general data preprocessing is similar to the ‘Training Data Preprocessing’ section in RNN-LSTM. Thus, this section will only discuss the differences of the data preparation between LGBM and RNN-LSTM.</p>
@@ -618,24 +617,27 @@ LGBM is sensitive to overfitting, and thus, several ways were taken to aviod ove
 </figure>
 </div>
 <p><strong>LightGBM model #2: predicting meter_reading in one model</strong><br>
-‘LightGBM model #1’ built each model for each meter type, while ‘LightGBM model #2’ built one model to predict the meter reading with meter_type as a categorical feature.</p>
-<p>Figure ?? illustrates the feature importance in ‘LightGBM model #2’.
-<img src="images/FeatureImportance.png" id="fig:image14" alt="Feature Importance in LightGBM model #2." /></p>
-<p>‘meter_type’ is the fourth most important feature as indicated in the above Figure ??. Thus, it is reasonable to build seperated model for each meter type. The test scores for LGBM model 1 and 2 are summarized below.</p>
+In ‘LightGBM model #1’, we built one model for each meter type, while in ‘LightGBM model #2’ one model was constructed to predict the meter reading for all meter types, with meter_type as a categorical feature. The structure and code for this model is very similar to LightGBM model #1 so they are omitted here. This model allows us to compare the feature importance for all features. Figure <a href="#fig:image14">14</a> shows the feature importance in ‘LightGBM model #2’.</p>
+<div id="fig:image14" class="fignos">
+<figure>
+<img src="images/FeatureImportance.png" alt="" /><figcaption><span>Figure 14:</span> Feature Importance in LightGBM model #2.</figcaption>
+</figure>
+</div>
+<p>From Figure <a href="#fig:image14">14</a>, ‘meter_type’ is the fourth most important feature, thus, it is reasonable to build a seperated model for each meter type, and doing so did improve the model performance. The test scores for LGBM model #1 and #2 are summarized below.</p>
 <table>
 <thead>
 <tr class="header">
-<th>LGBM models</th>
+<th>LGBM model</th>
 <th>Test score</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>model 1 (by meter type)</td>
-<td>1.154</td>
+<td>#1 (one model for each meter type)</td>
+<td>1.15</td>
 </tr>
 <tr class="even">
-<td>model 2</td>
+<td>#2 (one model for all meter types)</td>
 <td>1.37</td>
 </tr>
 </tbody>
