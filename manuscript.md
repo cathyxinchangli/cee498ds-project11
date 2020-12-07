@@ -71,11 +71,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/3a870102e7a51360b5321fc7fb505c7e0c1643ab/" />
+  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/791d1be0f2197bd0429fd999179bc6e204d59e15/" />
 
-  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/3a870102e7a51360b5321fc7fb505c7e0c1643ab/" />
+  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/791d1be0f2197bd0429fd999179bc6e204d59e15/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/3a870102e7a51360b5321fc7fb505c7e0c1643ab/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/791d1be0f2197bd0429fd999179bc6e204d59e15/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -107,9 +107,9 @@ title: 'CEE 498DS Project 11: Building Energy Predictions - Project Report'
 
 <small><em>
 This manuscript
-([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/3a870102e7a51360b5321fc7fb505c7e0c1643ab/))
+([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/791d1be0f2197bd0429fd999179bc6e204d59e15/))
 was automatically generated
-from [cathyxinchangli/cee498ds-project11@3a87010](https://github.com/cathyxinchangli/cee498ds-project11/tree/3a870102e7a51360b5321fc7fb505c7e0c1643ab)
+from [cathyxinchangli/cee498ds-project11@791d1be](https://github.com/cathyxinchangli/cee498ds-project11/tree/791d1be0f2197bd0429fd999179bc6e204d59e15)
 on December 7, 2020.
 </em></small>
 
@@ -588,7 +588,7 @@ The histograms of 'meter_reading' can indicate the accuracy of the models. For e
 
 Meter Type 0 Training Data | Meter Type 0 Predictions
 :-------------------------:|:-------------------------:
-![](images/training.png)   | ![](images/prediction.png)
+![](images/training.PNG)   | ![](images/prediction.PNG)
 
 **Another way of LightGBM**<br>
 
