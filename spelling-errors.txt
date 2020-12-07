@@ -47,14 +47,14 @@ intial
 Kaggle
 kBTU
 KTH
-LGBM
-lightgbm
+lgbm
+LightGBM
 logarithmically
 LSTM
 MAPE
 MBE
 mdoel
-mingyu
+Mingyu
 Minyu
 mkbenja
 NRMSE
@@ -65,6 +65,7 @@ pre
 precip
 preprocessing
 probelm
+quantile
 Rastegarpour
 regularizations
 relashinships

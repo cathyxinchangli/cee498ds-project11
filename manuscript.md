@@ -71,11 +71,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/9d7db6fd02a2075ef561bb0ddc8f07825e537239/" />
+  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/5e0a29f9fcefdad670efc68b3166822d4ab935fc/" />
 
-  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/9d7db6fd02a2075ef561bb0ddc8f07825e537239/" />
+  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/5e0a29f9fcefdad670efc68b3166822d4ab935fc/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/9d7db6fd02a2075ef561bb0ddc8f07825e537239/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/5e0a29f9fcefdad670efc68b3166822d4ab935fc/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -107,9 +107,9 @@ title: 'CEE 498DS Project 11: Building Energy Predictions - Project Report'
 
 <small><em>
 This manuscript
-([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/9d7db6fd02a2075ef561bb0ddc8f07825e537239/))
+([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/5e0a29f9fcefdad670efc68b3166822d4ab935fc/))
 was automatically generated
-from [cathyxinchangli/cee498ds-project11@9d7db6f](https://github.com/cathyxinchangli/cee498ds-project11/tree/9d7db6fd02a2075ef561bb0ddc8f07825e537239)
+from [cathyxinchangli/cee498ds-project11@5e0a29f](https://github.com/cathyxinchangli/cee498ds-project11/tree/5e0a29f9fcefdad670efc68b3166822d4ab935fc)
 on December 7, 2020.
 </em></small>
 
@@ -457,7 +457,23 @@ for bldg_id in test_full.building_id.unique():
 
 
 #### Tree-based Model: LightGBM
+**Introduction
+
+LightGBM is an abbreviation for Light Gradient Boosting Machine, a free open source gradient enhancement framework for machine learning.It is an ensemble model of decision trees which are trained in sequence. Following is the advantage of the LightGBM:
+
+First of all, LGBM is a faster training algorithm compared to other tree-based algorithms. For example, its histogram-based splitting. Finding the exact optimal split is very costly when the dataset is large, since it involves testing every possible split point. By using a histogram-based, or we can say quantile-based solution, the splitting procedure is much faster.
+ 
+Secondly, Similarly to the histogram-based algorithm, the continuous variables are replaced with discrete bins which largely reduce the memory usage.
+ 
+Thirdly, lgbm is good at dealing with categorical data. For instance, fisher method is a very excellent LGBM method. In fact, the Fisher method, also known as Fisher's combined feasibility test, is a data fuse or "meta-analysis" technique. Developed and named by Ronald Fisher. It is used as the basis for combining the results of several independent tests based on a common hypothesis. Instead of one-hot encoding, which significantly increases the size of the dataset, fisher’s method is used to find the optimal split of categorical variables, which means none of the encoding method is needed. 
+ 
+Last but not least, lgbm is good at dealing with large dataset.
+ 
+However, the LightGBM still have some disadvantages. The main disadvantage of lgbm is it’s sensitive to overfitting. And methods such as controlling the number of leaves can be used to address this problem
+
+
 **LightGBM model --Mingyu Sun**<br>
+
 **Data Preprocessing**<br>
 The general data preprocessing is similar to the 'Training Data Preprocessing' section in RNN-LSTM. Thus, this section will only discuss the differences of the data preparation between LGBM and RNN-LSTM.
 
@@ -642,7 +658,7 @@ for model, evals_result in zip(models, evals_results):
 
 plt.show()
 ```
-
+![](images/FeatureImportance.png)
 ```python
 from tqdm import tqdm
 
