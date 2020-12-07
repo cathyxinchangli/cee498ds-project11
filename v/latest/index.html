@@ -116,9 +116,9 @@
   <meta name="citation_fulltext_html_url" content="https://cathyxinchangli.github.io/cee498ds-project11/" />
   <meta name="citation_pdf_url" content="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/f8e1097b331ffa5b15bae2683b68088329393f22/" />
-  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/f8e1097b331ffa5b15bae2683b68088329393f22/" />
-  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/f8e1097b331ffa5b15bae2683b68088329393f22/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/3120ccf11e89c0a16cba027e1cf6ff28a73cd92e/" />
+  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/3120ccf11e89c0a16cba027e1cf6ff28a73cd92e/" />
+  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/3120ccf11e89c0a16cba027e1cf6ff28a73cd92e/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -132,9 +132,9 @@
 </header>
 <p><small><em>
 This manuscript
-(<a href="https://cathyxinchangli.github.io/cee498ds-project11/v/f8e1097b331ffa5b15bae2683b68088329393f22/">permalink</a>)
+(<a href="https://cathyxinchangli.github.io/cee498ds-project11/v/3120ccf11e89c0a16cba027e1cf6ff28a73cd92e/">permalink</a>)
 was automatically generated
-from <a href="https://github.com/cathyxinchangli/cee498ds-project11/tree/f8e1097b331ffa5b15bae2683b68088329393f22">cathyxinchangli/cee498ds-project11@f8e1097</a>
+from <a href="https://github.com/cathyxinchangli/cee498ds-project11/tree/3120ccf11e89c0a16cba027e1cf6ff28a73cd92e">cathyxinchangli/cee498ds-project11@3120ccf</a>
 on December 7, 2020.
 </em></small></p>
 <h2 id="authors">Authors</h2>
@@ -298,14 +298,14 @@ A valid sample submission containing <code>row_id</code> to match your predictio
 <img src="images/all-sites.png" id="fig:image7" alt="Combined meters profile of all sites." />
 <img src="images/site-13-removed.png" id="fig:image8" alt="Combined meters profile of all sites excluding site 13." /></p>
 <p>Since meter reading is time series data, it is helpful to study the predominant frequency in the data. The following figures show how the meter_reading change in different month of a year and in different hours during a day.
-<img src="images/monthy_meter_reading.PNG" id="fig:image9" alt="Monthly meter reading" />
-<img src="images/hourly_meter_reading.PNG" id="fig:image10" alt="Hourly meter reading" /></p>
+<img src="images/monthy_meter_reading.PNG" id="fig:image9" alt="Monthly meter reading time series." />
+<img src="images/hourly_meter_reading.PNG" id="fig:image10" alt="Hourly meter reading time series." /></p>
 <p>Figure 9 and 10 indicate the meter reading changes significantly during different months and different hours in a day, which makes ‘month_in_a_year’, and ‘hour_in_a_day’ possible date-time features.
 #### Weather Data
 <code>weather_train</code> has 2016 hourly weather data, and <code>weather_test</code> has 2017~18 hourly weather data. The time series plots for all variables of both the training and test periods are shown below (Figure <a href="#fig:image11">6</a>).</p>
 <div id="fig:image11" class="fignos">
 <figure>
-<img src="images/weather-data-time-series.PNG" alt="" /><figcaption><span>Figure 6:</span> Time series plots of weather variables.</figcaption>
+<img src="images/weather-data-time-series.png" alt="" /><figcaption><span>Figure 6:</span> Time series plots of weather variables.</figcaption>
 </figure>
 </div>
 <h4 id="correlations">Correlations</h4>
@@ -591,16 +591,16 @@ LGBM is sensitive to overfitting, and thus, several ways were taken to aviod ove
 <span id="cb7-18"><a href="#cb7-18"></a>test_y_2 <span class="op">=</span> generate_results(test_all,target_meter <span class="op">=</span> <span class="dv">2</span>, models <span class="op">=</span> models_2, batch_size <span class="op">=</span> <span class="dv">100000</span>)</span>
 <span id="cb7-19"><a href="#cb7-19"></a>test_y_3 <span class="op">=</span> generate_results(test_all,target_meter <span class="op">=</span> <span class="dv">3</span>, models <span class="op">=</span> models_3, batch_size <span class="op">=</span> <span class="dv">100000</span>)</span></code></pre></div>
 <p>Since the log(meter_reading) is used in the model training, the np.expm1() in the function ‘create_predictions’ transfer the predictions to the original values. np.concatenate() is used to combine the predictions from the four models.</p>
-<p>The histograms of ‘meter_reading’ can indicate the accuracy of the models. For each meter type, if the histograms of the meter_reading from the training data and the prediction are similar, then the model is reasonable. Histograms of meter_type=0 is provided below as an example (Figure <a href="#fig:image13">8</a>.</p>
+<p>The histograms of ‘meter_reading’ can indicate the accuracy of the models. For each meter type, if the histograms of the meter_reading from the training data and the prediction are similar, then the model is reasonable. Histograms of meter_type=0 is provided below as an example (Figure <a href="#fig:image13">8</a>).</p>
 <div id="fig:image13" class="fignos">
 <figure>
-<img src="images/training_prediction.png" alt="" /><figcaption><span>Figure 8:</span> Histograms of meter_reading of meter type 0</figcaption>
+<img src="images/training_prediction.PNG" alt="" /><figcaption><span>Figure 8:</span> Histograms of meter_reading of meter type 0 (left: training, right: prediction).</figcaption>
 </figure>
 </div>
 <p><strong>LightGBM model #2: predicting meter_reading in one model</strong><br>
 ‘LightGBM model #1’ built each model for each meter type, while ‘LightGBM model #2’ built one model to predict the meter reading with meter_type as a categorical feature.</p>
 <p>Figure ?? illustrates the feature importance in ‘LightGBM model #2’.
-<img src="images/FeatureImportance.png" id="fig:image14" alt="Feature Importance in LightGBM model #2" /></p>
+<img src="images/FeatureImportance.png" id="fig:image14" alt="Feature Importance in LightGBM model #2." /></p>
 <p>‘meter_type’ is the fourth most important feature as indicated in the above Figure ??. Thus, it is reasonable to build seperated model for each meter type. The test scores for LGBM model 1 and 2 are summarized below.</p>
 <table>
 <thead>
