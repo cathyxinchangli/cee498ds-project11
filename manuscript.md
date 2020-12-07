@@ -71,11 +71,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://cathyxinchangli.github.io/cee498ds-project11/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/38a814df861678aaea0c34fc40b0cf75e6fd3863/" />
+  <link rel="alternate" type="text/html" href="https://cathyxinchangli.github.io/cee498ds-project11/v/2b4f24bac07eef4a8c53745f3d5481f3468a4f0e/" />
 
-  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/38a814df861678aaea0c34fc40b0cf75e6fd3863/" />
+  <meta name="manubot_html_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/2b4f24bac07eef4a8c53745f3d5481f3468a4f0e/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/38a814df861678aaea0c34fc40b0cf75e6fd3863/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://cathyxinchangli.github.io/cee498ds-project11/v/2b4f24bac07eef4a8c53745f3d5481f3468a4f0e/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -107,9 +107,9 @@ title: 'CEE 498DS Project 11: Building Energy Predictions - Project Report'
 
 <small><em>
 This manuscript
-([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/38a814df861678aaea0c34fc40b0cf75e6fd3863/))
+([permalink](https://cathyxinchangli.github.io/cee498ds-project11/v/2b4f24bac07eef4a8c53745f3d5481f3468a4f0e/))
 was automatically generated
-from [cathyxinchangli/cee498ds-project11@38a814d](https://github.com/cathyxinchangli/cee498ds-project11/tree/38a814df861678aaea0c34fc40b0cf75e6fd3863)
+from [cathyxinchangli/cee498ds-project11@2b4f24b](https://github.com/cathyxinchangli/cee498ds-project11/tree/2b4f24bac07eef4a8c53745f3d5481f3468a4f0e)
 on December 7, 2020.
 </em></small>
 
@@ -314,18 +314,22 @@ When analyzing the meter readings, it was discovered that some measurements were
 ![Combined meters profile of all sites.](images/all-sites.png){#fig:image7}
 ![Combined meters profile of all sites excluding site 13.](images/site-13-removed.png){#fig:image8}
 
+Since meter reading is time series data, it is helpful to study the predominant frequency in the data. The following figures show how the meter_reading change in different month of a year and in different hours during a day. 
+![Monthly meter reading](images/monthy_meter_reading.png){#fig:image9}
+![Hourly meter reading](images/hourly_meter_reading.png){#fig:image10}
 
+Figure 9 and 10 indicate the meter reading changes significantly during different months and different hours in a day, which makes 'month_in_a_year', and 'hour_in_a_day' possible date-time features.
 #### Weather Data
 `weather_train` has 2016 hourly weather data, and `weather_test` has 2017~18 hourly weather data. The time series plots for all variables of both the training and test periods are shown below (Figure {@fig:image9}).
 
-![Time series plots of weather variables.](images/weather-data-time-series.png){#fig:image9}
+![Time series plots of weather variables.](images/weather-data-time-series.PNG){#fig:image11}
 
 #### Correlations
 Putting `building_metadata`, `train` and `weather_train` together, we can generate the correlation between each features and the target variable. The heat map below (Figure {@fig:image10}) shows that the correlation between variables range from -0.32 to 0.98, but no individual features have significant correlation with the target variable `meter_reading`. The top 5 most features most correlated with `meter_reading` are building square footage (0.13), number of floors (0.13), year of construction (0.11), meter type (0.077), and sites (0.047). This suggests that building metadata are potentially important predictors for our machine learning models, and the missing values need to be treated with care.
 
 In addition, some features show rather strong correlations with each other, such as: `square_feet` and `floor_count` (0.58); `air_temperature` and `dew_temperature` (0.75); `wind_direction` and `wind_speed` (0.43). This may provide insights to imputation of the missing values.
 
-![Correlations heatmap.](images/heatmap.png){#fig:image10}
+![Correlations heatmap.](images/heatmap.png){#fig:image12}
 
 ### Machine Learning Models
 #### Baseline: Linear Regression
@@ -456,7 +460,7 @@ for bldg_id in test_full.building_id.unique():
 ```
 
 
-#### Tree-based Model: LightGBM
+#### Tree-based Model: Light Gradient Boosting Machine (LGBM)
 
 **Introduction**<br>
 
@@ -604,13 +608,13 @@ Since the log(meter_reading) is used in the model training, the np.expm1() in th
 
 The histograms of 'meter_reading' can indicate the accuracy of the models. For each meter type, if the histograms of the meter_reading from the training data and the prediction are similar, then the model is reasonable. Histograms of meter_type=0 is provided below as an example.
 
-![Histograms of meter_reading of meter type 0](images/training_prediction.png){#fig:image11 Left:training Right:predictipn}
+![Histograms of meter_reading of meter type 0](images/training_prediction.png){#fig:image13 Left:training Right:predictipn}
 
 **LightGBM model #2: predicting meter_reading in one model**<br>
 'LightGBM model #1' built each model for each meter type, while 'LightGBM model #2' built one model to predict the meter reading with meter_type as a categorical feature.  
 
 The following figure indicates the feature importance in 'LightGBM model #2'.
-![Feature Importance in LightGBM model #2](images/FeatureImportance.png){#fig:image11}
+![Feature Importance in LightGBM model #2](images/FeatureImportance.png){#fig:image14}
 
 'meter_type' is the fourth important feature as indicated in the above figure. Thus, it's reasonable to build seperated model for each meter type.
 

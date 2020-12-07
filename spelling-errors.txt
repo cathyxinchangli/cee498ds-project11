@@ -47,14 +47,14 @@ intial
 Kaggle
 kBTU
 KTH
-lgbm
+LGBM
 LightGBM
 logarithmically
 LSTM
 MAPE
 MBE
 mdoel
-mingyu
+Mingyu
 minimised
 mkbenja
 NRMSE
@@ -64,7 +64,7 @@ overfitting
 pre
 precip
 predictipn
-preprocessing
+Preprocessing
 probelm
 quantile
 Rastegarpour
